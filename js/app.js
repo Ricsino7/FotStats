@@ -13,30 +13,29 @@
       ($stateProvider, $urlRouterProvider) => {
 
         $stateProvider
-          // .state('root', {
-          //   abstract: true,
-          //   views: {
-          //     '@': {
-          //       templateUrl: './html/root.html'
-          //     },
-          //     'header@root': {
-          //       templateUrl: './html/header.html'
-          //     },
-          //     'footer@root': {
-          //       templateUrl: './html/footer.html'
-          //     },
-          //     'modal@root': {
-          //       templateUrl: './html/modal.html'
-          //     }
-          //   }
-          // })
+           .state('root', {
+             abstract: true,
+             views: {
+              '@': {
+                 templateUrl: './html/root.html'
+               },
+              'header@root': {
+                 templateUrl: './html/header.html',
+                 controller:'headerController'
+               },
+              'footer@root': {
+                templateUrl: './html/footer.html'
+              },
+             }
+           })
 
           .state('home', {
             url: '/',
+            parent: 'root',
             controller: 'homeController',
             templateUrl: './html/home.html'
           })
-
+          
           // .state('matches', {
           //   url: '/matches',
           //   //controller: 'matchesController',
@@ -79,6 +78,12 @@
           //   templateUrl: './html/tournaments.html'
           // })
 
+          // .state('news', {
+          //   url: '/news',
+          //   //controller: 'newsController',
+          //   templateUrl: './html/news.html'
+          // })
+
         $urlRouterProvider.otherwise('/');
       }
     ])
@@ -91,11 +96,17 @@
     ])
     
     .controller('homeController', [
+    '$scope',
+    function($scope) {
+      console.log('fasf')
+    }
+  ])
+
+  .controller('headerController',[
     '$rootScope',
     '$scope',
-    function($rootScope, $scope) {
-
-			$scope.toggleTheme = function() {
+    function($rootScope, $scope){
+      $scope.toggleTheme = function() {
         $rootScope.darkMode = $rootScope.darkMode === "dark" ? "light" : "dark";
       }
     }
