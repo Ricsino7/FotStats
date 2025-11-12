@@ -99,6 +99,7 @@
     '$scope',
     function($scope) {
       console.log('fasf')
+      
     }
   ])
 
