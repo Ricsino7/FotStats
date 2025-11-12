@@ -53,11 +53,29 @@
           <button class="btn btn-outline-secondary" ng-click="toggleTheme()">
             {{ $root.darkMode === "dark" ? '☀️ Light mód' : '🌙 Dark mód' }}
           </button>
-        </div>
+        </div>  
+
+        <div class="mx-3 d-flex align-items-center">
+					<img style="height: 30px; width: 30px;"
+							 class="mx-3">
+					<select name="language" 
+									id="language" 
+									class="form-select"
+									data-bs-theme="dark">
+						<option>
+										<img ng-src="" 
+							 style="height: 30px; width: 30px;"
+							 class="mx-3">
+						</option>
+					</select>
+				</div>
+
       <form class="d-flex" role="search">
         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
         <button class="btn btn-outline-success" type="submit">Search</button>
       </form>
+
+      
     </div>
   </div>
 </nav>
