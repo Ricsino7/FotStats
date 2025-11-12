@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Gép: 127.0.0.1
--- Létrehozás ideje: 2025. Nov 12. 09:02
+-- Létrehozás ideje: 2025. Nov 12. 09:38
 -- Kiszolgáló verziója: 10.4.32-MariaDB
 -- PHP verzió: 8.2.12
 
@@ -237,6 +237,29 @@ INSERT INTO `meccsek` (`id`, `csapat1_id`, `csapat2_id`, `datum`, `liga_id`, `er
 -- --------------------------------------------------------
 
 --
+-- Tábla szerkezet ehhez a táblához `news`
+--
+
+CREATE TABLE `news` (
+  `id` int(11) NOT NULL,
+  `cim` varchar(255) NOT NULL,
+  `datum` date NOT NULL,
+  `forras` varchar(255) DEFAULT NULL,
+  `osszefoglalo` text DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+
+--
+-- A tábla adatainak kiíratása `news`
+--
+
+INSERT INTO `news` (`id`, `cim`, `datum`, `forras`, `osszefoglalo`) VALUES
+(1, 'Liverpool: Romano receives “information” over Slot sack as Reds intention becomes “very clear”', '0000-00-00', 'Football365 / Fabrizio Romano', 'Romano szerint a klubnak nincs jelenleg szándéka menedzsert váltani, habár rosszul indult a szezonjuk.'),
+(2, 'Manchester United will sign striker in January on one condition; scout “Brazilian Haaland”', '0000-00-00', 'Football365 / Fabrizio Romano', 'Romano szerint az MU csak akkor igazol majd csatárt januárban, ha Benjamin Sesko sérülése hosszabb távú problémát jelent.'),
+(3, 'Liverpool transfer twist as Romano confirms contract talks with fresh offer made and Reds “confident” of deal', '0000-00-00', 'LiverpoolWorld / Fabrizio Romano', 'Romano megerősítette, hogy az Anfield‑klub friss szerződéshosszabbítást kínált Ibrahima Konaténak, és bíznak a megállapodásban.');
+
+-- --------------------------------------------------------
+
+--
 -- Tábla szerkezet ehhez a táblához `users`
 --
 
@@ -293,6 +316,12 @@ ALTER TABLE `meccsek`
   ADD KEY `liga_id` (`liga_id`);
 
 --
+-- A tábla indexei `news`
+--
+ALTER TABLE `news`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- A tábla indexei `users`
 --
 ALTER TABLE `users`
@@ -327,6 +356,12 @@ ALTER TABLE `ligak`
 --
 ALTER TABLE `meccsek`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- AUTO_INCREMENT a táblához `news`
+--
+ALTER TABLE `news`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT a táblához `users`
