@@ -113,8 +113,6 @@
     }
   ])
 
-
-
   // .controller('homeController',function($scope,$window) {
        
   //       $scope.homeImages = [];   
