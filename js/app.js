@@ -88,6 +88,7 @@
       }
     ])
 
+    //Application run
     .run([
       '$rootScope',
       ($rootScope) => {
@@ -95,6 +96,7 @@
       }
     ])
     
+    //Home controller létrehozásának ellenőrzése
     .controller('homeController', [
     '$scope',
     function($scope) {
@@ -102,7 +104,8 @@
       
     }
   ])
-
+ 
+  //Dark and Light mode gomb létre hozása, müködövé tétele
   .controller('headerController',[
     '$rootScope',
     '$scope',
