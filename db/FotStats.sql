@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Gép: 127.0.0.1
--- Létrehozás ideje: 2025. Nov 25. 07:31
+-- Létrehozás ideje: 2025. Nov 25. 11:23
 -- Kiszolgáló verziója: 10.4.32-MariaDB
 -- PHP verzió: 8.2.12
 
@@ -81,6 +81,42 @@ INSERT INTO `csapatok` (`id`, `nev`, `orszag`, `tipus`, `liga_id`, `helyezes`) V
 (38, 'Portugália', 'Portugália', 'valogatott', 8, 3),
 (39, 'Spanyolország', 'Spanyolország', 'valogatott', 8, 4),
 (40, 'Magyarország', 'Magyarország', 'valogatott', 8, 5);
+
+-- --------------------------------------------------------
+
+--
+-- Tábla szerkezet ehhez a táblához `eredmenyek`
+--
+
+CREATE TABLE `eredmenyek` (
+  `id` int(11) NOT NULL,
+  `jatekos_id` int(11) NOT NULL,
+  `csapat_id` int(11) NOT NULL,
+  `meccs_id` int(11) NOT NULL,
+  `golok` int(11) DEFAULT 0
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+
+--
+-- A tábla adatainak kiíratása `eredmenyek`
+--
+
+INSERT INTO `eredmenyek` (`id`, `jatekos_id`, `csapat_id`, `meccs_id`, `golok`) VALUES
+(1, 1, 1, 1, 2),
+(2, 2, 1, 1, 0),
+(3, 3, 2, 1, 1),
+(4, 4, 2, 1, 0),
+(5, 5, 3, 2, 1),
+(6, 6, 3, 2, 0),
+(7, 7, 4, 2, 1),
+(8, 8, 4, 2, 0),
+(9, 1, 1, 1, 2),
+(10, 2, 1, 1, 0),
+(11, 3, 2, 1, 1),
+(12, 4, 2, 1, 0),
+(13, 5, 3, 2, 1),
+(14, 6, 3, 2, 0),
+(15, 7, 4, 2, 1),
+(16, 8, 4, 2, 0);
 
 -- --------------------------------------------------------
 
@@ -286,6 +322,15 @@ ALTER TABLE `csapatok`
   ADD KEY `fk_csapat_liga` (`liga_id`);
 
 --
+-- A tábla indexei `eredmenyek`
+--
+ALTER TABLE `eredmenyek`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `fk_eredmeny_jatekos` (`jatekos_id`),
+  ADD KEY `fk_eredmeny_csapat` (`csapat_id`),
+  ADD KEY `fk_eredmeny_meccs` (`meccs_id`);
+
+--
 -- A tábla indexei `jatekosok`
 --
 ALTER TABLE `jatekosok`
@@ -333,6 +378,12 @@ ALTER TABLE `csapatok`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
 
 --
+-- AUTO_INCREMENT a táblához `eredmenyek`
+--
+ALTER TABLE `eredmenyek`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+
+--
 -- AUTO_INCREMENT a táblához `jatekosok`
 --
 ALTER TABLE `jatekosok`
@@ -371,6 +422,14 @@ ALTER TABLE `statisztikak`
 --
 ALTER TABLE `csapatok`
   ADD CONSTRAINT `fk_csapat_liga` FOREIGN KEY (`liga_id`) REFERENCES `ligak` (`id`) ON DELETE SET NULL;
+
+--
+-- Megkötések a táblához `eredmenyek`
+--
+ALTER TABLE `eredmenyek`
+  ADD CONSTRAINT `fk_eredmeny_csapat` FOREIGN KEY (`csapat_id`) REFERENCES `csapatok` (`id`) ON DELETE CASCADE,
+  ADD CONSTRAINT `fk_eredmeny_jatekos` FOREIGN KEY (`jatekos_id`) REFERENCES `jatekosok` (`id`) ON DELETE CASCADE,
+  ADD CONSTRAINT `fk_eredmeny_meccs` FOREIGN KEY (`meccs_id`) REFERENCES `meccsek` (`id`) ON DELETE CASCADE;
 
 --
 -- Megkötések a táblához `jatekosok`
