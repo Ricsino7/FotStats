@@ -43,47 +43,33 @@
             templateUrl: './html/matches.html'
           })
 
-          // .state('results', {
-          //   url: '/results',
-          //   //controller: 'resultsController',
-          //   templateUrl: './html/results.html'
-          // })
+          .state('results', {
+            url: '/results',
+            parent: 'root',
+            controller: 'resultsController',
+            templateUrl: './html/results.html'
+          })
 
-          // .state('login', {
-          //   url: '/login',
-          //   //controller: 'loginController',
-          //   templateUrl: './html/login.html'
-          // })
+          .state('rolunk', {
+            url: '/rolunk',
+            parent: 'root',
+            controller: 'rolunkController',
+            templateUrl: './html/rolunk.html'
+          })
 
-          // .state('register', {
-          //   url: '/register',
-          //   //controller: 'registerController',
-          //   templateUrl: './html/register.html'
-          // })
+          .state('tournaments', {
+            url: '/tournamenst',
+            parent: 'root',
+            controller: 'tournamentsController',
+            templateUrl: './html/tournaments.html'
+           })
 
-          // .state('profile', {
-          //   url: '/profile',
-          //   // controller: 'profileController',
-          //   templateUrl: './html/profile.html'
-          // })
-
-          // .state('rolunk', {
-          //   url: '/rolunk',
-          //   //controller: 'rolunkController',
-          //   templateUrl: './html/rolunk.html'
-          // })
-
-          // .state('tournaments', {
-          //   url: '/tournamenst',
-          //   //controller: 'tournamentsController',
-          //   templateUrl: './html/tournaments.html'
-          // })
-
-          // .state('news', {
-          //   url: '/news',
-          //   //controller: 'newsController',
-          //   templateUrl: './html/news.html'
-          // })
+          .state('news', {
+            url: '/news',
+            parent: 'root',
+            controller: 'newsController',
+            templateUrl: './html/news.html'
+          })
 
         $urlRouterProvider.otherwise('/');
       }
@@ -123,6 +109,38 @@
     '$scope',
     function($scope) {
       console.log('Fso')
+    }
+  ])
+
+  //Resulst controller
+  .controller('resultsController',[
+    '$scope',
+    function($scope) {
+      console.log('Fdas')
+    }
+  ])
+
+  //Rolunk controller
+  .controller('rolunkController',[
+    '$scope',
+    function($scope) {
+      console.log('Fdasasd')
+    }
+  ])
+
+  //Tournaments controller
+  .controller('tournamentsController',[
+    '$scope',
+    function($scope) {
+      console.log('Fdasasdas')
+    }
+  ])
+
+  //News controller
+  .controller('newsController',[
+    '$scope',
+    function($scope) {
+      console.log('Fdasasdasasd')
     }
   ])
 
