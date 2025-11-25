@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Gép: 127.0.0.1
--- Létrehozás ideje: 2025. Nov 17. 12:03
+-- Létrehozás ideje: 2025. Nov 25. 07:31
 -- Kiszolgáló verziója: 10.4.32-MariaDB
 -- PHP verzió: 8.2.12
 
@@ -274,31 +274,6 @@ CREATE TABLE `statisztikak` (
   `meccs_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
--- --------------------------------------------------------
-
---
--- Tábla szerkezet ehhez a táblához `users`
---
-
-CREATE TABLE `users` (
-  `id` int(11) NOT NULL,
-  `username` varchar(50) NOT NULL,
-  `email` varchar(100) NOT NULL,
-  `password` varchar(255) NOT NULL,
-  `role` enum('admin','user') DEFAULT 'user',
-  `reg_date` datetime DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
-
---
--- A tábla adatainak kiíratása `users`
---
-
-INSERT INTO `users` (`id`, `username`, `email`, `password`, `role`, `reg_date`) VALUES
-(1, 'admin', 'admin@foci.hu', 'admin123', 'admin', '2025-11-12 08:25:04'),
-(2, 'richard', 'richard@foci.hu', 'jelszo123', 'user', '2025-11-12 08:25:04'),
-(3, 'balazs', 'balazs@foci.hu', 'titok456', 'user', '2025-11-12 08:25:04'),
-(4, 'anna', 'anna@foci.hu', 'pass789', 'user', '2025-11-12 08:25:04');
-
 --
 -- Indexek a kiírt táblákhoz
 --
@@ -348,14 +323,6 @@ ALTER TABLE `statisztikak`
   ADD KEY `fk_meccs` (`meccs_id`);
 
 --
--- A tábla indexei `users`
---
-ALTER TABLE `users`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `username` (`username`),
-  ADD UNIQUE KEY `email` (`email`);
-
---
 -- A kiírt táblák AUTO_INCREMENT értéke
 --
 
@@ -394,12 +361,6 @@ ALTER TABLE `news`
 --
 ALTER TABLE `statisztikak`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT a táblához `users`
---
-ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- Megkötések a kiírt táblákhoz
