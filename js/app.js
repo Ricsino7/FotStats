@@ -36,11 +36,12 @@
             templateUrl: './html/home.html'
           })
           
-          // .state('matches', {
-          //   url: '/matches',
-          //   //controller: 'matchesController',
-          //   templateUrl: './html/matches.html'
-          // })
+          .state('matches', {
+            url: '/matches',
+            parent: 'root',
+            controller : 'matchesController',
+            templateUrl: './html/matches.html'
+          })
 
           // .state('results', {
           //   url: '/results',
@@ -113,6 +114,15 @@
       $scope.toggleTheme = function() {
         $rootScope.darkMode = $rootScope.darkMode === "dark" ? "light" : "dark";
       }
+    }
+  ])
+
+  //Matches controller
+
+  .controller('matchesController',[
+    '$scope',
+    function($scope) {
+      console.log('Fso')
     }
   ])
 
