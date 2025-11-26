@@ -139,7 +139,12 @@
   //News controller
   .controller('newsController',[
     '$scope',
-    function($scope) {
+    function($scope,$http) {
+      $http.post('./php/news.php')
+
+      .catch((error) => {
+        console.error("Hiba az adat betöltése során: ", error);
+      });
       console.log('Fdasasdasasd')
     }
   ])
