@@ -1,3 +1,5 @@
 Tagok: Bokor Richard, Kulcsár Tamás
 Keretrendszer: AngularJS, Bootstrap
-Backend:PHPgit
+Backend:PHP
+Github: https://github.com/Ricsino7/FotStats
+Trello: https://trello.com/b/FnMqFbDa/fotstats
