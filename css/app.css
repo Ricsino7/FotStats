@@ -2,4 +2,20 @@
   background-color: #121212 !important;
   color: #f1f1f1 !important;
 }
-
+.footer-title {
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+.footer-small {
+    font-size: 0.9rem;
+}
+.footer-link {
+    color: inherit;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+.footer-social a {
+    font-size: 1.3rem;
+    margin-right: 12px;
+    color: inherit;
+}
