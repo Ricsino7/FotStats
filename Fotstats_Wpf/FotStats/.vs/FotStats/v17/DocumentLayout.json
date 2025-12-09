@@ -1,33 +1,33 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "Z:\\2025-26 tanev\\c#\\Fotstats_Wpf\\FotStats\\",
+  "WorkspaceRootPath": "C:\\xampp\\htdocs\\2025-2026\\13C\\VIZSGAREMEKEK\\FotStats\\Fotstats_Wpf\\FotStats\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{DB63477C-870B-4D32-8325-68998C6B7E80}|FotStats\\FotStats.csproj|z:\\2025-26 tanev\\c#\\fotstats_wpf\\fotstats\\fotstats\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "AbsoluteMoniker": "D:0:0:{DB63477C-870B-4D32-8325-68998C6B7E80}|FotStats\\FotStats.csproj|c:\\xampp\\htdocs\\2025-2026\\13c\\vizsgaremekek\\fotstats\\fotstats_wpf\\fotstats\\fotstats\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{DB63477C-870B-4D32-8325-68998C6B7E80}|FotStats\\FotStats.csproj|solutionrelative:fotstats\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DB63477C-870B-4D32-8325-68998C6B7E80}|FotStats\\FotStats.csproj|z:\\2025-26 tanev\\c#\\fotstats_wpf\\fotstats\\fotstats\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{DB63477C-870B-4D32-8325-68998C6B7E80}|FotStats\\FotStats.csproj|C:\\xampp\\htdocs\\2025-2026\\13C\\VIZSGAREMEKEK\\FotStats\\Fotstats_Wpf\\FotStats\\fotstats\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{DB63477C-870B-4D32-8325-68998C6B7E80}|FotStats\\FotStats.csproj|solutionrelative:fotstats\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DB63477C-870B-4D32-8325-68998C6B7E80}|FotStats\\FotStats.csproj|z:\\2025-26 tanev\\c#\\fotstats_wpf\\fotstats\\fotstats\\statisztikak.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "AbsoluteMoniker": "D:0:0:{DB63477C-870B-4D32-8325-68998C6B7E80}|FotStats\\FotStats.csproj|C:\\xampp\\htdocs\\2025-2026\\13C\\VIZSGAREMEKEK\\FotStats\\Fotstats_Wpf\\FotStats\\fotstats\\statisztikak.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{DB63477C-870B-4D32-8325-68998C6B7E80}|FotStats\\FotStats.csproj|solutionrelative:fotstats\\statisztikak.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DB63477C-870B-4D32-8325-68998C6B7E80}|FotStats\\FotStats.csproj|z:\\2025-26 tanev\\c#\\fotstats_wpf\\fotstats\\fotstats\\eredmenyek.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "AbsoluteMoniker": "D:0:0:{DB63477C-870B-4D32-8325-68998C6B7E80}|FotStats\\FotStats.csproj|C:\\xampp\\htdocs\\2025-2026\\13C\\VIZSGAREMEKEK\\FotStats\\Fotstats_Wpf\\FotStats\\fotstats\\eredmenyek.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{DB63477C-870B-4D32-8325-68998C6B7E80}|FotStats\\FotStats.csproj|solutionrelative:fotstats\\eredmenyek.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DB63477C-870B-4D32-8325-68998C6B7E80}|FotStats\\FotStats.csproj|z:\\2025-26 tanev\\c#\\fotstats_wpf\\fotstats\\fotstats\\news.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "AbsoluteMoniker": "D:0:0:{DB63477C-870B-4D32-8325-68998C6B7E80}|FotStats\\FotStats.csproj|C:\\xampp\\htdocs\\2025-2026\\13C\\VIZSGAREMEKEK\\FotStats\\Fotstats_Wpf\\FotStats\\fotstats\\news.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{DB63477C-870B-4D32-8325-68998C6B7E80}|FotStats\\FotStats.csproj|solutionrelative:fotstats\\news.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DB63477C-870B-4D32-8325-68998C6B7E80}|FotStats\\FotStats.csproj|z:\\2025-26 tanev\\c#\\fotstats_wpf\\fotstats\\fotstats\\matches.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "AbsoluteMoniker": "D:0:0:{DB63477C-870B-4D32-8325-68998C6B7E80}|FotStats\\FotStats.csproj|C:\\xampp\\htdocs\\2025-2026\\13C\\VIZSGAREMEKEK\\FotStats\\Fotstats_Wpf\\FotStats\\fotstats\\matches.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{DB63477C-870B-4D32-8325-68998C6B7E80}|FotStats\\FotStats.csproj|solutionrelative:fotstats\\matches.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DB63477C-870B-4D32-8325-68998C6B7E80}|FotStats\\FotStats.csproj|z:\\2025-26 tanev\\c#\\fotstats_wpf\\fotstats\\fotstats\\tournaments.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "AbsoluteMoniker": "D:0:0:{DB63477C-870B-4D32-8325-68998C6B7E80}|FotStats\\FotStats.csproj|C:\\xampp\\htdocs\\2025-2026\\13C\\VIZSGAREMEKEK\\FotStats\\Fotstats_Wpf\\FotStats\\fotstats\\tournaments.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{DB63477C-870B-4D32-8325-68998C6B7E80}|FotStats\\FotStats.csproj|solutionrelative:fotstats\\tournaments.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     }
   ],
@@ -44,70 +44,65 @@
               "$type": "Document",
               "DocumentIndex": 6,
               "Title": "Tournaments.xaml",
-              "DocumentMoniker": "Z:\\2025-26 tanev\\c#\\Fotstats_Wpf\\FotStats\\FotStats\\Tournaments.xaml",
+              "DocumentMoniker": "C:\\xampp\\htdocs\\2025-2026\\13C\\VIZSGAREMEKEK\\FotStats\\Fotstats_Wpf\\FotStats\\FotStats\\Tournaments.xaml",
               "RelativeDocumentMoniker": "FotStats\\Tournaments.xaml",
-              "ToolTip": "Z:\\2025-26 tanev\\c#\\Fotstats_Wpf\\FotStats\\FotStats\\Tournaments.xaml",
+              "ToolTip": "C:\\xampp\\htdocs\\2025-2026\\13C\\VIZSGAREMEKEK\\FotStats\\Fotstats_Wpf\\FotStats\\FotStats\\Tournaments.xaml",
               "RelativeToolTip": "FotStats\\Tournaments.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
               "WhenOpened": "2025-11-25T10:29:07.354Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
               "Title": "Matches.xaml",
-              "DocumentMoniker": "Z:\\2025-26 tanev\\c#\\Fotstats_Wpf\\FotStats\\FotStats\\Matches.xaml",
+              "DocumentMoniker": "C:\\xampp\\htdocs\\2025-2026\\13C\\VIZSGAREMEKEK\\FotStats\\Fotstats_Wpf\\FotStats\\FotStats\\Matches.xaml",
               "RelativeDocumentMoniker": "FotStats\\Matches.xaml",
-              "ToolTip": "Z:\\2025-26 tanev\\c#\\Fotstats_Wpf\\FotStats\\FotStats\\Matches.xaml",
+              "ToolTip": "C:\\xampp\\htdocs\\2025-2026\\13C\\VIZSGAREMEKEK\\FotStats\\Fotstats_Wpf\\FotStats\\FotStats\\Matches.xaml",
               "RelativeToolTip": "FotStats\\Matches.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-11-25T10:48:30.131Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-25T10:48:30.131Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
               "Title": "News.xaml",
-              "DocumentMoniker": "Z:\\2025-26 tanev\\c#\\Fotstats_Wpf\\FotStats\\FotStats\\News.xaml",
+              "DocumentMoniker": "C:\\xampp\\htdocs\\2025-2026\\13C\\VIZSGAREMEKEK\\FotStats\\Fotstats_Wpf\\FotStats\\FotStats\\News.xaml",
               "RelativeDocumentMoniker": "FotStats\\News.xaml",
-              "ToolTip": "Z:\\2025-26 tanev\\c#\\Fotstats_Wpf\\FotStats\\FotStats\\News.xaml",
+              "ToolTip": "C:\\xampp\\htdocs\\2025-2026\\13C\\VIZSGAREMEKEK\\FotStats\\Fotstats_Wpf\\FotStats\\FotStats\\News.xaml",
               "RelativeToolTip": "FotStats\\News.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-11-25T10:29:17.826Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-25T10:29:17.826Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
               "Title": "Eredmenyek.xaml",
-              "DocumentMoniker": "Z:\\2025-26 tanev\\c#\\Fotstats_Wpf\\FotStats\\FotStats\\Eredmenyek.xaml",
+              "DocumentMoniker": "C:\\xampp\\htdocs\\2025-2026\\13C\\VIZSGAREMEKEK\\FotStats\\Fotstats_Wpf\\FotStats\\FotStats\\Eredmenyek.xaml",
               "RelativeDocumentMoniker": "FotStats\\Eredmenyek.xaml",
-              "ToolTip": "Z:\\2025-26 tanev\\c#\\Fotstats_Wpf\\FotStats\\FotStats\\Eredmenyek.xaml",
+              "ToolTip": "C:\\xampp\\htdocs\\2025-2026\\13C\\VIZSGAREMEKEK\\FotStats\\Fotstats_Wpf\\FotStats\\FotStats\\Eredmenyek.xaml",
               "RelativeToolTip": "FotStats\\Eredmenyek.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-11-25T10:28:52.037Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-25T10:28:52.037Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
               "Title": "Statisztikak.xaml",
-              "DocumentMoniker": "Z:\\2025-26 tanev\\c#\\Fotstats_Wpf\\FotStats\\FotStats\\Statisztikak.xaml",
+              "DocumentMoniker": "C:\\xampp\\htdocs\\2025-2026\\13C\\VIZSGAREMEKEK\\FotStats\\Fotstats_Wpf\\FotStats\\FotStats\\Statisztikak.xaml",
               "RelativeDocumentMoniker": "FotStats\\Statisztikak.xaml",
-              "ToolTip": "Z:\\2025-26 tanev\\c#\\Fotstats_Wpf\\FotStats\\FotStats\\Statisztikak.xaml",
+              "ToolTip": "C:\\xampp\\htdocs\\2025-2026\\13C\\VIZSGAREMEKEK\\FotStats\\Fotstats_Wpf\\FotStats\\FotStats\\Statisztikak.xaml",
               "RelativeToolTip": "FotStats\\Statisztikak.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-11-25T10:28:40.09Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-25T10:28:40.09Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "MainWindow.xaml",
-              "DocumentMoniker": "Z:\\2025-26 tanev\\c#\\Fotstats_Wpf\\FotStats\\FotStats\\MainWindow.xaml",
+              "DocumentMoniker": "C:\\xampp\\htdocs\\2025-2026\\13C\\VIZSGAREMEKEK\\FotStats\\Fotstats_Wpf\\FotStats\\FotStats\\MainWindow.xaml",
               "RelativeDocumentMoniker": "FotStats\\MainWindow.xaml",
-              "ToolTip": "Z:\\2025-26 tanev\\c#\\Fotstats_Wpf\\FotStats\\FotStats\\MainWindow.xaml",
+              "ToolTip": "C:\\xampp\\htdocs\\2025-2026\\13C\\VIZSGAREMEKEK\\FotStats\\Fotstats_Wpf\\FotStats\\FotStats\\MainWindow.xaml",
               "RelativeToolTip": "FotStats\\MainWindow.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
               "WhenOpened": "2025-11-25T10:28:18.338Z",
@@ -117,14 +112,13 @@
               "$type": "Document",
               "DocumentIndex": 1,
               "Title": "MainWindow.xaml.cs",
-              "DocumentMoniker": "Z:\\2025-26 tanev\\c#\\Fotstats_Wpf\\FotStats\\FotStats\\MainWindow.xaml.cs",
+              "DocumentMoniker": "C:\\xampp\\htdocs\\2025-2026\\13C\\VIZSGAREMEKEK\\FotStats\\Fotstats_Wpf\\FotStats\\FotStats\\MainWindow.xaml.cs",
               "RelativeDocumentMoniker": "FotStats\\MainWindow.xaml.cs",
-              "ToolTip": "Z:\\2025-26 tanev\\c#\\Fotstats_Wpf\\FotStats\\FotStats\\MainWindow.xaml.cs",
+              "ToolTip": "C:\\xampp\\htdocs\\2025-2026\\13C\\VIZSGAREMEKEK\\FotStats\\Fotstats_Wpf\\FotStats\\FotStats\\MainWindow.xaml.cs",
               "RelativeToolTip": "FotStats\\MainWindow.xaml.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-25T10:28:17.33Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-11-25T10:28:17.33Z"
             }
           ]
         }
