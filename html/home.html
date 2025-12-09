@@ -13,21 +13,18 @@
  <div class="mx-3 d-flex align-items-center">
 					<img style="height: 30px; width: 30px;"
 							 class="mx-3">
-					<select name="tabella" 
-									id="tabella" 
-									class="form-select"
-                  ng-onchange="tabella_kivalasztas()"> 
-					  <option>
-            
-					  <img 
-					  	style="height: 30px; width: 30px;"
-					    class="mx-3">
-			      </option>
-            <option>
-            asd
-					  <img 
-					  	style="height: 30px; width: 30px;"
-					    class="mx-3">
-			      </option>
-		</select>
+					<select name="tabella"
+            id="tabella"
+            class="form-select"
+            ng-model="kivalasztott_tabella"
+            ng-change="tabella_kivalasztas()">
+
+            <option ng-repeat="Liga in Ligak" value="{{ Liga }}">
+              {{ Liga }}
+            </option>
+
+
+          </select>
+
+
 </div>

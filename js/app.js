@@ -192,11 +192,17 @@
             // response.data tartalmazza a PHP által visszaadott JSON tömböt
             // Ezt betöltjük az Angular scope változójába
             // Így a HTML-ben az ng-repeat automatikusan frissíti a táblázatot
-            $scope.data = response.data;
             
-          $scope.tabella_kivalasztas=()=> {
-            console.log("asd");
-          }
+          $scope.Ligak = [...new Set(response.data.map(x => x.Liga))];
+          $scope.$applyAsnc;
+
+          $scope.tabella_kivalasztas = () => {
+            console.log("Kiválasztva:", $scope.kivalasztott_tabella);
+            $scope.filteredTabella = response.data.filter(x=> x.Liga==$scope.kivalasztott_tabella)
+            $scope.data=$scope.filteredTabella;
+          
+          };
+
         })
         // Ha valami hiba történik a lekérés során, ezt a függvényt hívja meg
         .catch(function(error) {
