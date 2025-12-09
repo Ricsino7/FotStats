@@ -137,7 +137,13 @@
   .controller('rolunkController',[
     '$scope',
     function($scope) {
-      console.log('Fdasasd')
+      $scope.teamMembers = [
+            { name: 'Bokor Richárd', role: 'Angular master(oldal életben tartója)'},
+            { name: 'Kulcsár Tamás Ámon', role: 'Designer prodigy'},
+            
+        ];
+
+        $scope.aboutText = "Ez egy olyan oldal ami összehozza az embereket és a futball világát a futball világának híreivel és eredményeivel;)";
     }
   ])
 
