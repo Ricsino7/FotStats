@@ -82,15 +82,6 @@
         $rootScope.darkMode = "dark";
       }
     ])
-    
-    //Home controller létrehozásának ellenőrzése
-    .controller('homeController', [
-    '$scope',
-    function($scope) {
-      console.log('fasf')
-      
-    }
-  ])
  
   //Dark and Light mode gomb létre hozása, müködövé tétele
   .controller('headerController',[
@@ -185,7 +176,7 @@
 
 }])
 
-
+//Home controller
 .controller('homeController', ['$scope', '$http', function($scope, $http) {
 
     // Inicializálunk egy üres tömböt a home oldali adatok tárolására
@@ -202,9 +193,11 @@
             // Ezt betöltjük az Angular scope változójába
             // Így a HTML-ben az ng-repeat automatikusan frissíti a táblázatot
             $scope.data = response.data;
-
+            
+          $scope.tabella_kivalasztas=()=> {
+            console.log("asd");
+          }
         })
-
         // Ha valami hiba történik a lekérés során, ezt a függvényt hívja meg
         .catch(function(error) {
 

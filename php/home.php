@@ -9,4 +9,5 @@ $rows = $db->execute("SELECT `helyezes` AS Helyezés,
          WHERE `liga_id` = 1");
 $db = null;
 
+
 echo json_encode($rows ?: []);
