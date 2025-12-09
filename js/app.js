@@ -137,7 +137,13 @@
   .controller('rolunkController',[
     '$scope',
     function($scope) {
-      console.log('Fdasasd')
+      $scope.teamMembers = [
+            { name: 'Bokor Richárd', role: 'Angular master(oldal életben tartója)'},
+            { name: 'Kulcsár Tamás Ámon', role: 'Designer prodigy'},
+            
+        ];
+
+        $scope.aboutText = "Ez egy olyan oldal ami összehozza az embereket és a futball világát a futball világának híreivel és eredményeivel;)";
     }
   ])
 
@@ -194,15 +200,9 @@
             // Így a HTML-ben az ng-repeat automatikusan frissíti a táblázatot
             
           $scope.Ligak = [...new Set(response.data.map(x => x.Liga))];
-          $scope.data=response.data.filter(x=> x.Liga=="Premier League");
-          
-          $scope.tabella_kivalasztas = () => {
-            console.log("Kiválasztva:", $scope.kivalasztott_tabella);
-            $scope.filteredTabella = response.data.filter(x=> x.Liga==$scope.kivalasztott_tabella)
-            $scope.data=$scope.filteredTabella;
-            
-          };
-
+          $scope.data=response.data;
+          $scope.kivalasztott_tabella = "Premier League";
+          $scope.$applyAsync();
         })
         // Ha valami hiba történik a lekérés során, ezt a függvényt hívja meg
         .catch(function(error) {
@@ -212,7 +212,4 @@
         });
 
 }]);
-
-
-
 })(window, angular);
