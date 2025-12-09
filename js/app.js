@@ -194,13 +194,13 @@
             // Így a HTML-ben az ng-repeat automatikusan frissíti a táblázatot
             
           $scope.Ligak = [...new Set(response.data.map(x => x.Liga))];
-          $scope.$applyAsnc;
-
+          $scope.data=response.data.filter(x=> x.Liga=="Premier League");
+          
           $scope.tabella_kivalasztas = () => {
             console.log("Kiválasztva:", $scope.kivalasztott_tabella);
             $scope.filteredTabella = response.data.filter(x=> x.Liga==$scope.kivalasztott_tabella)
             $scope.data=$scope.filteredTabella;
-          
+            
           };
 
         })
