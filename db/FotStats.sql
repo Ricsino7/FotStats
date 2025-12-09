@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Gép: 127.0.0.1
--- Létrehozás ideje: 2025. Nov 26. 07:38
+-- Létrehozás ideje: 2025. Dec 09. 10:24
 -- Kiszolgáló verziója: 10.4.32-MariaDB
 -- PHP verzió: 8.2.12
 
@@ -253,9 +253,9 @@ CREATE TABLE `news` (
 --
 
 INSERT INTO `news` (`id`, `cim`, `datum`, `forras`, `osszefoglalo`) VALUES
-(1, 'Liverpool: Romano receives “information” over Slot sack as Reds intention becomes “very clear”', '0000-00-00', 'Football365 / Fabrizio Romano', 'Romano szerint a klubnak nincs jelenleg szándéka menedzsert váltani, habár rosszul indult a szezonjuk.'),
-(2, 'Manchester United will sign striker in January on one condition; scout “Brazilian Haaland”', '0000-00-00', 'Football365 / Fabrizio Romano', 'Romano szerint az MU csak akkor igazol majd csatárt januárban, ha Benjamin Sesko sérülése hosszabb távú problémát jelent.'),
-(3, 'Liverpool transfer twist as Romano confirms contract talks with fresh offer made and Reds “confident” of deal', '0000-00-00', 'LiverpoolWorld / Fabrizio Romano', 'Romano megerősítette, hogy az Anfield‑klub friss szerződéshosszabbítást kínált Ibrahima Konaténak, és bíznak a megállapodásban.');
+(1, 'Liverpool: Romano receives “information” over Slot sack as Reds intention becomes “very clear”', '2025-09-25', 'Football365 / Fabrizio Romano', 'Romano szerint a klubnak nincs jelenleg szándéka menedzsert váltani, habár rosszul indult a szezonjuk.'),
+(2, 'Manchester United will sign striker in January on one condition; scout “Brazilian Haaland”', '2025-10-22', 'Football365 / Fabrizio Romano', 'Romano szerint az MU csak akkor igazol majd csatárt januárban, ha Benjamin Sesko sérülése hosszabb távú problémát jelent.'),
+(3, 'Liverpool transfer twist as Romano confirms contract talks with fresh offer made and Reds “confident” of deal', '2025-11-23', 'LiverpoolWorld / Fabrizio Romano', 'Romano megerősítette, hogy az Anfield‑klub friss szerződéshosszabbítást kínált Ibrahima Konaténak, és bíznak a megállapodásban.');
 
 -- --------------------------------------------------------
 
