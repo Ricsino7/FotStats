@@ -1,24 +1,21 @@
-<h2>Legfrisebb híreink</h2>
+<h1>Legfrissebb híreink</h1>
+<div class="row g-3">
+<div class="col-md-4 mb-3" ng-repeat="row in data">
+    <div class="card" style="width: 22rem;">
+        <img class="card-img-top rounded-top"
+             ng-src="./img/{{row.kepek}}"
+             alt="Card image">
 
-<div class="row">
-    <div class="col-md-4 mb-3" ng-repeat="row in data">
-
-        <div class="card" style="width: 18rem;">
-
-            <img class="card-img-top"
-                 ng-src="img/{{row.kepek}}"
-                 alt="{{row.cim || 'Hír képe'}}"
-                 onerror="this.src='img/no-image.png'">
-
-            <div class="card-body">
-                <p class="card-text" ng-repeat="(key, value) in row">
-                    <strong>{{ key }}:</strong> {{ value }}
-                </p>
-            </div>
-
+        <div class="card-body">
+            <p class="card-text" 
+               ng-repeat="(key, value) in row"
+               ng-if="key !== 'kepek'">
+                <strong>{{ key }}:</strong> {{ value }}
+            </p>
         </div>
-
     </div>
+</div>
+ 
 </div>
 
 <div class="alert alert-warning" ng-if="!data.length">
