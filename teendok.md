@@ -18,3 +18,5 @@ Egy select létrehozása
 a táblázatba be kell rakni hogy 
 kell egy select és azt egy modelbe kell rakni kell neki egy érték 
 és automatikusan a ciklust egy ifet kell létrehozni a phpba
+
+Jatekosok:barcelona jatekosok kész
