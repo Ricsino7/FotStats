@@ -5,8 +5,9 @@ $db = new Database('fotstats');
 $rows = $db->execute("SELECT `cim` AS News,
                       `datum` AS Dátum, 
                 `forras` AS Forrás, 
-                `osszefoglalo` AS Hírek
+                `osszefoglalo` AS Hírek,
+                `kep` AS kepek
          FROM `news`");
 $db = null;
 
-echo json_encode($rows ?: []);
+echo json_encode($rows ?: [],JSON_PRETTY_PRINT);

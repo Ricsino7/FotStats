@@ -182,6 +182,7 @@
             // response.data tartalmazza a PHP által visszaadott JSON tömböt
             // Ezt betöltjük az Angular scope változójába, így a HTML ng-repeat-je automatikusan frissül
             $scope.data = response.data;
+            
 
         })
 

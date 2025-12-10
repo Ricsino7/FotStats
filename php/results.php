@@ -57,4 +57,4 @@ if (empty($rows)) {
 
 $db = null;
 
-echo json_encode($rows ?: []);
+echo json_encode($rows ?: [], JSON_PRETTY_PRINT);
