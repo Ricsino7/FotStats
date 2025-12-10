@@ -158,8 +158,8 @@
     '$scope',
     function($scope) {
       $scope.teamMembers = [
-            { name: 'Bokor Richárd', role: 'Projektvezető', image : './img/ricsi.jpg'},
-            { name: 'Kulcsár Tamás Ámon', role: 'Munkás', image : './img/tomi.jpg'},
+            { name: 'Bokor Richárd', role: 'Projektvezető(Cégtulajodonos)', image : './img/ricsi.jpg'},
+            { name: 'Kulcsár Tamás Ámon', role: 'Projektsegítő(Igazgató Úr)', image : './img/tomi.jpg'},
             
         ];
 
