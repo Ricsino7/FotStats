@@ -21,3 +21,5 @@ kell egy select és azt egy modelbe kell rakni kell neki egy érték
 
 Jatekosok:barcelona jatekosok kész
           city jatekosok is kész
+          arsenal is kész
+          liverpool is kész ricsi intézte
