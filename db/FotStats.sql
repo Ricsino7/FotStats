@@ -408,9 +408,20 @@ CREATE TABLE `news` (
 --
 
 INSERT INTO `news` (`id`, `cim`, `datum`, `forras`, `osszefoglalo`) VALUES
-(1, 'Liverpool: Romano receives “information” over Slot sack as Reds intention becomes “very clear”', '2025-09-25', 'Football365 / Fabrizio Romano', 'Romano szerint a klubnak nincs jelenleg szándéka menedzsert váltani, habár rosszul indult a szezonjuk.'),
-(2, 'Manchester United will sign striker in January on one condition; scout “Brazilian Haaland”', '2025-10-22', 'Football365 / Fabrizio Romano', 'Romano szerint az MU csak akkor igazol majd csatárt januárban, ha Benjamin Sesko sérülése hosszabb távú problémát jelent.'),
-(3, 'Liverpool transfer twist as Romano confirms contract talks with fresh offer made and Reds “confident” of deal', '2025-11-23', 'LiverpoolWorld / Fabrizio Romano', 'Romano megerősítette, hogy az Anfield‑klub friss szerződéshosszabbítást kínált Ibrahima Konaténak, és bíznak a megállapodásban.');
+(1, 'Liverpool: Romano információi szerint nincs napirenden az edző menesztése', '2025-09-25', 'Football365 / Fabrizio Romano', 'Romano szerint a klubnak jelenleg nem áll szándékában menedzsert váltani, noha a szezon rosszul indult.'),
+(2, 'A Manchester United csak akkor igazol csatárt januárban, ha Sesko sérülése komolyabb', '2025-10-22', 'Football365 / Fabrizio Romano', 'Romano úgy tudja, az MU csak akkor szerződtet új csatárt, ha Benjamin Sesko sérülése hosszabb távú problémának bizonyul.'),
+(3, 'A Liverpool új szerződést kínált Konaténak, közel a megállapodás', '2025-11-23', 'LiverpoolWorld / Fabrizio Romano', 'Romano megerősítette, hogy az Anfield-csapat friss hosszabbítást ajánlott Ibrahima Konaténak, és bíznak a sikeres megegyezésben.'),
+(4, 'Arsenal új ajánlatra készül egy középpályásért, a tárgyalások egyre intenzívebbek', '2025-12-05', 'Football365 / Fabrizio Romano', 'Romano szerint az Arsenal újabb ajánlatot készít elő egy kiszemelt középpályás megszerzésére, miközben a tárgyalások egyre aktívabbá válnak.'),
+(5, 'A Chelsea közel a megállapodáshoz egy új védővel, a feltételekben már megegyeztek', '2025-12-08', 'LondonWorld / Fabrizio Romano', 'Romano információi alapján a Chelsea hamarosan bejelentheti új védőjét, a játékossal pedig már megállapodtak a személyes feltételekről.'),
+(6, 'A Tottenham tárgyalásokat kezdett egy januári szélsőigazolásról', '2025-12-11', 'Football Insider / Fabrizio Romano', 'Romano szerint a Tottenham már megkezdte a tárgyalásokat egy szélső leigazolásáról a téli átigazolási időszakra, és optimisták az egyezség elérésében.'),
+(7, 'A Newcastle új csatárt akar igazolni, a klub nem adja fel', '2025-12-15', 'ChronicleLive / Fabrizio Romano', 'Romano úgy tudja, hogy a Newcastle eltökélt egy új csatár szerződtetésében, és addig folytatják a tárgyalásokat, amíg nem sikerül megegyezni.'),
+(8, 'A Barcelona áttörést ért el egy kulcsvédő szerződéshosszabbításában', '2025-12-18', 'Marca / Fabrizio Romano', 'Romano szerint a Barcelona komoly előrelépést tett egy fontos védő új szerződéséről szóló tárgyalásokban, és közel állnak a végleges megállapodáshoz.'),
+(9, 'A Real Madrid új szerződést kínál fiatal tehetségének, közel a megegyezés', '2025-12-20', 'Marca / Fabrizio Romano', 'Romano szerint a Real Madrid már előrehaladott tárgyalásokat folytat egyik legnagyobb tehetségével a szerződéshosszabbításról, és hamarosan megegyezhetnek.'),
+(10, 'A Bayern München új támadó szerződtetését tervezi a keret megerősítésére', '2025-12-22', 'Bild / Fabrizio Romano', 'Romano arról számolt be, hogy a Bayern München egy új támadó igazolásán dolgozik, és több jelölt neve is felmerült.'),
+(11, 'Az Inter Milan közel áll egy új középpályás szerződtetéséhez', '2025-12-23', 'Gazzetta dello Sport / Fabrizio Romano', 'Romano információi szerint az Inter megegyezés közeli állapotban van egy középpályás érkezéséről, aki már januárban csatlakozhat a csapathoz.'),
+(12, 'A Juventus hamarosan bemutathatja új védőjét', '2025-12-27', 'Tuttosport / Fabrizio Romano', 'Romano úgy tudja, hogy a Juventus lezárta az egyeztetéseket egy új védő szerződtetéséről, a bejelentés már csak idő kérdése.'),
+(13, 'A PSG több kulcsjátékossal tárgyal a szerződéshosszabbításról', '2025-12-28', 'L Équipe / Fabrizio Romano', 'Romano jelentése szerint a PSG célja a keret stabilizálása, ezért egyszerre több meghatározó játékossal is tárgyal a hosszabbításról.');
+
 
 -- --------------------------------------------------------
 
