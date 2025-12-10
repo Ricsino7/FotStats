@@ -8,6 +8,7 @@
     <tr ng-repeat="row in data">
         <td ng-repeat="(key, value) in row">{{ value }}</td>
     </tr>
+    
     <tr ng-if="!data.length">
         <td colspan="10">Nincs adat</td>
     </tr>

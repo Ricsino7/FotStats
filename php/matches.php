@@ -8,7 +8,6 @@ $rows = $db->execute("
         c1.nev AS Hazai,
         c2.nev AS Vendég,
         m.datum AS Dátum,
-        m.eredmeny AS Eredmények,
         l.nev AS Liga
     FROM meccsek m
     INNER JOIN csapatok c1 ON m.csapat1_id = c1.id
