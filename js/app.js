@@ -250,11 +250,12 @@
             // Ezt betöltjük az Angular scope változójába
             // Így a HTML-ben az ng-repeat automatikusan frissíti a táblázatot
             
-          $scope.Csapatnev = [...new Set(response.data.map(x => x.Liga))];
+          $scope.Csapatnev = [...new Set(response.data.map(x => x.Csapatnev))];
           $scope.data=response.data;
           $scope.kivalasztott_csapat = "Barcelona";
           $scope.$applyAsync();
-          console.log(Csapatnev)
+          console.log(response.data);
+          
         })
         // Ha valami hiba történik a lekérés során, ezt a függvényt hívja meg
         .catch(function(error) {

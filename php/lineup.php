@@ -5,9 +5,16 @@ $db = new Database('fotstats');
 
 $rows = $db->execute("
     SELECT 
-        c.nev AS Csapatnev
+        c.nev AS 'Csapatnev',
+        j.nev AS 'Jatekos Név',
+        j.poszt AS 'Játékos Poszt'
     FROM csapatok c
+    LEFT JOIN jatekosok j 
+        ON c.id = j.csapat_id
+    WHERE j.id IS NOT NULL
 ");
+
+
 
 $db = null;
 
