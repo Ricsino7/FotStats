@@ -71,6 +71,13 @@
             templateUrl: './html/news.html'
           })
 
+          .state('lineup', {
+            url: '/lineup',
+            parent: 'root',
+            controller: 'lineupController',
+            templateUrl: './html/lineup.html'
+          })
+
         $urlRouterProvider.otherwise('/');
       }
     ])
@@ -224,5 +231,36 @@
             console.error("Hiba a lekérésnél:", error);
         });
 
+
+}])
+
+.controller('lineupController', ['$scope', '$http', function($scope, $http) {
+
+    // Inicializálunk egy üres tömböt a home oldali adatok tárolására
+    // Ide fogjuk betölteni a PHP-ból érkező JSON-t
+    $scope.data = [];
+
+    // Lekérjük az adatokat a home.php fájlból Angular $http segítségével
+    $http.get('./php/lineup.php') // az útvonal a PHP fájlhoz
+
+        // Ha a lekérés sikeres, ezt a függvényt hívja meg
+        .then(function(response) {
+
+            // response.data tartalmazza a PHP által visszaadott JSON tömböt
+            // Ezt betöltjük az Angular scope változójába
+            // Így a HTML-ben az ng-repeat automatikusan frissíti a táblázatot
+            
+          $scope.Csapatnev = [...new Set(response.data.map(x => x.Liga))];
+          $scope.data=response.data;
+          $scope.kivalasztott_csapat = "Barcelona";
+          $scope.$applyAsync();
+          console.log(Csapatnev)
+        })
+        // Ha valami hiba történik a lekérés során, ezt a függvényt hívja meg
+        .catch(function(error) {
+
+            // Kiírjuk a konzolra a hibát, hogy lássuk mi ment rosszul
+            console.error("Hiba a lekérésnél:", error);
+        });
 }]);
 })(window, angular);
