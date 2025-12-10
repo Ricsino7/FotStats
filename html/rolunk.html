@@ -1,9 +1,10 @@
 <div class="container">
     <h1 class="header display-5 fw-bold">About Us</h1>
     <p class="text-center">{{ aboutText }}</p>
-    <h3 class="text-center fw-bold">Csapatunk</h3>
+    <h3 class="text-center fw-bold">Our Team</h3>
     <div class="team">
         <div class="team-member" ng-repeat="member in teamMembers">
+              <img ng-src="{{member.image}}" alt="{{member.name}}">
             <p><strong>{{ member.name }}</strong></p>
             <p>{{ member.role }}</p>
         </div>
