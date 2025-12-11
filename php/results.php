@@ -2,7 +2,7 @@
 require_once('../../common/php/environment.php');
 
 $db = new Database('fotstats');
-
+//UJRA LESZ CSINALVA AZ EGESZ!!!
 // Első lekérdezés: meccsek statisztikákkal
 $rows = $db->execute("
 SELECT 
