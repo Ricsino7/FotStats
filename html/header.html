@@ -1,54 +1,49 @@
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
-  <!--Az oldal legteteje menü pontokkal és különböző funkcióval el látva-->
+<nav class="navbar navbar-expand-lg bg-body-tertiary custom-nav shadow-sm">
   <div class="container-fluid">
+
     <img src="./img/logo.png" alt="FotStats Logo" height="40" width="30px">
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" 
+            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+            aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link fw-bold" aria-current="page" ui-sref="home">Főoldal</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" ui-sref='matches'>Meccsek</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" ui-sref='results'>Eredmények</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" ui-sref="lineup">Összeállitások</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" ui-sref="news">Hírek</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" ui-sref="rolunk">Rolunk</a>
-        </li>
-      </ul>
-       <div class="mx-4">
-          <button class="btn btn-outline-secondary" ng-click="toggleTheme()">
-            {{ $root.darkMode === "dark" ? '☀️ Light mód' : '🌙 Dark mód' }}
-          </button>
-        </div>  
 
-        <div class="mx-3 d-flex align-items-center">
-					<img style="height: 30px; width: 30px;"
-							 class="mx-3">
-					<select name="language" 
-									id="language" 
-									class="form-select">
-						<option>
-										<img ng-src="" 
-							 style="height: 30px; width: 30px;"
-							 class="mx-3">
-						</option>
-					</select>
-				</div>
-      <form class="d-flex" role="search">
-        <input class="form-control me-2" type="search" placeholder="Keresés" aria-label="Search"/>
-        <button class="btn btn-outline-success mx-3" type="submit">Keresés</button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item"><a class="nav-link fw-bold" ui-sref="home">Főoldal</a></li>
+        <li class="nav-item"><a class="nav-link" ui-sref="matches">Meccsek</a></li>
+        <li class="nav-item"><a class="nav-link" ui-sref="results">Eredmények</a></li>
+        <li class="nav-item"><a class="nav-link" ui-sref="lineup">Összeállitások</a></li>
+        <li class="nav-item"><a class="nav-link" ui-sref="news">Hírek</a></li>
+        <li class="nav-item"><a class="nav-link" ui-sref="rolunk">Rolunk</a></li>
+      </ul>
+
+      <!-- DARK MODE -->
+      <div class="mx-4">
+        <button class="btn theme-btn" ng-click="toggleTheme()">
+          {{ $root.darkMode === "dark" ? '☀️ Light mód' : '🌙 Dark mód' }}
+        </button>
+      </div>
+
+      <!-- LANGUAGE SELECTOR (NÉGYZET MEGMARAD!) -->
+      <div class="mx-3 d-flex align-items-center lang-box">
+        <img style="height: 30px; width: 30px;" class="mx-3 placeholder-flag">
+        
+        <select name="language" id="language" class="form-select lang-select">
+          <option>HU</option>
+          <option>EN</option>
+          <option>DE</option>
+        </select>
+      </div>
+
+      <!-- SEARCH -->
+      <form class="d-flex nav-search" role="search">
+        <input class="form-control me-2" type="search" placeholder="Keresés">
+        <button class="btn search-btn" type="submit">🔍</button>
       </form>
+
     </div>
   </div>
 </nav>

@@ -114,4 +114,110 @@ body
   overflow-x:hidden;
 }
 
+/* Sticky fejléc */
+.sticky-header th {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: #212529; /* hogy szépen látszódjon */
+}
+
+/* Navbar összhatás */
+.custom-nav {
+  padding: 8px 15px;
+  font-size: 15px;
+}
+
+/* Menülinkek szebben */
+.nav-link {
+  transition: 0.2s;
+}
+.nav-link:hover {
+  color: #0d6efd;
+}
+
+/* Dark mode gomb */
+.theme-btn {
+  border-radius: 20px;
+  padding: 6px 16px;
+  border: 1px solid #6c757d;
+  transition: 0.2s;
+}
+.theme-btn:hover {
+  background: #e9ecef;
+}
+
+/* Nyelvváltó kis négyzet megmarad, csak szebb */
+
+.lang-select {
+  border-radius: 8px;
+  padding: 5px 8px;
+}
+
+/* Kereső szépítése */
+.search-btn {
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  color: white;
+  border: none;
+  transition: 0.2s;
+}
+.search-btn:hover {
+  background: #0b5ed7;
+}
+
+/* Mobil reszponzív beállítások */
+@media (max-width: 992px) {
+  .nav-search {
+    margin-top: 10px;
+    width: 100%;
+  }
+
+  .lang-box {
+    width: 100%;
+    justify-content: flex-start;
+    margin-bottom: 10px;
+  }
+}
+
+.big-news-card {
+  overflow: hidden;
+}
+.big-img {
+  height: 700px;
+  object-fit: cover;
+}
+
+.small-news-item {
+  border-bottom: 1px solid #e5e5e5;
+  padding-bottom: 10px;
+}
+.small-thumb {
+  width: 70px;
+  height: 70px;
+  object-fit: cover;
+}
+.number-circle {
+  width: 32px;
+  height: 32px;
+  background: #e9f7ee;
+  color: #22b14c;
+  font-weight: bold;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.see-more {
+  display: inline-block;
+  margin-top: 10px;
+  font-weight: bold;
+  color: #0d6efd;
+  cursor: pointer;
+}
+
+.news-block {
+  margin-bottom: 40px; /* nagyobb tér a blokkok között */
+}
 

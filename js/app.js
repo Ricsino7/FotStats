@@ -176,31 +176,35 @@
 
 .controller('newsController', ['$scope', '$http', function($scope, $http) {
 
-    // Inicializálunk egy üres tömböt a hírek tárolására
-    // Ide fogja betölteni a PHP-ból érkező JSON adatokat
     $scope.data = [];
+    $scope.groupedNews = [];
 
-    // Lekérjük a híreket a PHP fájlból Angular $http segítségével
-    $http.get('./php/news.php') // az útvonal a PHP fájlhoz
-
-        // Ha a lekérés sikeres, ezt a függvényt hívja meg
+    $http.get('./php/news.php')
         .then(function(response) {
 
-            // response.data tartalmazza a PHP által visszaadott JSON tömböt
-            // Ezt betöltjük az Angular scope változójába, így a HTML ng-repeat-je automatikusan frissül
             $scope.data = response.data;
-            
+            $scope.groupedNews = [];
+
+            // 1 nagy + 4 kicsi (FotMob stílus)
+            for (let i = 0; i < $scope.data.length; i += 5) {
+                const bigItem = $scope.data[i];
+                const smallItems = $scope.data.slice(i + 1, i + 5);
+
+                $scope.groupedNews.push({
+                    big: bigItem,
+                    small: smallItems
+                });
+            }
 
         })
-
-        // Ha valami hiba történik a lekérés során, ezt a függvényt hívja meg
         .catch(function(error) {
-
-            // Kiírjuk a konzolra a hibát, hogy lássuk mi ment rosszul
             console.error("Hiba a lekérésnél:", error);
         });
 
 }])
+
+
+
 
 //Home controller
 .controller('homeController', ['$scope', '$http', function($scope, $http) {
