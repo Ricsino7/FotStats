@@ -13,7 +13,6 @@ A datum ne date legyen hanem datetime(Kész van)
 Az eredmények tábla nem fog kelleni hiszen a statisztikákból mindent megfogunk majd kapni törölni kell(Kész van)
 A news is majd csatlakozhat idővel a többi táblához és igy majd azokból tud létrehozni
 híreket és infokat gyűjteni.
-
 Egy select létrehozása
 a táblázatba be kell rakni hogy 
 kell egy select és azt egy modelbe kell rakni kell neki egy érték 
