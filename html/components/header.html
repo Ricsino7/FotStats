@@ -27,7 +27,7 @@
         </button>
       </div>
 
-      <!-- LANGUAGE SELECTOR (NÉGYZET MEGMARAD!) -->
+      <!-- LANGUAGE SELECTOR -->
       <div class="mx-3 d-flex align-items-center lang-box">
         <img style="height: 30px; width: 30px;" class="mx-3 placeholder-flag">
         
@@ -38,11 +38,34 @@
         </select>
       </div>
 
-      <!-- SEARCH -->
-      <form class="d-flex nav-search" role="search">
-        <input class="form-control me-2" type="search" placeholder="Keresés">
-        <button class="btn search-btn" type="submit">🔍</button>
-      </form>
+      <!-- SEARCH (headerController kezeli, de nincs ng-controller itt) -->
+      <div class="position-relative">
+
+        <form class="d-flex nav-search" role="search">
+          <input class="form-control me-2"
+                 type="search"
+                 placeholder="Keresés"
+                 ng-model="searchText"
+                 ng-change="doSearch()">
+
+          <button class="btn search-btn" type="button">🔍</button>
+        </form>
+
+        <ul class="list-group position-absolute mt-2 w-100"
+            style="z-index: 999;"
+            ng-if="filtered.length">
+
+         <li class="list-group-item"
+              ng-repeat="item in filtered"
+              ng-click="goToItem(item)"
+              style="cursor: pointer;">
+              {{ item.name }} ({{ item.type }})
+        </li>
+
+
+        </ul>
+
+      </div>
 
     </div>
   </div>

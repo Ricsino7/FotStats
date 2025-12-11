@@ -12,75 +12,69 @@
       '$urlRouterProvider',
       ($stateProvider, $urlRouterProvider) => {
 
-        $stateProvider
-           .state('root', {
-             abstract: true,
-             views: {
-              '@': {
-                 templateUrl: './html/root.html'
-               },
-              'header@root': {
-                 templateUrl: './html/header.html',
-                 controller:'headerController'
-               },
-              'footer@root': {
-                templateUrl: './html/footer.html'
-              },
-             }
-           })
+          $stateProvider
+            .state('root', {
+              abstract: true,
+              views: {
+                '@': {
+                  templateUrl: './html../layouts/root.html'
+                },
+                'header@root': {
+                  templateUrl: './html../components/header.html',
+                  controller:'headerController'
+                },
+                'footer@root': {
+                  templateUrl: './html../components/footer.html'
+                },
+              }
+            })
 
-          .state('home', {
-            url: '/',
-            parent: 'root',
-            controller: 'homeController',
-            templateUrl: './html/home.html'
-          })
-          
-          .state('matches', {
-            url: '/matches',
-            parent: 'root',
-            controller : 'matchesController',
-            templateUrl: './html/matches.html'
-          })
+            .state('home', {
+              url: '/?selectedLeague',
+              parent: 'root',
+              controller: 'homeController',
+              templateUrl: './html../pages/home.html'
+            })
+            
+            .state('matches', {
+              url: '/matches',
+              parent: 'root',
+              controller : 'matchesController',
+              templateUrl: './html../pages/matches.html'
+            })
 
-          .state('results', {
-            url: '/results',
-            parent: 'root',
-            controller: 'resultsController',
-            templateUrl: './html/results.html'
-          })
+            .state('results', {
+              url: '/results',
+              parent: 'root',
+              controller: 'resultsController',
+              templateUrl: './html../pages/results.html'
+            })
 
-          .state('rolunk', {
-            url: '/rolunk',
-            parent: 'root',
-            controller: 'rolunkController',
-            templateUrl: './html/rolunk.html'
-          })
+            .state('rolunk', {
+              url: '/rolunk',
+              parent: 'root',
+              controller: 'rolunkController',
+              templateUrl: './html../pages/rolunk.html'
+            })
 
-          .state('tournaments', {
-            url: '/tournamenst',
-            parent: 'root',
-            controller: 'tournamentsController',
-            templateUrl: './html/tournaments.html'
-           })
+            .state('news', {
+              url: '/news',
+              parent: 'root',
+              controller: 'newsController',
+              templateUrl: './html../pages/news.html'
+            })
 
-          .state('news', {
-            url: '/news',
-            parent: 'root',
-            controller: 'newsController',
-            templateUrl: './html/news.html'
-          })
+           .state('lineup', {
+               url: '/lineup?selectedTeam',
+              parent: 'root',
+              controller: 'lineupController',
+              templateUrl: './html../pages/lineup.html'
+            })
 
-          .state('lineup', {
-            url: '/lineup',
-            parent: 'root',
-            controller: 'lineupController',
-            templateUrl: './html/lineup.html'
-          })
 
-        $urlRouterProvider.otherwise('/');
-      }
-    ])
+          $urlRouterProvider.otherwise('/');
+        }
+      ])
 
     //Application run
     .run([
@@ -90,207 +84,4 @@
       }
     ])
  
-  //Dark and Light mode gomb létre hozása, müködövé tétele
-  .controller('headerController',[
-    '$rootScope',
-    '$scope',
-    function($rootScope, $scope){
-      $scope.toggleTheme = function() {
-        $rootScope.darkMode = $rootScope.darkMode === "dark" ? "light" : "dark";
-      }
-    }
-  ])
-
-  //Matches controller
-
-  .controller('matchesController',[
-    '$scope', '$http',
-    function($scope,$http) {
-      // Inicializálunk egy üres tömböt a home oldali adatok tárolására
-    // Ide fogjuk betölteni a PHP-ból érkező JSON-t
-    $scope.data = [];
-
-    // Lekérjük az adatokat a home.php fájlból Angular $http segítségével
-    $http.get('./php/matches.php') // az útvonal a PHP fájlhoz
-
-        // Ha a lekérés sikeres, ezt a függvényt hívja meg
-        .then(function(response) {
-
-            // response.data tartalmazza a PHP által visszaadott JSON tömböt
-            // Ezt betöltjük az Angular scope változójába
-            // Így a HTML-ben az ng-repeat automatikusan frissíti a táblázatot
-            $scope.data = response.data;
-
-        })
-
-        // Ha valami hiba történik a lekérés során, ezt a függvényt hívja meg
-        .catch(function(error) {
-
-            // Kiírjuk a konzolra a hibát, hogy lássuk mi ment rosszul
-            console.error("Hiba a lekérésnél:", error);
-        });
-    }
-  ])
-
-  //Resulst controller
-  .controller('resultsController', ['$scope', '$http', function($scope, $http) {
-
-    // Inicializálunk egy üres tömböt a hírek tárolására
-    // Ide fogja betölteni a PHP-ból érkező JSON adatokat
-    $scope.data = [];
-
-    // Lekérjük a híreket a PHP fájlból Angular $http segítségével
-    $http.get('./php/results.php') // az útvonal a PHP fájlhoz
-
-        // Ha a lekérés sikeres, ezt a függvényt hívja meg
-        .then(function(response) {
-
-            // response.data tartalmazza a PHP által visszaadott JSON tömböt
-            // Ezt betöltjük az Angular scope változójába, így a HTML ng-repeat-je automatikusan frissül
-            $scope.data = response.data;
-
-        })
-
-        // Ha valami hiba történik a lekérés során, ezt a függvényt hívja meg
-        .catch(function(error) {
-
-            // Kiírjuk a konzolra a hibát, hogy lássuk mi ment rosszul
-            console.error("Hiba a lekérésnél:", error);
-        });
-
-}])
-
-  //Rolunk controller
-  .controller('rolunkController',[
-    '$scope',
-    function($scope) {
-      $scope.teamMembers = [
-            { name: 'Bokor Richárd', role: 'Projektvezető(Cégtulajodonos)', image : './img/ricsi.jpg'},
-            { name: 'Kulcsár Tamás Ámon', role: 'Projektsegítő(Igazgató Úr)', image : './img/tomi.jpg'},
-            
-        ];
-
-        $scope.aboutText = "Ez egy olyan oldal ami összehozza az embereket és a futball világát a futball világának híreivel és eredményeivel;)";
-    }
-  ])
-
-.controller('newsController', ['$scope', '$http', function($scope, $http) {
-
-    $scope.data = [];
-    $scope.groupedNews = [];
-
-    $http.get('./php/news.php')
-        .then(function(response) {
-
-            $scope.data = response.data;
-            $scope.groupedNews = [];
-
-            // 1 nagy + 4 kicsi (FotMob stílus)
-            for (let i = 0; i < $scope.data.length; i += 5) {
-                const bigItem = $scope.data[i];
-                const smallItems = $scope.data.slice(i + 1, i + 5);
-
-                $scope.groupedNews.push({
-                    big: bigItem,
-                    small: smallItems
-                });
-            }
-
-        })
-        .catch(function(error) {
-            console.error("Hiba a lekérésnél:", error);
-        });
-
-}])
-
-
-
-
-//Home controller
-.controller('homeController', ['$scope', '$http', function($scope, $http) {
-
-    $scope.data = [];
-    $scope.Ligak = [];
-    $scope.kivalasztott_tabella = null;
-    $scope.kivalasztott_kep = null;
-
-    $http.get('./php/home.php')
-        .then(function(response) {
-
-            console.log("API válasz:", response.data);
-
-            // TÖMB-e?
-            if (!Array.isArray(response.data)) {
-                console.error("HIBA: A PHP nem tömböt adott vissza!");
-                $scope.data = [];
-                return;
-            }
-
-            $scope.data = response.data;
-
-            // Ligák listája
-            $scope.Ligak = [...new Set($scope.data.map(x => x.Liga))];
-
-            // Alapértelmezett liga
-            $scope.kivalasztott_tabella = $scope.Ligak[0];
-
-            // Liga kép betöltés
-            let adat = $scope.data.find(x => x.Liga === $scope.kivalasztott_tabella);
-            if (adat) {
-                $scope.kivalasztott_kep = adat.kepek;
-            }
-        })
-        .catch(function(error) {
-            console.error("Hiba a lekérésnél:", error);
-        });
-
-    $scope.tabella_kivalasztas = function () {
-        let adat = $scope.data.find(x => x.Liga === $scope.kivalasztott_tabella);
-        if (adat) {
-            $scope.kivalasztott_kep = adat.kepek;
-        }
-    };
-
-}])
-
-
-
-
-.controller('lineupController', ['$scope', '$http', function($scope, $http) {
-
-    $scope.data = [];
-
-    $http.get('./php/lineup.php')
-        .then(function(response) {
-
-            $scope.data = response.data;
-
-            // Egyedi csapatnevek listája
-            $scope.Csapatnev = [...new Set(response.data.map(x => x.Csapatnev))];
-
-            // Alapértelmezett csapat
-            $scope.kivalasztott_csapat = "Barcelona";
-
-            // Alapértelmezett csapat képének beállítása
-            let adat = $scope.data.find(x => x.Csapatnev === $scope.kivalasztott_csapat);
-            if (adat) {
-                $scope.kivalasztott_kep = adat.kepek;
-            }
-
-            console.log(response.data);
-        })
-        .catch(function(error) {
-            console.error("Hiba a lekérésnél:", error);
-        });
-
-    // Csapat kiválasztásakor fut le
-    $scope.csapat_kivalsztas = function () {
-        let adat = $scope.data.find(x => x.Csapatnev === $scope.kivalasztott_csapat);
-        if (adat) {
-            $scope.kivalasztott_kep = adat.kepek;
-        }
-    };
-
-}]);
-
 })(window, angular);
