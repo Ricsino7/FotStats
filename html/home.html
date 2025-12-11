@@ -2,17 +2,24 @@
   <div class="row mt-5">
     <div class="mx-3 d-flex align-items-center gap-3">
 
-      <img style="height: 30px; width: 30px;" class="rounded">
+      <!-- Liga logó -->
+      <img style="height: 90px; width: 110px;" 
+           class="rounded"
+           ng-src="img/liga_logos/{{kivalasztott_kep}}"
+           alt="Liga logo">
 
+      <!-- Liga select -->
       <select name="tabella"
               id="tabella"
               class="form-select shadow-sm rounded-3"
               style="max-width: 250px;"
               ng-model="kivalasztott_tabella"
               ng-change="tabella_kivalasztas()">
+
         <option ng-repeat="Liga in Ligak" value="{{ Liga }}">
           {{ Liga }}
         </option>      
+
       </select>
     </div>
   </div>
@@ -25,15 +32,20 @@
         <div class="card-body p-4">
 
           <table class="table modern-table home-table">
+
             <thead>
               <tr>
-                <th ng-repeat="(key, value) in data[0]">{{ key }}</th>
+                <th ng-repeat="(key, value) in data[0]" ng-if="key !== 'kepek' && key !== 'Liga'">
+                  {{ key }}
+                </th>
               </tr>
             </thead>
 
             <tbody>
-              <tr ng-repeat="row in data" ng-if="kivalasztott_tabella === row.Liga">
-                <td ng-repeat="(key, value) in row">{{ value }}</td>
+              <tr ng-repeat="row in data" ng-if="kivalasztott_tabella === row.Liga" >
+                <td ng-repeat="(key, value) in row" ng-if="key !== 'kepek' && key !== 'Liga'">
+                  {{ value }}
+                </td>
               </tr>
 
               <tr ng-if="!data.length">
@@ -42,6 +54,7 @@
                 </td>
               </tr>
             </tbody>
+
           </table>
 
         </div>

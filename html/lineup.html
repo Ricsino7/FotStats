@@ -4,7 +4,11 @@
   <div class="row mt-5">
     <div class="mx-3 d-flex align-items-center">
 
-      <img style="height: 30px; width: 30px;" class="mx-3">
+      <img class="card-img-top mx-3"
+     style="height: 80px; width: 110px;"  
+     ng-src="./img/club_logos/{{kivalasztott_kep}}" 
+     alt="Card image">
+
 
       <select name="lineup"
               id="lineup"
@@ -12,7 +16,7 @@
               ng-model="kivalasztott_csapat"
               ng-change="csapat_kivalsztas()">
 
-        <option ng-repeat="nev in Csapatnev" value="{{ nev }}">
+        <option ng-repeat="nev in Csapatnev" value="{{ nev }}" ng-if="key !== 'kepek'">
           {{ nev }}
         </option>
 
@@ -30,7 +34,7 @@
       <!-- Dinamikus fejléc -->
       <thead>
         <tr ng-if="data.length">
-          <th  ng-repeat="(key, value) in data[0]" >
+          <th  ng-repeat="(key, value) in data[0]" ng-if="key !== 'kepek'">
             {{ key }}
           </th>
         </tr>
@@ -40,11 +44,11 @@
 
         <!-- Dinamikus sorok: csak a kiválasztott csapat -->
         <tr ng-repeat="row in data" ng-if="row.Csapatnev === kivalasztott_csapat">
-          <td ng-repeat="(key, value) in row">{{ value }}</td>
+          <td ng-repeat="(key, value) in row" ng-if="key !== 'kepek'">{{ value }}</td>
         </tr>
 
         <!-- Nincs adat -->
-        <tr ng-if="!data.length">
+        <tr ng-if="!data.length" >
           <td colspan="10">Nincs adat</td>
         </tr>
 

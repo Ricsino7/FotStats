@@ -205,63 +205,88 @@
 //Home controller
 .controller('homeController', ['$scope', '$http', function($scope, $http) {
 
-    // Inicializálunk egy üres tömböt a home oldali adatok tárolására
-    // Ide fogjuk betölteni a PHP-ból érkező JSON-t
     $scope.data = [];
+    $scope.Ligak = [];
+    $scope.kivalasztott_tabella = null;
+    $scope.kivalasztott_kep = null;
 
-    // Lekérjük az adatokat a home.php fájlból Angular $http segítségével
-    $http.get('./php/home.php') // az útvonal a PHP fájlhoz
-
-        // Ha a lekérés sikeres, ezt a függvényt hívja meg
+    $http.get('./php/home.php')
         .then(function(response) {
 
-            // response.data tartalmazza a PHP által visszaadott JSON tömböt
-            // Ezt betöltjük az Angular scope változójába
-            // Így a HTML-ben az ng-repeat automatikusan frissíti a táblázatot
-            
-          $scope.Ligak = [...new Set(response.data.map(x => x.Liga))];
-          $scope.data=response.data;
-          $scope.kivalasztott_tabella = "Premier League";
-          $scope.$applyAsync();
-        })
-        // Ha valami hiba történik a lekérés során, ezt a függvényt hívja meg
-        .catch(function(error) {
+            console.log("API válasz:", response.data);
 
-            // Kiírjuk a konzolra a hibát, hogy lássuk mi ment rosszul
+            // TÖMB-e?
+            if (!Array.isArray(response.data)) {
+                console.error("HIBA: A PHP nem tömböt adott vissza!");
+                $scope.data = [];
+                return;
+            }
+
+            $scope.data = response.data;
+
+            // Ligák listája
+            $scope.Ligak = [...new Set($scope.data.map(x => x.Liga))];
+
+            // Alapértelmezett liga
+            $scope.kivalasztott_tabella = $scope.Ligak[0];
+
+            // Liga kép betöltés
+            let adat = $scope.data.find(x => x.Liga === $scope.kivalasztott_tabella);
+            if (adat) {
+                $scope.kivalasztott_kep = adat.kepek;
+            }
+        })
+        .catch(function(error) {
             console.error("Hiba a lekérésnél:", error);
         });
 
+    $scope.tabella_kivalasztas = function () {
+        let adat = $scope.data.find(x => x.Liga === $scope.kivalasztott_tabella);
+        if (adat) {
+            $scope.kivalasztott_kep = adat.kepek;
+        }
+    };
 
 }])
 
+
+
+
 .controller('lineupController', ['$scope', '$http', function($scope, $http) {
 
-    // Inicializálunk egy üres tömböt a home oldali adatok tárolására
-    // Ide fogjuk betölteni a PHP-ból érkező JSON-t
     $scope.data = [];
 
-    // Lekérjük az adatokat a home.php fájlból Angular $http segítségével
-    $http.get('./php/lineup.php') // az útvonal a PHP fájlhoz
-
-        // Ha a lekérés sikeres, ezt a függvényt hívja meg
+    $http.get('./php/lineup.php')
         .then(function(response) {
 
-            // response.data tartalmazza a PHP által visszaadott JSON tömböt
-            // Ezt betöltjük az Angular scope változójába
-            // Így a HTML-ben az ng-repeat automatikusan frissíti a táblázatot
-            
-          $scope.Csapatnev = [...new Set(response.data.map(x => x.Csapatnev))];
-          $scope.data=response.data;
-          $scope.kivalasztott_csapat = "Barcelona";
-          $scope.$applyAsync();
-          console.log(response.data);
-          
-        })
-        // Ha valami hiba történik a lekérés során, ezt a függvényt hívja meg
-        .catch(function(error) {
+            $scope.data = response.data;
 
-            // Kiírjuk a konzolra a hibát, hogy lássuk mi ment rosszul
+            // Egyedi csapatnevek listája
+            $scope.Csapatnev = [...new Set(response.data.map(x => x.Csapatnev))];
+
+            // Alapértelmezett csapat
+            $scope.kivalasztott_csapat = "Barcelona";
+
+            // Alapértelmezett csapat képének beállítása
+            let adat = $scope.data.find(x => x.Csapatnev === $scope.kivalasztott_csapat);
+            if (adat) {
+                $scope.kivalasztott_kep = adat.kepek;
+            }
+
+            console.log(response.data);
+        })
+        .catch(function(error) {
             console.error("Hiba a lekérésnél:", error);
         });
+
+    // Csapat kiválasztásakor fut le
+    $scope.csapat_kivalsztas = function () {
+        let adat = $scope.data.find(x => x.Csapatnev === $scope.kivalasztott_csapat);
+        if (adat) {
+            $scope.kivalasztott_kep = adat.kepek;
+        }
+    };
+
 }]);
+
 })(window, angular);

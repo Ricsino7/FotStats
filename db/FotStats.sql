@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Gép: 127.0.0.1
--- Létrehozás ideje: 2025. Dec 10. 14:15
+-- Létrehozás ideje: 2025. Dec 11. 08:58
 -- Kiszolgáló verziója: 10.4.32-MariaDB
 -- PHP verzió: 8.2.12
 
@@ -42,13 +42,13 @@ CREATE TABLE `csapatok` (
 --
 
 INSERT INTO `csapatok` (`id`, `nev`, `orszag`, `tipus`, `liga_id`, `helyezes`, `kep`) VALUES
-(1, 'Manchester City', 'Anglia', 'klub', 1, 1, ''),
-(2, 'Arsenal', 'Anglia', 'klub', 1, 2, ''),
-(3, 'Liverpool', 'Anglia', 'klub', 1, 3, ''),
+(1, 'Manchester City', 'Anglia', 'klub', 1, 1, 'Manchester_City.jpg'),
+(2, 'Arsenal', 'Anglia', 'klub', 1, 2, 'Arsenal_FC.jpg'),
+(3, 'Liverpool', 'Anglia', 'klub', 1, 3, 'Liverpool.jpg'),
 (4, 'Aston Villa', 'Anglia', 'klub', 1, 4, ''),
 (5, 'Tottenham Hotspur', 'Anglia', 'klub', 1, 5, ''),
 (6, 'Real Madrid', 'Spanyolország', 'klub', 2, 1, ''),
-(7, 'Barcelona', 'Spanyolország', 'klub', 2, 2, ''),
+(7, 'Barcelona', 'Spanyolország', 'klub', 2, 2, 'Barcelona.jpg'),
 (8, 'Atletico Madrid', 'Spanyolország', 'klub', 2, 3, ''),
 (9, 'Girona', 'Spanyolország', 'klub', 2, 4, ''),
 (10, 'Real Sociedad', 'Spanyolország', 'klub', 2, 5, ''),
@@ -428,22 +428,23 @@ INSERT INTO `jatekosok` (`id`, `nev`, `poszt`, `nemzetiseg`, `csapat_id`) VALUES
 
 CREATE TABLE `ligak` (
   `id` int(11) NOT NULL,
-  `nev` varchar(100) NOT NULL
+  `nev` varchar(100) NOT NULL,
+  `kep` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- A tábla adatainak kiíratása `ligak`
 --
 
-INSERT INTO `ligak` (`id`, `nev`) VALUES
-(1, 'Premier League'),
-(2, 'La Liga'),
-(3, 'Bundesliga'),
-(4, 'Serie A'),
-(5, 'Ligue 1'),
-(6, 'Bajnokok Ligája'),
-(7, 'Európa Konferencia Liga'),
-(8, 'VB-selejtező');
+INSERT INTO `ligak` (`id`, `nev`, `kep`) VALUES
+(1, 'Premier League', 'Premier_League.jpg'),
+(2, 'La Liga', 'laliga.jpg'),
+(3, 'Bundesliga', 'Bundesliga.jpg'),
+(4, 'Serie A', 'Serie_A.jpg'),
+(5, 'Ligue 1', 'Ligue_1.jpg'),
+(6, 'Bajnokok Ligája', 'Champions_League.jpg'),
+(7, 'Európa Konferencia Liga', 'UECL.jpg'),
+(8, 'VB-selejtező', 'FIFA_World_Cup.jpg');
 
 -- --------------------------------------------------------
 
