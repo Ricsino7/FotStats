@@ -3,40 +3,40 @@
   color: #f1f1f1 !important;
 }
 .footer-title {
-    font-weight: 600;
-    font-size: 1.1rem;
+  font-weight: 600;
+  font-size: 1.1rem;
 }
 .footer-small {
-    font-size: 0.9rem;
+  font-size: 0.9rem;
 }
 .footer-link {
-    color: inherit;
-    text-decoration: underline;
-    text-underline-offset: 3px;
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 3px;
 }
 .footer-social a {
-    font-size: 1.3rem;
-    margin-right: 12px;
-    color: inherit;
+  font-size: 1.3rem;
+  margin-right: 12px;
+  color: inherit;
 }
  .team {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 30px;
-            margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin-top: 50px;
 }
 .team-member {
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 15px;
-    overflow: hidden;
-    box-shadow: 0 8px 20px rgba(0, 255, 255, 0.3);
-    transition: transform 0.5s, box-shadow 0.5s;
-    text-align: center;
-    width: 320px;
-    position: relative;
-    animation: slideIn 1s ease-in-out forwards;
-    transform: translateX(-100vw);
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0, 255, 255, 0.3);
+  transition: transform 0.5s, box-shadow 0.5s;
+  text-align: center;
+  width: 320px;
+  position: relative;
+  animation: slideIn 1s ease-in-out forwards;
+  transform: translateX(-100vw);
 }
 .team-member:nth-child(odd) {
     animation-delay: 0.3s;
@@ -63,12 +63,12 @@
     font-size: 1.2em;
 }
 .header {
-    text-align: center;
-    margin-top: 50px;
-    font-weight: bold;
-    font-size: 32px;
-    text-transform: uppercase;
-    letter-spacing: 3px;
+  text-align: center;
+  margin-top: 50px;
+  font-weight: bold;
+  font-size: 32px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
 }
 .modern-table th {
   background: transparent !important;
