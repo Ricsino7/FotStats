@@ -27,4 +27,4 @@ Home tabeláknál:
 Lőtt/Kapott golok szám kiírása + golarány + GY D V Meccsek kiírása
 szponzorok megjelenítése a homeba
 
-languages megcsinálása otthon
+languages megcsinálása otthon   
