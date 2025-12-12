@@ -4,6 +4,8 @@ require_once('../../common/php/environment.php');
 $db = new Database('fotstats');
 //UJRA LESZ CSINALVA AZ EGESZ!!!
 // Első lekérdezés: meccsek statisztikákkal
+//A COALESCE ha nincs a statiszikanal adat vagy eppen nem volt a meccsen olyan statisztika
+//Akkor 0-val fog visszatérni
 $rows = $db->execute("
 SELECT 
     c1.nev AS Hazai,
