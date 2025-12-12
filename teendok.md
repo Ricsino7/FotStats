@@ -22,3 +22,7 @@ Jatekosok:barcelona jatekosok kész
           city jatekosok is kész
           arsenal is kész
           liverpool is kész ricsi intézte
+
+Home tabeláknál:
+Lőtt/Kapott golok szám kiírása + golarány + GY D V Meccsek kiírása
+szponzorok megjelenítése a homeba
