@@ -7,6 +7,7 @@ $rows = $db->execute("
     SELECT 
         c.helyezes AS Helyezes,
         c.nev AS Csapatnev,
+        c.Pontszam AS Pontszamok,
         l.nev AS Liga,
         l.kep AS kepek
     FROM csapatok c
