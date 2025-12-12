@@ -15,11 +15,11 @@ using System.Windows.Shapes;
 namespace FotStats
 {
     /// <summary>
-    /// Interaction logic for Tournaments.xaml
+    /// Interaction logic for Lineup.xaml
     /// </summary>
-    public partial class Tournaments : Window
+    public partial class Lineup : Window
     {
-        public Tournaments()
+        public Lineup()
         {
             InitializeComponent();
         }

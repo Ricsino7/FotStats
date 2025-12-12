@@ -67,8 +67,8 @@
     <Compile Include="Statisztikak.xaml.cs">
       <DependentUpon>Statisztikak.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Tournaments.xaml.cs">
-      <DependentUpon>Tournaments.xaml</DependentUpon>
+    <Compile Include="Lineups.xaml.cs">
+      <DependentUpon>Lineups.xaml</DependentUpon>
     </Compile>
     <Page Include="Eredmenyek.xaml">
       <SubType>Designer</SubType>
@@ -98,7 +98,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Tournaments.xaml">
+    <Page Include="Lineups.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
