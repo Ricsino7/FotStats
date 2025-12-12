@@ -1,7 +1,4 @@
-# Visual Studio mappa
 .vs/
-
-# Build output (mindet törli!)
 bin/
 obj/
 Debug/
@@ -12,65 +9,43 @@ ARM/
 ARM64/
 publish/
 
-# Visual Studio user-specifikus fájlok
 *.suo
 *.user
 *.userosscache
 *.sln.docstates
 
-# WPF auto-generated
 *.g.cs
 *.g.i.cs
 *.baml
 
-# NuGet csomagok és melléktermékei
 packages/
 *.nupkg
 *.snupkg
 project.lock.json
 project.assets.json
 
-# Test eredmények
+*.log
+*.tmp
+*.cache
+
+.idea/
+_ReSharper*/
+*.DotSettings.user
+
 TestResults/
 coverage/
 *.coverage
 *.coveragexml
 
-# Logs, cache, tmp
-*.log
-*.cache
-*.tmp
-
-# JetBrains Rider / ReSharper
-.idea/
-_ReSharper*/
-*.DotSettings.user
-
-# Profiling / diagnosztika
-*.psess
-*.vsp
-*.vspscc
-*.vssscc
-
-# SQL Server helyi adatbázisok
-*.dbmdl
-
-# MonoDevelop / Xamarin maradékok
-*.pidb
-*.userprefs
-
-# Backup fájlok
 *.bak
 *.old
-
-# Képfájlok auto-generated változatai
-*.thumbnail
-
-# MSBuild melléktermékek
 *.tlog
 *.lastcodeanalysissucceeded
 
-# Local configuration (ha ide teszel titkokat)
-appsettings.Development.json
-appsettings.Local.json
-
+!*.sln
+!*.csproj
+!*.xaml
+!*.xaml.cs
+!App.xaml
+!MainWindow.xaml
+!nuget.config

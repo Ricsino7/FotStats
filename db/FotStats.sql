@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Gép: 127.0.0.1
--- Létrehozás ideje: 2025. Dec 12. 09:42
+-- Létrehozás ideje: 2025. Dec 12. 10:21
 -- Kiszolgáló verziója: 10.4.32-MariaDB
 -- PHP verzió: 8.2.12
 
@@ -87,7 +87,7 @@ INSERT INTO `csapatok` (`id`, `nev`, `orszag`, `tipus`, `liga_id`, `helyezes`, `
 (43, 'Newcastle United', 'Anglia', 'klub', 1, 8, 'newcastle.jpg'),
 (44, 'West Ham United', 'Anglia', 'klub', 1, 9, 'westham.jpg'),
 (45, 'Brighton & Hove Albion', 'Anglia', 'klub', 1, 10, 'brighton.jpg'),
-(46, 'Fulham', 'Anglia', 'klub', 1, 11, 'fullham.jpg'),
+(46, 'Fulham', 'Anglia', 'klub', 1, 11, 'fulham.jpg'),
 (47, 'Crystal Palace', 'Anglia', 'klub', 1, 12, 'crystalpalace.jpg'),
 (48, 'Brentford', 'Anglia', 'klub', 1, 13, 'brentford.jpg'),
 (49, 'Wolverhampton Wanderers', 'Anglia', 'klub', 1, 14, 'wolverhampton.jpg'),
