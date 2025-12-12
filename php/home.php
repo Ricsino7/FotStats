@@ -5,10 +5,16 @@ $db = new Database('fotstats');
 
 $rows = $db->execute("
     SELECT 
-        c.helyezes AS Helyezes,
-        c.nev AS Csapatnev,
-        c.Pontszam AS Pontszamok,
+        c.helyezes AS '#',
+        c.nev AS Csapat,
+        c.lejatszottmeccs AS LM,
+        c.gyozelem AS GY,
+        c.dontetlen AS D, 
+        c.vereseg AS V,   
+        c.Pontszam AS P,
         c.Lottgol AS LG,
+        c.kapottgol AS KG,
+        c.golarany AS GK,
         l.nev AS Liga,
         l.kep AS kepek
     FROM csapatok c
