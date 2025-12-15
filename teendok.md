@@ -28,3 +28,5 @@ Lőtt/Kapott golok szám kiírása + golarány + GY D V Meccsek kiírása
 szponzorok megjelenítése a homeba
 
 languages megcsinálása otthon   
+
+meccseknál az idkat normalisan kiosztani pl 1es liga id csak az 1es idval jatszhat
