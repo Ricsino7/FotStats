@@ -34,7 +34,7 @@
       <!-- Dinamikus fejléc -->
       <thead>
         <tr ng-if="data.length">
-          <th  ng-repeat="(key, value) in data[0]" ng-if="key !== 'kepek'">
+          <th  ng-repeat="(key, value) in data[0]" ng-if="key !== 'kepek' && key !== 'Csapatnev'">
             {{ key }}
           </th>
         </tr>
@@ -44,7 +44,7 @@
 
         <!-- Dinamikus sorok: csak a kiválasztott csapat -->
         <tr ng-repeat="row in data" ng-if="row.Csapatnev === kivalasztott_csapat">
-          <td ng-repeat="(key, value) in row" ng-if="key !== 'kepek'">{{ value }}</td>
+          <td ng-repeat="(key, value) in row" ng-if="key !== 'kepek' && key !== 'Csapatnev'">{{ value }}</td>
         </tr>
 
         <!-- Nincs adat -->
