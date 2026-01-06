@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{DB63477C-870B-4D32-8325-68998C6B7E80}</ProjectGuid>
+    <ProjectGuid>{76A907B1-0E58-4414-A49D-82AD3849ECC5}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>FotStats</RootNamespace>
     <AssemblyName>FotStats</AssemblyName>
@@ -55,25 +55,6 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Eredmenyek.xaml.cs">
-      <DependentUpon>Eredmenyek.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Matches.xaml.cs">
-      <DependentUpon>Matches.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="News.xaml.cs">
-      <DependentUpon>News.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Statisztikak.xaml.cs">
-      <DependentUpon>Statisztikak.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Lineups.xaml.cs">
-      <DependentUpon>Lineups.xaml</DependentUpon>
-    </Compile>
-    <Page Include="Eredmenyek.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -86,24 +67,15 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="Matches.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="News.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Statisztikak.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Lineups.xaml">
+    <Page Include="Meccsek.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Meccsek.xaml.cs">
+      <DependentUpon>Meccsek.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
