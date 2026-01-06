@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Gép: 127.0.0.1
--- Létrehozás ideje: 2025. Dec 12. 22:54
+-- Létrehozás ideje: 2026. Jan 06. 11:14
 -- Kiszolgáló verziója: 10.4.32-MariaDB
 -- PHP verzió: 8.2.12
 
@@ -862,6 +862,24 @@ INSERT INTO `jatekosok` (`id`, `nev`, `poszt`, `nemzetiseg`, `csapat_id`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Tábla szerkezet ehhez a táblához `language`
+--
+
+CREATE TABLE `language` (
+  `language` char(2) CHARACTER SET utf8mb4 COLLATE utf8mb4_hungarian_ci NOT NULL,
+  `data` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+
+--
+-- A tábla adatainak kiíratása `language`
+--
+
+INSERT INTO `language` (`language`, `data`) VALUES
+('hu', '{\r\n    \"footer\": {\r\n        \"copyright\": \"2019 FotStats Ügynökség, Budapest\"\r\n    },\r\n    \"header\": {\r\n        \"home\": \"Főoldal\",\r\n        \"matches\" : \"Meccsek\",\r\n        \"results\" : \"Eredmények\",\r\n        \"lineup\" : \"Összeállitások\",\r\n        \"news\" : \"Hírek\",\r\n        \"aboutus\" : \"Rolunk\"\r\n    },\r\n   \"home_title\" : {\r\n     \"title\" : \"Aktuális tabellák 25-26-os szezon\"\r\n    }\r\n}');
+
+-- --------------------------------------------------------
+
+--
 -- Tábla szerkezet ehhez a táblához `ligak`
 --
 
@@ -1107,6 +1125,12 @@ ALTER TABLE `csapatok`
 ALTER TABLE `jatekosok`
   ADD PRIMARY KEY (`id`),
   ADD KEY `csapat_id` (`csapat_id`);
+
+--
+-- A tábla indexei `language`
+--
+ALTER TABLE `language`
+  ADD PRIMARY KEY (`language`);
 
 --
 -- A tábla indexei `ligak`
