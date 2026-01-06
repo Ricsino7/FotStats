@@ -12,12 +12,12 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item"><a class="nav-link fw-bold" ui-sref="home">{{currentLang.header.home}}</a></li>
-        <li class="nav-item"><a class="nav-link" ui-sref="matches">{{currentLang.header.matches}}</a></li>
-        <li class="nav-item"><a class="nav-link" ui-sref="results">{{currentLang.header.results}}</a></li>
-        <li class="nav-item"><a class="nav-link" ui-sref="lineup">{{currentLang.header.lineup}}</a></li>
-        <li class="nav-item"><a class="nav-link" ui-sref="news">{{currentLang.header.news}}</a></li>
-        <li class="nav-item"><a class="nav-link" ui-sref="rolunk">{{currentLang.header.aboutus}}</a></li>
+        <li class="nav-item"><a class="nav-link fw-bold" ui-sref="home">{{$root.lang.data.home}}</a></li>
+        <li class="nav-item"><a class="nav-link" ui-sref="matches">{{$root.lang.data.matches}}</a></li>
+        <li class="nav-item"><a class="nav-link" ui-sref="results">{{$root.lang.data.results}}</a></li>
+        <li class="nav-item"><a class="nav-link" ui-sref="lineup">{{$root.lang.data.lineup}}</a></li>
+        <li class="nav-item"><a class="nav-link" ui-sref="news">{{$root.lang.data.news}}</a></li>
+        <li class="nav-item"><a class="nav-link" ui-sref="rolunk">{{$root.lang.data.aboutus}}</a></li>
       </ul>
 
       <!-- DARK MODE -->
@@ -31,7 +31,11 @@
       <div class="mx-3 d-flex align-items-center lang-box">
         <img style="height: 30px; width: 30px;" class="mx-3 placeholder-flag">
         
-        <select name="language" id="language" class="form-select lang-select">
+        <select name="language" 
+                id="language" 
+                class="form-select lang-select"
+                ng-model="language"
+                ng-change="$root.changeLanguage()">
           <option>HU</option>
           <option>EN</option>
           <option>DE</option>
@@ -44,7 +48,7 @@
         <form class="d-flex nav-search" role="search">
           <input class="form-control me-2"
                  type="search"
-                 placeholder="Keresés"
+                 placeholder="{{$root.lang.data['search']}}"
                  ng-model="searchText"
                  ng-change="doSearch()">
 

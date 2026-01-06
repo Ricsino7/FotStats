@@ -9,8 +9,11 @@
   '$state',
   function($rootScope, $scope, $http, $state) {
 
+    // Page tempate mode
+    $rootScope.darkMode = "dark";
     $scope.toggleTheme = function() {
-      $rootScope.darkMode = $rootScope.darkMode === "dark" ? "light" : "dark";
+      $rootScope.darkMode = $rootScope.darkMode === "dark" 
+                            ? "light" : "dark";
     };
 
     $scope.searchText = "";
@@ -51,6 +54,11 @@
       }
     };
 
+    $scope.language = "HU";
+    $rootScope.changeLanguage = () => {
+      $rootScope.lang.id = $scope.language.toLowerCase();
+      $rootScope.getLanguageData();
+    }
   }
 ]);
 

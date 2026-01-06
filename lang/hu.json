@@ -1,4 +1,18 @@
 {
     "lejatszottmeccs": "LM",
-    "gyozelem": "GY"
+    "gyozelem": "GY",
+    "dontetlen": "D", 
+    "vereseg": "V",   
+    "Pontszam": "P",
+    "Lottgol": "LG",
+    "kapottgol": "KG",
+    "golarany": "GK",
+    "search": "Keresés",
+    "home": "Főoldal",
+    "matches" : "Meccsek",
+    "results" : "Eredmények",
+    "lineup" : "Összeállitások",
+    "news" : "Hírek",
+    "aboutus" : "Rolunk",
+    "title" : "Aktuális tabellák 25-26-os szezon"
 }

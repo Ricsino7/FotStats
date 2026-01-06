@@ -24,9 +24,11 @@
     </div>
   </div>
 
+  <div>{{ $root.lang.id }}</div>
+
   <div class="row mt-5 justify-content-center">
     <div class="col-lg-10">
-      <h2 class="fw-bold mb-3">{{currentLang.home_title.title}}</h2>
+      <h2 class="fw-bold mb-3">{{$root.lang.data.title}}</h2>
 
       <div class="card shadow-lg border-0 rounded-4 card-home">
         <div class="card-body p-4">
@@ -37,7 +39,7 @@
               <tr>
                 <th ng-repeat="(key, value) in data[0]" 
                     ng-if="key !== 'kepek' && key !== 'Liga'">
-                  {{ key }}
+                  {{ $root.lang.data[key] }}
                 </th>
               </tr>
             </thead>

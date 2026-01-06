@@ -7,14 +7,14 @@ $rows = $db->execute("
     SELECT 
         c.helyezes AS '#',
         c.nev AS Csapat,
-        c.lejatszottmeccs AS LM,
-        c.gyozelem AS GY,
-        c.dontetlen AS D, 
-        c.vereseg AS V,   
-        c.Pontszam AS P,
-        c.Lottgol AS LG,
-        c.kapottgol AS KG,
-        c.golarany AS GK,
+        c.lejatszottmeccs,
+        c.gyozelem,
+        c.dontetlen, 
+        c.vereseg,   
+        c.Pontszam,
+        c.Lottgol,
+        c.kapottgol,
+        c.golarany,
         l.nev AS Liga,
         l.kep AS kepek
     FROM csapatok c
