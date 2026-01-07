@@ -23,7 +23,7 @@
       <!-- DARK MODE -->
       <div class="mx-4">
         <button class="btn theme-btn" ng-click="toggleTheme()">
-          {{ $root.darkMode === "dark" ? '☀️ Light mód' : '🌙 Dark mód' }}
+          {{ $root.darkMode === "dark" ? '☀️ ' + $root.lang.data['light'] : '🌙 ' + $root.lang.data['dark'] }}
         </button>
       </div>
 

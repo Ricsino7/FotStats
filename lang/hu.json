@@ -14,5 +14,15 @@
     "lineup" : "Összeállitások",
     "news" : "Hírek",
     "aboutus" : "Rolunk",
-    "title" : "Aktuális tabellák 25-26-os szezon"
+    "title" : "Aktuális tabellák a 25-26os szezonra",
+    "upcoming" : "Soron következő mérkőzések 25-26os szezon",
+    "hazai" : "hazai",
+    "vendeg": "vendég",
+    "datum":"dátum",
+    "liga":"liga",
+    "moto": "Csak azoknak, akik szerelmesek a Futballba®",
+    "kozpont": "Központjaink",
+    "kovetes": "Kövess minket",
+    "light": "Világos mód",
+    "dark": "Sötét mód"
 }
