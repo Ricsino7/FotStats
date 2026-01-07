@@ -13,7 +13,7 @@ SELECT
     m.eredmeny AS Eredmény,
     m.datum AS Dátum,
     l.nev AS Liga,
-    COALESCE(sh.golok, 0) AS 'Hazai Golok',
+    COALESCE(sh.golok, 0) AS 'Hazai Golok', 
     COALESCE(sh.lovesek, 0) AS 'Hazai Lovesek',
     COALESCE(sh.passzok, 0) AS 'Hazai Passzok',
     COALESCE(sh.labdabirtoklas, 0.00) AS 'Hazai Labbirtoklas',
