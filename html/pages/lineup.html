@@ -16,7 +16,7 @@
               ng-model="kivalasztott_csapat"
               ng-change="csapat_kivalsztas()">
 
-        <option ng-repeat="nev in Csapatnev" value="{{ nev }}" ng-if="key !== 'kepek'">
+        <option ng-repeat="nev in csapatnev" value="{{ nev }}" ng-if="key !== 'kepek'">
           {{ nev }}
         </option>
 
@@ -34,8 +34,8 @@
       <!-- Dinamikus fejléc -->
       <thead>
         <tr ng-if="data.length">
-          <th  ng-repeat="(key, value) in data[0]" ng-if="key !== 'kepek' && key !== 'Csapatnev'">
-            {{ key }}
+          <th  class="text-capitalize" ng-repeat="(key, value) in data[0]" ng-if="key !== 'kepek' && key !== 'csapatnev'">
+            {{ $root.lang.data[key] }}
           </th>
         </tr>
       </thead>
@@ -43,8 +43,8 @@
       <tbody>
 
         <!-- Dinamikus sorok: csak a kiválasztott csapat -->
-        <tr ng-repeat="row in data" ng-if="row.Csapatnev === kivalasztott_csapat">
-          <td ng-repeat="(key, value) in row" ng-if="key !== 'kepek' && key !== 'Csapatnev'">{{ value }}</td>
+        <tr ng-repeat="row in data" ng-if="row.csapatnev === kivalasztott_csapat">
+          <td ng-repeat="(key, value) in row" ng-if="key !== 'kepek' && key !== 'csapatnev'">{{ value }}</td>
         </tr>
 
         <!-- Nincs adat -->

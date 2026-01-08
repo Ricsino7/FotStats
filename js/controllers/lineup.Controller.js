@@ -9,7 +9,7 @@
   function($scope, $http, $stateParams) {
 
     $scope.data = [];
-    $scope.Csapatnev = [];
+    $scope.csapatnev = [];
     $scope.kivalasztott_csapat = null;
     $scope.kivalasztott_kep = null;
 
@@ -19,13 +19,13 @@
         $scope.data = response.data;
 
         // összes csapatnév
-        $scope.Csapatnev = [...new Set(response.data.map(x => x.Csapatnev))];
+        $scope.csapatnev = [...new Set(response.data.map(x => x.csapatnev))];
 
         // ha keresőből jött csapat → arra állunk
         if ($stateParams.selectedTeam) {
           $scope.kivalasztott_csapat = $stateParams.selectedTeam;
 
-          let adat = $scope.data.find(x => x.Csapatnev === $scope.kivalasztott_csapat);
+          let adat = $scope.data.find(x => x.csapatnev === $scope.kivalasztott_csapat);
           if (adat) {
             $scope.kivalasztott_kep = adat.kepek;
           }
@@ -33,9 +33,9 @@
         }
 
         // alapértelmezett csapat
-        $scope.kivalasztott_csapat = $scope.Csapatnev[0];
+        $scope.kivalasztott_csapat = $scope.csapatnev[0];
 
-        let alap = $scope.data.find(x => x.Csapatnev === $scope.kivalasztott_csapat);
+        let alap = $scope.data.find(x => x.csapatnev === $scope.kivalasztott_csapat);
         if (alap) {
           $scope.kivalasztott_kep = alap.kepek;
         }
@@ -44,7 +44,7 @@
       .catch(error => console.error(error));
 
     $scope.csapat_kivalsztas = function() {
-      let adat = $scope.data.find(x => x.Csapatnev === $scope.kivalasztott_csapat);
+      let adat = $scope.data.find(x => x.csapatnev === $scope.kivalasztott_csapat);
       if (adat) {
         $scope.kivalasztott_kep = adat.kepek;
       }

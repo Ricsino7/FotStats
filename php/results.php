@@ -8,19 +8,19 @@ $db = new Database('fotstats');
 //Akkor 0-val fog visszatérni
 $rows = $db->execute("
 SELECT 
-    c1.nev AS Hazai,
-    c2.nev AS Vendeg,
-    m.eredmeny AS Eredmény,
-    m.datum AS Dátum,
-    l.nev AS Liga,
-    COALESCE(sh.golok, 0) AS 'Hazai Golok', 
-    COALESCE(sh.lovesek, 0) AS 'Hazai Lovesek',
-    COALESCE(sh.passzok, 0) AS 'Hazai Passzok',
-    COALESCE(sh.labdabirtoklas, 0.00) AS 'Hazai Labbirtoklas',
-    COALESCE(sv.golok, 0) AS 'Vendeg Golok',
-    COALESCE(sv.lovesek, 0) AS 'Vendeg Lovesek',
-    COALESCE(sv.passzok, 0) AS 'Vendeg Passzok',
-    COALESCE(sv.labdabirtoklas, 0.00) AS 'Vendeg Labbirtoklas'
+    c1.nev AS Haz,
+    c2.nev AS Ven,
+    m.eredmeny AS Ered,
+    m.datum AS Dat,
+    l.nev AS Lig,
+    COALESCE(sh.golok, 0) AS 'HazaiGol', 
+    COALESCE(sh.lovesek, 0) AS 'HazaiLov',
+    COALESCE(sh.passzok, 0) AS 'HazaiPasszok',
+    COALESCE(sh.labdabirtoklas, 0.00) AS 'HazaiLabbirtoklas',
+    COALESCE(sv.golok, 0) AS 'VendegGol',
+    COALESCE(sv.lovesek, 0) AS 'VendegLoves',
+    COALESCE(sv.passzok, 0) AS 'VendegPasszok',
+    COALESCE(sv.labdabirtoklas, 0.00) AS 'VendegLabbirtoklas'
 FROM meccsek m
 INNER JOIN csapatok c1 ON m.csapat1_id = c1.id
 INNER JOIN csapatok c2 ON m.csapat2_id = c2.id

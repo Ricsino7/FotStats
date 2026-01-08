@@ -24,5 +24,19 @@
     "kozpont": "Our Centers",
     "kovetes": "Follow us",
     "light": "Light mode",
-    "dark": "Dark mode"
+    "dark": "Dark mode",
+    "multered":"Results in the past time in the 25-26 season",
+    "Haz":"Home",
+    "Ven": "Away",
+    "Ered":"Result",
+    "Dat":"Date",
+    "Lig":"league",
+    "HazaiGol":"HT goals", 
+    "HazaiLov":"HT shots",
+    "HazaiPasszok":"HT passes",
+    "HazaiLabbirtoklas":"HT possession",
+    "VendegGol":"AT goals",
+    "VendegLoves":"AT shost",
+    "VendegPasszok":"AT passes",
+    "VendegLabbirtoklas":"AT possession"
 }

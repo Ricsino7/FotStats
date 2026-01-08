@@ -24,5 +24,22 @@
     "kozpont": "Központjaink",
     "kovetes": "Kövess minket",
     "light": "Világos mód",
-    "dark": "Sötét mód"
+    "dark": "Sötét mód",
+    "multered":"Eredmények az elmúlt időkben 25-26-os szezon",
+    "Haz":"Hazai",
+    "Ven": "Vendég",
+    "Ered":"Eredmeny",
+    "Dat":"Dátum",
+    "Lig":"Liga",
+    "HazaiGol":"hazai gólok", 
+    "HazaiLov":"hazai lövések",
+    "HazaiPasszok":"hazai Passzok",
+    "HazaiLabbirtoklas":"hazai labdabirt",
+    "VendegGol":"vendég gólok",
+    "VendegLoves":"vendég lövések",
+    "VendegPasszok":"vendég passzok",
+    "VendegLabbirtoklas":"vendég labdabirt",
+    "squad":"A 25-26 szezon csapatainak játékosai",
+    "jatekosnev":"játékosnév",
+    "jatekosPoszt":"játékosposzt"
 }

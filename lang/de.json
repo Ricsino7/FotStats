@@ -24,5 +24,19 @@
     "kozpont": "Unsere Zentren",
     "kovetes": "Folge uns",
     "light": "Heller Modus",
-    "dark": "Dunkler Modus"
+    "dark": "Dunkler Modus",
+    "multered":"Ergebnisse der letzten Zeit für Saison 25-26",
+    "Haz":"heim",
+    "Ven": "auswärts",
+    "Ered":"enden",
+    "Dat":"date",
+    "Lig":"ligen",
+    "HazaiGol":"heim ziele", 
+    "HazaiLov":"heim Ziele",
+    "HazaiPasszok":"heim pässe",
+    "HazaiLabbirtoklas":"heim allbesitz",
+    "VendegGol":"auswärts ziele",
+    "VendegLoves":"auswärts Schüsse",
+    "VendegPasszok":"auswärts pässe",
+    "VendegLabbirtoklas":"auswärts allbesitz"
 }
