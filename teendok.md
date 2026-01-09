@@ -30,3 +30,8 @@ szponzorok megjelenítése a homeba
 languages megcsinálása otthon   
 
 meccseknál az idkat normalisan kiosztani pl 1es liga id csak az 1es idval jatszhat
+
+a tablat ahol a posztok vannak van egy kulcs egy id
+az osszes poszot fel kell venni
+aztan ossze kell kotni a nev szerint
+ide kell bele updatelni a dologokat 

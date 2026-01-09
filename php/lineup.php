@@ -7,13 +7,21 @@ $rows = $db->execute("
     SELECT 
         c.nev AS csapatnev,
         j.nev AS jatekosnev,
-        j.poszt AS jatekosPoszt,
+        CASE j.poszt_tmp
+            WHEN 'Csatár' THEN 'CS'
+            WHEN 'Szélső' THEN 'SZ'
+            WHEN 'Középpályás' THEN 'KP'
+            WHEN 'Védő' THEN 'HAT'
+            WHEN 'Kapus' THEN 'KAP'
+            WHEN 'Edző' THEN 'EDZ'
+            ELSE ''
+        END AS jatekosPoszt,
         c.kep AS kepek
     FROM csapatok c
-    LEFT JOIN jatekosok j 
-        ON c.id = j.csapat_id
+    LEFT JOIN jatekosok j ON c.id = j.csapat_id
     WHERE j.id IS NOT NULL
 ");
+
 
 
 
