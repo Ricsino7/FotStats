@@ -35,3 +35,7 @@ a tablat ahol a posztok vannak van egy kulcs egy id
 az osszes poszot fel kell venni
 aztan ossze kell kotni a nev szerint
 ide kell bele updatelni a dologokat 
+
+ki cserelni a jsonprettyprintet
+jsonunescapeducincode/Slashesre mint ketto kell
+kell bejelenkezes a wpfbe hogy adatokat lehessen feltolteni meg a hasonlok
