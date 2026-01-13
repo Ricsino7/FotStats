@@ -1,6 +1,9 @@
 .vs/
+.idea/
+
 bin/
 obj/
+
 Debug/
 Release/
 x64/
@@ -17,6 +20,8 @@ publish/
 *.g.cs
 *.g.i.cs
 *.baml
+*.tlog
+*.lastcodeanalysissucceeded
 
 packages/
 *.nupkg
@@ -27,25 +32,19 @@ project.assets.json
 *.log
 *.tmp
 *.cache
-
-.idea/
-_ReSharper*/
-*.DotSettings.user
+*.bak
+*.old
 
 TestResults/
 coverage/
 *.coverage
 *.coveragexml
 
-*.bak
-*.old
-*.tlog
-*.lastcodeanalysissucceeded
+_ReSharper*/
+*.DotSettings.user
 
 !*.sln
 !*.csproj
+!*.cs
 !*.xaml
-!*.xaml.cs
-!App.xaml
-!MainWindow.xaml
-!nuget.config
+!*.config
