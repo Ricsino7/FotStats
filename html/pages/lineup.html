@@ -5,10 +5,9 @@
     <div class="mx-3 d-flex align-items-center">
 
       <img class="card-img-top mx-3"
-     style="height: 80px; width: 110px;"  
-     ng-src="./img/club_logos/{{kivalasztott_kep}}" 
-     alt="Card image">
-
+           style="height: 80px; width: 110px;"  
+           ng-src="./img/club_logos/{{kivalasztott_kep}}" 
+           alt="Card image">
 
       <select name="lineup"
               id="lineup"
@@ -19,9 +18,7 @@
         <option ng-repeat="nev in csapatnev" value="{{ nev }}" ng-if="key !== 'kepek'">
           {{ nev }}
         </option>
-
       </select>
-
     </div>
   </div>
 
@@ -34,7 +31,9 @@
       <!-- Dinamikus fejléc -->
       <thead>
         <tr ng-if="data.length">
-          <th  class="text-capitalize" ng-repeat="(key, value) in data[0]" ng-if="key !== 'kepek' && key !== 'csapatnev'">
+          <th  class="text-capitalize" 
+               ng-repeat="(key, value) in data[0]" 
+               ng-if="key !== 'kepek' && key !== 'csapatnev'">
             {{ $root.lang.data[key] }}
           </th>
         </tr>
@@ -43,8 +42,12 @@
       <tbody>
 
         <!-- Dinamikus sorok: csak a kiválasztott csapat -->
-        <tr ng-repeat="row in data" ng-if="row.csapatnev === kivalasztott_csapat">
-          <td ng-repeat="(key, value) in row" ng-if="key !== 'kepek' && key !== 'csapatnev'">{{ value }}</td>
+        <tr ng-repeat="row in data" 
+            ng-if="row.csapatnev === kivalasztott_csapat">
+          <td ng-repeat="(key, value) in row" 
+              ng-if="key !== 'kepek' && key !== 'csapatnev'">
+              {{ value }}
+          </td>
         </tr>
 
         <!-- Nincs adat -->

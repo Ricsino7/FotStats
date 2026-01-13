@@ -3,9 +3,12 @@
 
     <img src="./img/logo.png" alt="FotStats Logo" height="40" width="30px">
 
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" 
-            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-            aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler" type="button" 
+            data-bs-toggle="collapse" 
+            data-bs-target="#navbarSupportedContent" 
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false" 
+            aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
 
@@ -22,7 +25,8 @@
 
       <!-- DARK MODE -->
       <div class="mx-4">
-        <button class="btn theme-btn" ng-click="toggleTheme()">
+        <button class="btn theme-btn" 
+                ng-click="toggleTheme()">
           {{ $root.darkMode === "dark" ? '☀️ ' + $root.lang.data['light'] : '🌙 ' + $root.lang.data['dark'] }}
         </button>
       </div>
@@ -65,12 +69,8 @@
               style="cursor: pointer;">
               {{ item.name }} ({{ item.type }})
           </li>
-
-
         </ul>
-
       </div>
-
     </div>
   </div>
 </nav>

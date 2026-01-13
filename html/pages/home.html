@@ -1,7 +1,6 @@
 <div class="container">
   <div class="row mt-5">
     <div class="mx-3 d-flex align-items-center gap-3">
-
       <!-- Liga logó -->
       <img style="height: 90px; width: 110px;" 
            class="rounded"
@@ -16,7 +15,8 @@
               ng-model="kivalasztott_tabella"
               ng-change="tabella_kivalasztas()">
 
-        <option ng-repeat="Liga in Ligak" value="{{ Liga }}">
+        <option ng-repeat="Liga in Ligak" 
+                value="{{ Liga }}">
           {{ Liga }}
         </option>      
 
@@ -45,24 +45,24 @@
             </thead>
 
             <tbody>
-              <tr ng-repeat="row in data" ng-if="kivalasztott_tabella === row.Liga" >
-                <td ng-repeat="(key, value) in row" ng-if="key !== 'kepek' && key !== 'Liga'">
+              <tr ng-repeat="row in data" 
+                  ng-if="kivalasztott_tabella === row.Liga" >
+                <td ng-repeat="(key, value) in row" 
+                    ng-if="key !== 'kepek' && key !== 'Liga'">
                   {{ value }}
                 </td>
               </tr>
 
               <tr ng-if="!data.length">
-                <td colspan="10" class="text-center text-muted py-4">
+                <td colspan="10" 
+                    class="text-center text-muted py-4">
                   Nincs adat
                 </td>
               </tr>
             </tbody>
-
           </table>
-
         </div>
       </div>
-
     </div>
   </div>
 </div>
