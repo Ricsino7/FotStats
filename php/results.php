@@ -8,19 +8,19 @@ $db = new Database('fotstats');
 //Akkor 0-val fog visszatérni
 $rows = $db->execute("
 SELECT 
-    c1.nev AS Haz,
-    c2.nev AS Ven,
-    m.eredmeny AS Ered,
-    m.datum AS Dat,
-    l.nev AS Lig,
-    COALESCE(sh.golok, 0) AS 'HazaiGol', 
-    COALESCE(sh.lovesek, 0) AS 'HazaiLov',
-    COALESCE(sh.passzok, 0) AS 'HazaiPasszok',
-    COALESCE(sh.labdabirtoklas, 0.00) AS 'HazaiLabbirtoklas',
-    COALESCE(sv.golok, 0) AS 'VendegGol',
-    COALESCE(sv.lovesek, 0) AS 'VendegLoves',
-    COALESCE(sv.passzok, 0) AS 'VendegPasszok',
-    COALESCE(sv.labdabirtoklas, 0.00) AS 'VendegLabbirtoklas'
+  c1.nev AS Haz,
+  c2.nev AS Ven,
+  m.eredmeny AS Ered,
+  m.datum AS Dat,
+  l.nev AS Lig,
+  COALESCE(sh.golok, 0) AS 'HazaiGol', 
+  COALESCE(sh.lovesek, 0) AS 'HazaiLov',
+  COALESCE(sh.passzok, 0) AS 'HazaiPasszok',
+  COALESCE(sh.labdabirtoklas, 0.00) AS 'HazaiLabbirtoklas',
+  COALESCE(sv.golok, 0) AS 'VendegGol',
+  COALESCE(sv.lovesek, 0) AS 'VendegLoves',
+  COALESCE(sv.passzok, 0) AS 'VendegPasszok',
+  COALESCE(sv.labdabirtoklas, 0.00) AS 'VendegLabbirtoklas'
 FROM meccsek m
 INNER JOIN csapatok c1 ON m.csapat1_id = c1.id
 INNER JOIN csapatok c2 ON m.csapat2_id = c2.id
@@ -35,20 +35,20 @@ ORDER BY m.datum DESC
 if (empty($rows)) {
     $rows = $db->execute("
     SELECT 
-        m.id AS Meccs_ID,
-        c1.nev AS Hazai,
-        c2.nev AS Vendeg,
-        m.eredmeny AS Eredmény,
-        m.datum AS Dátum,
-        l.nev AS Liga,
-        0 AS Hazai_Golok,
-        0 AS Hazai_Lovesek,
-        0 AS Hazai_Passzok,
-        0.00 AS Hazai_Labbirtoklas,
-        0 AS Vendeg_Golok,
-        0 AS Vendeg_Lovesek,
-        0 AS Vendeg_Passzok,
-        0.00 AS Vendeg_Labbirtoklas
+      m.id AS Meccs_ID,
+      c1.nev AS Hazai,
+      c2.nev AS Vendeg,
+      m.eredmeny AS Eredmény,
+      m.datum AS Dátum,
+      l.nev AS Liga,
+      0 AS Hazai_Golok,
+      0 AS Hazai_Lovesek,
+      0 AS Hazai_Passzok,
+      0.00 AS Hazai_Labbirtoklas,
+      0 AS Vendeg_Golok,
+      0 AS Vendeg_Lovesek,
+      0 AS Vendeg_Passzok,
+      0.00 AS Vendeg_Labbirtoklas
     FROM meccsek m
     INNER JOIN csapatok c1 ON m.csapat1_id = c1.id
     INNER JOIN csapatok c2 ON m.csapat2_id = c2.id
@@ -59,4 +59,6 @@ if (empty($rows)) {
 
 $db = null;
 
+// Adatok JSON-ként visszaadása
+// Ha nincs adat, üres tömböt küldünk
 echo json_encode($rows ?: [], JSON_PRETTY_PRINT);

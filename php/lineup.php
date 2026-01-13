@@ -4,28 +4,26 @@ require_once('../../common/php/environment.php');
 $db = new Database('fotstats');
 
 $rows = $db->execute("
-    SELECT 
-        c.nev AS csapatnev,
-        j.nev AS jatekosnev,
-        CASE j.poszt_tmp
-            WHEN 'Csatár' THEN 'CS'
-            WHEN 'Szélső' THEN 'SZ'
-            WHEN 'Középpályás' THEN 'KP'
-            WHEN 'Védő' THEN 'HAT'
-            WHEN 'Kapus' THEN 'KAP'
-            WHEN 'Edző' THEN 'EDZ'
-            ELSE ''
-        END AS jatekosPoszt,
-        c.kep AS kepek
-    FROM csapatok c
-    LEFT JOIN jatekosok j ON c.id = j.csapat_id
-    WHERE j.id IS NOT NULL
+  SELECT 
+    c.nev AS csapatnev,
+    j.nev AS jatekosnev,
+    CASE j.poszt_tmp
+      WHEN 'Csatár' THEN 'CS'
+      WHEN 'Szélső' THEN 'SZ'
+      WHEN 'Középpályás' THEN 'KP'
+      WHEN 'Védő' THEN 'HAT'
+      WHEN 'Kapus' THEN 'KAP'
+      WHEN 'Edző' THEN 'EDZ'
+      ELSE ''
+    END AS jatekosPoszt,
+    c.kep AS kepek
+  FROM csapatok c
+  LEFT JOIN jatekosok j ON c.id = j.csapat_id
+  WHERE j.id IS NOT NULL
 ");
-
-
-
-
 
 $db = null;
 
+// Adatok JSON-ként visszaadása
+// Ha nincs adat, üres tömböt küldünk
 echo json_encode($rows ?: [], JSON_PRETTY_PRINT);

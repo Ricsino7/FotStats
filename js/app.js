@@ -74,8 +74,6 @@
       $urlRouterProvider.otherwise('/');
     }
   ])
-
-
     //Application run
     .run([
       '$rootScope',

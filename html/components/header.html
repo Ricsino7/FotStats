@@ -1,75 +1,120 @@
 <nav class="navbar navbar-expand-lg bg-body-tertiary custom-nav shadow-sm">
   <div class="container-fluid">
+    <img  src="./img/logo.png"
+          alt="FotStats Logo"
+          height="40"
+          width="30">
 
-    <img src="./img/logo.png" alt="FotStats Logo" height="40" width="30px">
-
-    <button class="navbar-toggler" type="button" 
-            data-bs-toggle="collapse" 
-            data-bs-target="#navbarSupportedContent" 
+    <button class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent"
-            aria-expanded="false" 
+            aria-expanded="false"
             aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
 
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <div class="collapse navbar-collapse"
+         id="navbarSupportedContent">
 
+      <!-- LEFT MENU (unchanged desktop) -->
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item"><a class="nav-link fw-bold" ui-sref="home">{{$root.lang.data.home}}</a></li>
-        <li class="nav-item"><a class="nav-link" ui-sref="matches">{{$root.lang.data.matches}}</a></li>
-        <li class="nav-item"><a class="nav-link" ui-sref="results">{{$root.lang.data.results}}</a></li>
-        <li class="nav-item"><a class="nav-link" ui-sref="lineup">{{$root.lang.data.lineup}}</a></li>
-        <li class="nav-item"><a class="nav-link" ui-sref="news">{{$root.lang.data.news}}</a></li>
-        <li class="nav-item"><a class="nav-link" ui-sref="rolunk">{{$root.lang.data.aboutus}}</a></li>
+        <li class="nav-item">
+          <a class="nav-link fw-bold"
+             ui-sref="home">
+            {{$root.lang.data.home}}
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link"
+             ui-sref="matches">
+            {{$root.lang.data.matches}}
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link"
+             ui-sref="results">
+            {{$root.lang.data.results}}
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link"
+             ui-sref="lineup">
+            {{$root.lang.data.lineup}}
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link"
+             ui-sref="news">
+            {{$root.lang.data.news}}
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link"
+             ui-sref="rolunk">
+            {{$root.lang.data.aboutus}}
+          </a>
+        </li>
       </ul>
 
-      <!-- DARK MODE -->
-      <div class="mx-4">
-        <button class="btn theme-btn" 
+      <!-- RIGHT SIDE -->
+      <div class="d-flex flex-column flex-lg-row align-items-start align-items-lg-center gap-2">
+
+        <button class="btn theme-btn"
+                type="button"
                 ng-click="toggleTheme()">
-          {{ $root.darkMode === "dark" ? '☀️ ' + $root.lang.data['light'] : '🌙 ' + $root.lang.data['dark'] }}
+          {{ $root.darkMode === "dark"
+            ? '☀️ ' + $root.lang.data['light']
+            : '🌙 ' + $root.lang.data['dark'] }}
         </button>
-      </div>
 
-      <!-- LANGUAGE SELECTOR -->
-      <div class="mx-3 d-flex align-items-center lang-box">
-        <img style="height: 30px; width: 30px;" class="mx-3 placeholder-flag">
-        
-        <select name="language" 
-                id="language" 
-                class="form-select lang-select"
-                ng-model="language"
-                ng-change="$root.changeLanguage()">
-          <option>HU</option>
-          <option>EN</option>
-          <option>DE</option>
-        </select>
-      </div>
+        <div class="d-flex align-items-center gap-2">
+          <img class="placeholder-flag d-none d-lg-block"
+               style="height: 30px; width: 30px;">
 
-      <!-- SEARCH (headerController kezeli, de nincs ng-controller itt) -->
-      <div class="position-relative">
+          <select class="form-select lang-select"
+                  name="language"
+                  id="language"
+                  ng-model="language"
+                  ng-change="$root.changeLanguage()">
+            <option>HU</option>
+            <option>EN</option>
+            <option>DE</option>
+          </select>
+        </div>
 
-        <form class="d-flex nav-search" role="search">
-          <input class="form-control me-2"
-                 type="search"
-                 placeholder="{{$root.lang.data['search']}}"
-                 ng-model="searchText"
-                 ng-change="doSearch()">
+        <div class="position-relative">
+          <form class="d-flex nav-search"
+                role="search">
+            <input class="form-control me-2"
+                   type="search"
+                   placeholder="{{$root.lang.data['search']}}"
+                   ng-model="searchText"
+                   ng-change="doSearch()">
 
-          <button class="btn search-btn" type="button">🔍</button>
-        </form>
+            <button class="btn search-btn"
+                    type="button">
+              🔍
+            </button>
+          </form>
 
-        <ul class="list-group position-absolute mt-2 w-100"
-            style="z-index: 999;"
-            ng-if="filtered.length">
-
-          <li class="list-group-item"
-              ng-repeat="item in filtered"
-              ng-click="goToItem(item)"
-              style="cursor: pointer;">
+          <ul class="list-group position-absolute mt-2 w-100"
+              style="z-index: 999;"
+              ng-if="filtered.length">
+            <li class="list-group-item"
+                ng-repeat="item in filtered"
+                ng-click="goToItem(item)"
+                style="cursor: pointer;">
               {{ item.name }} ({{ item.type }})
-          </li>
-        </ul>
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
   </div>
