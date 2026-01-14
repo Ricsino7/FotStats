@@ -173,7 +173,7 @@ body{
 }
 
 .big-news-card{
-  background: rgba(255, 255, 255, 0.1) !important;
+  background: rgba(34, 74, 182, 0.719) !important;
   border-radius: 15px !important;
   overflow: hidden;
   box-shadow: 0 8px 20px rgba(0, 255, 255, 0.3);
@@ -201,7 +201,7 @@ body{
   height: 700px;
   object-fit: cover;
   padding: 0 !important;
-  box-shadow: 0 6px 16px rgba(3, 23, 199, 0.842);
+  box-shadow: 0 6px 16px rgba(17, 163, 189, 0.842);
   transition: transform 0.35s, box-shadow 0.35s;
 }
 
@@ -215,16 +215,16 @@ body{
 }
 
 .small-news-item{
-  background: rgba(255,255,255,0.08);
+  background: rgba(34, 74, 182, 0.719);
   border-radius: 12px;
   padding: 10px 12px;
-  box-shadow: 0 6px 16px rgba(3, 23, 199, 0.842);
+  box-shadow: 0 6px 16px rgba(17, 163, 189, 0.842);
   transition: transform 0.35s, box-shadow 0.35s;
 }
 
 .small-news-item:hover{
   transform: scale(1.02);
-  box-shadow: 0 10px 22px rgba(9, 45, 206, 0.884);
+  box-shadow: 0 10px 22px rgba(8, 112, 230, 0.884);
 }
 
 .small-thumb{
@@ -236,8 +236,8 @@ body{
 .number-circle{
   width: 32px;
   height: 32px;
-  background: #e9f7ee;
-  color: #22b14c;
+  background: #147df5;
+  color: #0adbf7;
   font-weight: bold;
   border-radius: 50%;
   display: flex;
