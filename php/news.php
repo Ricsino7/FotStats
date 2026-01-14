@@ -1,17 +1,23 @@
 <?php
 require_once('../../common/php/environment.php');
 
+// adatbázis kapcsolat
 $db = new Database('fotstats');
-$rows = $db->execute(
-  "SELECT `cim` AS News,
-          `datum` AS Dátum, 
-            `forras` AS Forrás, 
-            `osszefoglalo` AS Hírek,
-            `kep` AS kepek
-  FROM `news`");
 
+// hírek lekérése
+$rows = $db->execute(
+  "SELECT 
+      cim AS News,
+      datum AS Dátum, 
+      forras AS Forrás, 
+      osszefoglalo AS Hírek,
+      kep AS kepek
+   FROM news"
+);
+
+// kapcsolat lezárása
 $db = null;
 
-// Adatok JSON-ként visszaadása
-// Ha nincs adat, üres tömböt küldünk
-echo json_encode($rows ?: [],JSON_PRETTY_PRINT);
+// JSON válasz frontendnek
+// ha nincs adat → üres tömb
+echo json_encode($rows ?: [], JSON_PRETTY_PRINT);

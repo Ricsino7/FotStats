@@ -1,13 +1,16 @@
 <?php
 require_once("../../common/php/environment.php");
 
+// adatbázis kapcsolat
 $db = new Database("fotstats");
 
+// csapatok lekérése
 $teams = $db->execute("
   SELECT id, nev 
   FROM csapatok
 ");
 
+// ligák lekérése
 $leagues = $db->execute("
   SELECT id, nev 
   FROM ligak
@@ -15,24 +18,24 @@ $leagues = $db->execute("
 
 $data = [];
 
-// csapatok hozzáadása
+// csapatok hozzáadása a keresőhöz
 foreach ($teams as $t) {
   $data[] = [
-    "id" => $t["id"],
+    "id"   => $t["id"],
     "name" => $t["nev"],
     "type" => "team"
   ];
 }
 
-// ligák hozzáadása
+// ligák hozzáadása a keresőhöz
 foreach ($leagues as $l) {
   $data[] = [
-    "id" => $l["id"],
+    "id"   => $l["id"],
     "name" => $l["nev"],
     "type" => "league"
   ];
 }
 
-// Adatok JSON-ként visszaadása
-// Ha nincs adat, üres tömböt küldünk 
+// JSON válasz frontendnek
+// ha nincs adat → üres tömb
 echo json_encode($data, JSON_PRETTY_PRINT);

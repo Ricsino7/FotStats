@@ -1,8 +1,10 @@
 <?php
 require_once('../../common/php/environment.php');
 
+// adatbázis kapcsolat
 $db = new Database('fotstats');
 
+// meccsek lekérése (hazai + vendég + liga)
 $rows = $db->execute("
   SELECT 
     c1.nev AS hazai,
@@ -15,8 +17,9 @@ $rows = $db->execute("
   INNER JOIN ligak l ON m.liga_id = l.id
 ");
 
+// kapcsolat lezárása
 $db = null;
 
-// Adatok JSON-ként visszaadása
-// Ha nincs adat, üres tömböt küldünk
-echo json_encode($rows ?: [],JSON_PRETTY_PRINT);
+// JSON válasz frontendnek
+// ha nincs adat → üres tömb
+echo json_encode($rows ?: [], JSON_PRETTY_PRINT);
