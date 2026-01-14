@@ -123,8 +123,8 @@ body{
   background: transparent !important;
   font-weight: 600;
   text-transform: uppercase;
-  color: #555;
-  border-bottom: 2px solid #ddd !important;
+  color: #0a40f1;
+  border-bottom: 2px solid #0824c2 !important;
 }
 
 .modern-table td{
@@ -135,6 +135,26 @@ body{
 .modern-table tbody tr:hover{
   background: #f1f3f5;
   transition: 0.2s;
+}
+
+.card-home {
+  border: 2px solid #0d6efd !important;
+  box-shadow: none;
+}
+
+.home-table th {
+  color: #0752f5;         
+  letter-spacing: 1px;
+}
+
+.home-table td {
+  color: #18a6e7;             
+  font-weight: 500;
+}
+
+.home-table tbody tr:hover {
+  background-color: rgba(13,110,253,.10) !important; 
+  transform: scale(1.01);
 }
 
 .sticky-header th{
