@@ -6,10 +6,9 @@
     '$scope', '$http',
     function($scope,$http) {
       // Inicializálunk egy üres tömböt a home oldali adatok tárolására
-    // Ide fogjuk betölteni a PHP-ból érkező JSON-t
-    $scope.data = [];
 
-    // Lekérjük az adatokat a home.php fájlból Angular $http segítségével
+    $scope.data = [];
+    //Lekérés
     $http.get('./php/matches.php') // az útvonal a PHP fájlhoz
 
         // Ha a lekérés sikeres, ezt a függvényt hívja meg

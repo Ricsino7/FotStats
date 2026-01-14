@@ -2,19 +2,30 @@
   'use strict';
 
   angular.module('app')
-  .controller('rolunkController',[
+  .controller('rolunkController', [
     '$scope',
     function($scope) {
+
+      // Csapattagok adatai
       $scope.teamMembers = [
-        { name: 'Bokor Richárd', 
-          role: 'Projektvezető(Cégtulajodonos)', 
-          image : './img/ricsi.jpg'},
-        { name: 'Kulcsár Tamás Ámon', 
-          role: 'Projektsegítő(Igazgató Úr)', 
-          image : './img/tomi.jpg'},
+        {
+          name: 'Bokor Richárd',
+          role: 'Projektvezető (cégtulajdonos)',
+          image: './img/ricsi.jpg'
+        },
+        {
+          name: 'Kulcsár Tamás Ámon',
+          role: 'Projektsegítő (igazgató úr)',
+          image: './img/tomi.jpg'
+        }
       ];
-      $scope.aboutText = `Ez egy olyan oldal ami összehozza az embereket és a 
-                          futball világát a futball világának híreivel és eredményeivel;)`;
+
+      // Rólunk szöveg
+      $scope.aboutText =
+        'Ez egy olyan oldal, ami összehozza az embereket és ' +
+        'a futball világát a futball világának híreivel és eredményeivel ;)';
+
     }
   ]);
+
 })(window, angular);

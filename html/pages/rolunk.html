@@ -1,18 +1,41 @@
 <div class="container">
-  <h1 class="header display-5 fw-bold">Rolunk</h1>
-  <p class="text-center">{{ aboutText }}</p>
-  <h3 class="text-center fw-bold">Csapatunk</h3>
+
+  <!-- Oldal cím -->
+  <h1 class="header display-5 fw-bold">
+    Rolunk
+  </h1>
+
+  <!-- Bemutatkozó szöveg -->
+  <p class="text-center">
+    {{ aboutText }}
+  </p>
+
+  <!-- Csapat szekció -->
+  <h3 class="text-center fw-bold">
+    Csapatunk
+  </h3>
+
   <div class="team">
-    <div class="team-member" ng-repeat="member in teamMembers">
-      <img ng-src="{{member.image}}" alt="{{member.name}}">
+
+    <!-- Csapattagok listája -->
+    <div class="team-member"
+         ng-repeat="member in teamMembers">
+
+      <!-- Profilkép -->
+      <img ng-src="{{member.image}}"
+           alt="{{member.name}}">
+
+      <!-- Név -->
       <p>
-        <strong>
-          {{ member.name }}
-        </strong>
+        <strong>{{ member.name }}</strong>
       </p>
+
+      <!-- Szerepkör -->
       <p>
         {{ member.role }}
       </p>
+
     </div>
   </div>
+
 </div>
