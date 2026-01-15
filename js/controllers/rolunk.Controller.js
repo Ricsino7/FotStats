@@ -14,8 +14,8 @@
           image: './img/ricsi.jpg'
         },
         {
-          name: 'Kulcsár Tamás Ámon',
-          role: 'Projektsegítő (igazgató úr)',
+          name2: 'Kulcsár Tamás Ámon',
+          role2: 'Projektsegítő (igazgató úr)',
           image: './img/tomi.jpg'
         }
       ];

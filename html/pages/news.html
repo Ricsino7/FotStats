@@ -14,14 +14,14 @@
              ng-src="./img/{{block.big.kepek}}" />
 
         <div class="card-body">
-          <h4 class="fw-bold">{{ block.big.news }}</h4>
+          <h4 class="fw-bold">{{ $root.lang.data[block.big.news] }}</h4>
 
           <p class="text-muted">
             {{ block.big['datum'] }} • {{ block.big['forras'] }}
           </p>
 
           <p class="text-light">
-            {{ block.big['hirek'] }}
+            {{  $root.lang.data[block.big['hirek']] }}
           </p>
         </div>
       </div>
