@@ -23,7 +23,7 @@
       // Rólunk szöveg
       $scope.aboutText =
         'Ez egy olyan oldal, ami összehozza az embereket és ' +
-        'a futball világát a futball világának híreivel és eredményeivel ;)';
+        'a futball világát, a futball világának híreivel és eredményeivel;)';
 
     }
   ]);
