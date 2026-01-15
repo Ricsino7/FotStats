@@ -42,5 +42,11 @@
   "squad":"A 25-26 szezon csapatainak játékosai",
   "jatekosnev":"játékosnév",
   "jatekosPoszt":"játékosposzt",
-  "CS":"Csatár"
+  "csatar":"Csatár",
+  "szelso":"Szélső",
+  "kozeppalyas": "Középpályás",
+  "vedo" : "Védő",
+  "kapus": "Kapus",
+  "edzo":"Edző",
+  "hirleiras":"Lefrisebb híreink a 25-26-os szezonból"
 }

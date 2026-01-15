@@ -39,5 +39,13 @@
   "VendegLoves":"AT shost",
   "VendegPasszok":"AT passes",
   "VendegLabbirtoklas":"AT possession",
-  "CS":"Forward"
+  "squad":"The 25-26 season team players",
+  "jatekosnev":"playername",
+  "jatekosPoszt":"playerposition",
+  "csatar":"Forward",
+  "szelso":"Winger",
+  "kozeppalyas": "Midfielder",
+  "vedo" : "Defender",
+  "kapus": "Goalkeeper",
+  "edzo":"Coach"
 }

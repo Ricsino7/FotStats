@@ -38,5 +38,14 @@
   "VendegGol":"auswärts ziele",
   "VendegLoves":"auswärts Schüsse",
   "VendegPasszok":"auswärts pässe",
-  "VendegLabbirtoklas":"auswärts allbesitz"
+  "VendegLabbirtoklas":"auswärts allbesitz",
+  "squad":"Spieler der Mannschaften der Saison 25-26",
+  "jatekosnev":"Spielername",
+  "jatekosPoszt":"Spielerposition",
+  "csatar":"Stürmer",
+  "szelso":"Flügelspieler",
+  "kozeppalyas": "Mittelfeldspieler",
+  "vedo" : "Verteidiger",
+  "kapus": "Torwart",
+  "edzo":"Trainer"
 }

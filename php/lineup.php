@@ -12,12 +12,12 @@ $rows = $db->execute("
 
     -- poszt rövidítés
     CASE j.poszt_tmp
-      WHEN 'Csatár' THEN 'CS'
-      WHEN 'Szélső' THEN 'SZ'
-      WHEN 'Középpályás' THEN 'KP'
-      WHEN 'Védő' THEN 'HAT'
-      WHEN 'Kapus' THEN 'KAP'
-      WHEN 'Edző' THEN 'EDZ'
+      WHEN 'Csatár' THEN 'csatar'
+      WHEN 'Szélső' THEN 'szelso'
+      WHEN 'Középpályás' THEN 'kozeppalyas'
+      WHEN 'Védő' THEN 'vedo'
+      WHEN 'Kapus' THEN 'kapus'
+      WHEN 'Edző' THEN 'edzo'
       ELSE ''
     END AS jatekosPoszt,
 

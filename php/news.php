@@ -7,10 +7,10 @@ $db = new Database('fotstats');
 // hírek lekérése
 $rows = $db->execute(
   "SELECT 
-      cim AS News,
-      datum AS Dátum, 
-      forras AS Forrás, 
-      osszefoglalo AS Hírek,
+      cim AS news,
+      datum AS datum, 
+      forras AS forras, 
+      osszefoglalo AS hirek,
       kep AS kepek
    FROM news"
 );
