@@ -162,7 +162,7 @@ body{
   position: sticky;
   top: 0;
   z-index: 10;
-  background: #212529;
+  background: rgba(34, 74, 182, 0.719);
 }
 
 .dark-card{
@@ -289,4 +289,28 @@ body{
   .big-news-card .big-img{
     height: 420px;
   }
+}
+
+.table-striped td{
+  color: #18e0e7;
+  background-color: rgba(34, 74, 182, 0.719);
+}
+
+.table-bordered th{
+  color: #18e0e7;
+  background-color: rgba(34, 74, 182, 0.719);
+}
+
+.form-select{
+  color: #18e0e7;
+  background-color: rgba(34, 74, 182, 0.719);
+}
+
+.form-control{
+  background-color: rgba(34, 74, 182, 0.719);
+}
+
+.list-group-item{
+  color: #18e0e7;
+  background-color: rgba(34, 74, 182, 0.719);
 }
