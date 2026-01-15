@@ -46,7 +46,8 @@
             ng-if="row.csapatnev === kivalasztott_csapat">
           <td ng-repeat="(key, value) in row" 
               ng-if="key !== 'kepek' && key !== 'csapatnev'">
-              {{ value }}
+              <span ng-if="key !== 'jatekosPoszt'">{{ value }}</span>
+              <span ng-if="key === 'jatekosPoszt'">{{ $root.lang.data[value] }}</span>
           </td>
         </tr>
 
