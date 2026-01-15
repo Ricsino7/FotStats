@@ -1,0 +1,54 @@
+<h1 class="fw-bold text-center my-4 header"> {{ $root.lang.data.hirleiras }}</h1>
+
+<div class="container">
+
+  <!-- 1 nagy + 4 kicsi blokk -->
+  <div class="row g-4 news-block d-flex-row"
+       ng-repeat="x in data track by $index ">
+
+      <!-- BAL OLDAL – nagy hír -->
+      <div class="col-12 col-lg-7"
+           ng-if="$index % 5 === 0">
+        <div class="card shadow-lg border-0 rounded-4 big-news-card">
+
+          <img class="card-img-top big-img py-5"
+              ng-src="./img/{{x.kepek}}" />
+
+          <div class="card-body">
+            <h4 class="fw-bold">{{ $root.lang.data[x.news] }}</h4>
+
+            <p class="text-muted">
+              {{ x.datum }} • {{ x.forras }}
+            </p>
+
+            <p class="text-light">
+              {{ $root.lang.data[x.hirek] }}
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- JOBB OLDAL – 4 kicsi hír -->
+      <div class="col-12 col-lg-5"
+           ng-if="$index % 5 !== 0">
+
+        <div class="small-news-item d-flex align-items-center mb-3">
+
+          <div class="number-circle">
+            {{ $index }}
+          </div>
+
+          <div class="flex-grow-1 ms-3">
+            <h6 class="fw-semibold mb-1">{{ $root.lang.data[x.news] }}</h6>
+
+            <small class="text-muted">
+              {{ x.datum }} • {{ x.forras }}
+            </small>
+          </div>
+          <img ng-src="./img/{{x.kepek}}" 
+               class="small-thumb rounded">
+        </div>
+      </div>
+  </div>
+</div>
+

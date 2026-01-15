@@ -63,6 +63,12 @@
           controller: 'newsController',
           templateUrl: './html../pages/news.html'
         })
+        .state('news2', {
+          url: '/news2',
+          parent: 'root',
+          controller: 'news2Controller',
+          templateUrl: './html../pages/news2.html'
+        })
 
        .state('lineup', {
            url: '/lineup?selectedTeam',
