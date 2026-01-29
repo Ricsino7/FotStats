@@ -9,7 +9,7 @@
     $scope.data = [];
     //Lekérés
     $http.get('./php/bet.php') // az útvonal a PHP fájlhoz
-
+    
         // Ha a lekérés sikeres, ezt a függvényt hívja meg
         .then(function(response) {
             // response.data tartalmazza a PHP által visszaadott JSON tömböt
