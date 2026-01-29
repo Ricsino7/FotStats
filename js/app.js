@@ -69,6 +69,13 @@
           parent: 'root',
           controller: 'lineupController',
           templateUrl: './html../pages/lineup.html'
+        })
+
+        .state('bet', {
+           url: '/bet',
+          parent: 'root',
+          controller: 'betController',
+          templateUrl: './html../pages/bet.html'
         });
 
       $urlRouterProvider.otherwise('/');

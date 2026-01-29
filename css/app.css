@@ -314,3 +314,37 @@ body{
   color: #18e0e7;
   background-color: rgba(34, 74, 182, 0.719);
 }
+
+.btn-login{
+  color:  #18e0e7;
+  background-color: rgba(34, 74, 182, 0.719);
+}
+
+.btn-register{
+  color:  #18e0e7;
+  background-color: rgba(34, 74, 182, 0.719);
+}
+
+.btn-login:hover{
+  color: #0db9fd;
+}
+
+.btn-register:hover{
+  color: #0db9fd;
+}
+
+.fav-star {
+  cursor: pointer;
+  font-size: 20px;
+  color: #ccc;
+  transition: all 0.2s ease;
+}
+
+.fav-star:hover {
+  transform: scale(1.2);
+  color: #999;
+}
+
+.fav-star.active {
+  color: #f5c518; /* arany */
+}
