@@ -1,53 +1,66 @@
-<h1 class="fw-bold text-center my-4 header"> {{ $root.lang.data.hirleiras }}</h1>
-
 <div class="container">
 
-  <!-- 1 nagy + 4 kicsi blokk -->
-  <div class="row g-4 news-block" ng-repeat="block in groupedNews">
+  <h1 class="fw-bold text-center my-5 header"> 
+    {{ $root.lang.data.hirleiras }}
+  </h1>
 
+  <div class="row g-4 news-block"
+       ng-repeat-start="x in data track by $index"
+       ng-if="$index % 5 === 0">
 
-    <!-- BAL OLDAL – nagy hír -->
+    <!-- BAL – nagy hír -->
     <div class="col-12 col-lg-7">
-      <div class="card shadow-lg border-0 rounded-4 big-news-card">
+      <div class="card shadow-lg border-0 rounded-4 big-news-card"
+           data-news-index="{{$index}}">
 
         <img class="card-img-top big-img py-5"
-             ng-src="./img/{{block.big.kepek}}" />
+             ng-src="./img/{{x.kepek}}" />
 
         <div class="card-body">
-          <h4 class="fw-bold">{{ $root.lang.data[block.big.news] }}</h4>
+          <h4 class="fw-bold">{{ $root.lang.data[x.news] }}</h4>
 
           <p class="text-muted">
-            {{ block.big['datum'] }} • {{ block.big['forras'] }}
+            {{ x.datum }} • {{ x.forras }}
           </p>
 
           <p class="text-light">
-            {{  $root.lang.data[block.big['hirek']] }}
+            {{x.hirek}}
           </p>
         </div>
       </div>
     </div>
 
-    <!-- JOBB OLDAL – 4 kicsi hír -->
+    <!-- JOBB – 4 kicsi -->
     <div class="col-12 col-lg-5">
-
-      <div class="small-news-item d-flex align-items-center mb-3"
-           ng-repeat="item in block.small">
+      <div class="small-news-item d-flex align-items-center mb-3 cursor-pointer"
+           ng-repeat="y in data.slice($index + 1, $index + 5)"
+           ng-init="currentIndex=$parent.$index + $index + 1"
+           ng-click="swapWithBig(currentIndex)"
+           data-news-index="{{currentIndex}}">
 
         <div class="number-circle">
-          {{ $parent.$index * 5 + $index + 1 }}
+          {{ currentIndex }}
         </div>
 
         <div class="flex-grow-1 ms-3">
-          <h6 class="fw-semibold mb-1">{{ item.news }}</h6>
+          <h6 class="fw-semibold mb-1">
+            {{y.news}}
+          </h6>
 
           <small class="text-muted">
-            {{ item['datum'] }} • {{ item['forras'] }}
+            {{ y.datum }} • {{ y.forras }}
           </small>
         </div>
-        <img ng-src="./img/{{item.kepek}}" 
+
+        <img ng-src="./img/{{y.kepek}}"
              class="small-thumb rounded">
       </div>
     </div>
   </div>
+
+  <!-- lezárás -->
+  <div ng-repeat-end></div>
+
 </div>
+
 
