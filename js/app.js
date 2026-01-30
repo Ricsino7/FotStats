@@ -71,6 +71,20 @@
           templateUrl: './html../pages/lineup.html'
         })
 
+        .state('login', {
+           url: '/login',
+          parent: 'root',
+          controller: 'loginController',
+          templateUrl: './html../pages/login.html'
+        })
+
+        .state('register', {
+           url: '/register',
+          parent: 'root',
+          controller: 'registerController',
+          templateUrl: './html../pages/register.html'
+        })
+
         .state('bet', {
            url: '/bet',
           parent: 'root',
