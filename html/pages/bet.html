@@ -1,5 +1,46 @@
 <div class="container">
-    <div class="row">
-        <h1>{{$root.lang.data.hamar}}</h1>
+  <div class="row">
+
+    <!--A gombok letre hozasa + a gombokhoz esemeny letre hozasa ra-->
+    <div class="d-flex gap-2 mb-3">
+      <button class="btn"
+              ng-class="activeTab === '1x2' ? 'btn-primary' : 'btn-outline-primary'"
+              ng-click="setTab('1x2')">
+        1X2
+      </button>
+
+      <button class="btn"
+              ng-class="activeTab === 'goals' ? 'btn-primary' : 'btn-outline-primary'"
+              ng-click="setTab('goals')">
+        Gólszám
+      </button>
+
+      <button class="btn"
+              ng-class="activeTab === 'corners' ? 'btn-primary' : 'btn-outline-primary'"
+              ng-click="setTab('corners')">
+        Szögletek
+      </button>
     </div>
+
+  <!--Adatok a kártyákhoz + a kártyák hozzád rendeláse a tabhoz/gombokhoz -->
+    <div class="card p-3 shadow-sm rounded-4">
+
+      <div ng-show="activeTab === '1x2'">
+        <h5>1X2</h5>
+        <p>HAZAI DÖNTETLEN VENDÉG FOGADÁSI OPCIOK HELYE</p>
+      </div>
+
+      <div ng-show="activeTab === 'goals'">
+        <h5>Gólszám</h5>
+        <p>TÖBB MINT VAGY KEVESEBB MINT VALAMENNYI GOLSZAL + Mindkét csapat szerez gólt</p>
+      </div>
+
+      <div ng-show="activeTab === 'corners'">
+        <h5>Szögletek</h5>
+        <p>SZÖGLET SZÁMOK + KINEK LESZ TÖBB SZÖGLETE HAZAI V VENDÉG.</p>
+      </div>
+
+    </div>
+    </div>
+  </div>  
 </div>

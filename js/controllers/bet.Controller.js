@@ -7,6 +7,11 @@
     function($scope,$http) {
 
     $scope.data = [];
+    $scope.activeTab = '1x2';
+
+    $scope.setTab = function(tab) {
+      $scope.activeTab = tab;
+    };
     //Lekérés
     $http.get('./php/bet.php') // az útvonal a PHP fájlhoz
     
@@ -18,6 +23,8 @@
             $scope.data = response.data;
 
         })
+
+        
 
         // Ha valami hiba történik a lekérés során, ezt a függvényt hívja meg
         .catch(function(error) {
