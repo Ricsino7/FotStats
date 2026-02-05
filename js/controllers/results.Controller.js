@@ -2,8 +2,9 @@
   'use strict';
 
   angular.module('app')
-  .controller('resultsController', ['$scope', '$http', function($scope, $http) {
-
+  .controller('resultsController', ['$scope','$rootScope','$http', function($scope,$rootScope,$http) {
+    console.log($rootScope.user)
+    
     // Inicializálunk egy üres tömböt a hírek tárolására
     // Ide fogja betölteni a PHP-ból érkező JSON adatokat
   $scope.data = [];

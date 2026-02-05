@@ -3,28 +3,26 @@
 
   angular.module('app')
   .controller('loginController',[
-    '$scope', '$http',
-    function($scope,$http) {
-
-    $scope.data = [];
-    //Lekérés
-    $http.get('./php/login.php') // az útvonal a PHP fájlhoz
-    
-        // Ha a lekérés sikeres, ezt a függvényt hívja meg
-        .then(function(response) {
-            // response.data tartalmazza a PHP által visszaadott JSON tömböt
-            // Ezt betöltjük az Angular scope változójába
-            // Így a HTML-ben az ng-repeat automatikusan frissíti a táblázatot
-            $scope.data = response.data;
-
+    '$scope', 'http','$rootScope','$state',
+    function($scope,http,$rootScope,$state) {
+      $scope.loginButton = function () {
+        http.request({
+          url:"./php/login.php",
+          data : $scope.loginData
         })
-
-        // Ha valami hiba történik a lekérés során, ezt a függvényt hívja meg
-        .catch(function(error) {
-
-            // Kiírjuk a konzolra a hibát, hogy lássuk mi ment rosszul
-            console.error("Hiba a lekérésnél:", error);
-        });
+        .then(response => {
+          console.log(response);
+          if (response == null) {
+            alert("Sikertelen Bejelentkezés! ");
+          }else{
+            alert("Sikeres Bejelentkezés!");
+            $rootScope.user = response;
+            $rootScope.$applyAsync();
+            $state.go('home');
+          }
+        })
+        .catch(e => console.error(e));
+      }
     }
   ]);
 

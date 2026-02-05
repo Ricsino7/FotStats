@@ -4,28 +4,29 @@
 
   angular.module('app')
   .controller('registerController',[
-    '$scope', '$http',
-    function($scope,$http) {
-
-    $scope.data = [];
-    //Lekérés
-    $http.get('./php/register.php') // az útvonal a PHP fájlhoz
-    
-        // Ha a lekérés sikeres, ezt a függvényt hívja meg
-        .then(function(response) {
-            // response.data tartalmazza a PHP által visszaadott JSON tömböt
-            // Ezt betöltjük az Angular scope változójába
-            // Így a HTML-ben az ng-repeat automatikusan frissíti a táblázatot
-            $scope.data = response.data;
-
+    '$scope', 'http',
+    function($scope,http) {
+      $scope.registerButton = function () {
+        console.log($scope.registerData);
+        delete $scope.registerData['passwordConfirm'];
+        delete $scope.registerData['radio'];
+        console.log($scope.registerData);
+        http.request({
+          url: "./php/register.php",
+          data: $scope.registerData
         })
+        .then(response => {
+          console.log(response);
+          if (response == null) {
+            alert("Az email vagy a felhasználónév már foglalt");
+          }else {
+            alert("Sikeres Regisztráció!");
+          }
+        })
+        .catch(e => console.error(e));
+      }
 
-        // Ha valami hiba történik a lekérés során, ezt a függvényt hívja meg
-        .catch(function(error) {
-
-            // Kiírjuk a konzolra a hibát, hogy lássuk mi ment rosszul
-            console.error("Hiba a lekérésnél:", error);
-        });
+    
     }
   ]);
 

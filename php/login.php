@@ -1,18 +1,26 @@
 <?php
-require_once('../../common/php/environment.php');
 
-// adatbázis kapcsolat
-$db = new Database('fotstats');
+require_once("../../common/php/environment.php");
 
-// hírek lekérése
-$rows = $db->execute(
-  ""
-);
+$db = new Database('fotstats'); 
 
-// kapcsolat lezárása
+$args = Util::getArgs();
+
+$query = "SELECT
+              `id`,
+              `username`,
+              `email`,
+              `password`,
+              `role`,
+              `created_at`
+           FROM
+               `users`
+           WHERE
+               `email` = :email AND
+               `password` = :password";
+
+$result = $db->execute($query, $args);
+
 $db = null;
 
-// JSON válasz frontendnek
-// ha nincs adat → üres tömb
-echo json_encode($rows ?: [], JSON_UNESCAPED_UNICODE | 
-                              JSON_UNESCAPED_SLASHES);
+Util::setResponse($result);
