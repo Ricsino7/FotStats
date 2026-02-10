@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Gép: 127.0.0.1
--- Létrehozás ideje: 2026. Jan 29. 13:05
+-- Létrehozás ideje: 2026. Feb 10. 07:37
 -- Kiszolgáló verziója: 10.4.32-MariaDB
 -- PHP verzió: 8.2.12
 
@@ -20,6 +20,43 @@ SET time_zone = "+00:00";
 --
 -- Adatbázis: `fotstats`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Tábla szerkezet ehhez a táblához `bet`
+--
+
+CREATE TABLE `bet` (
+  `id` int(11) NOT NULL,
+  `meccs_id` int(11) NOT NULL,
+  `odd_hazai` decimal(5,2) DEFAULT NULL,
+  `odd_dontetlen` decimal(5,2) DEFAULT NULL,
+  `odd_vendeg` decimal(5,2) DEFAULT NULL,
+  `odd_over_15` decimal(5,2) DEFAULT NULL,
+  `odd_under_15` decimal(5,2) DEFAULT NULL,
+  `odd_over_25` decimal(5,2) DEFAULT NULL,
+  `odd_under_25` decimal(5,2) DEFAULT NULL,
+  `odd_btts_igen` decimal(5,2) DEFAULT NULL,
+  `odd_btts_nem` decimal(5,2) DEFAULT NULL,
+  `odd_szoglet_over_75` decimal(5,2) DEFAULT NULL,
+  `odd_szoglet_under_75` decimal(5,2) DEFAULT NULL,
+  `odd_tobb_szoglet_hazai` decimal(5,2) DEFAULT NULL,
+  `odd_tobb_szoglet_vendeg` decimal(5,2) DEFAULT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+
+--
+-- A tábla adatainak kiíratása `bet`
+--
+
+INSERT INTO `bet` (`id`, `meccs_id`, `odd_hazai`, `odd_dontetlen`, `odd_vendeg`, `odd_over_15`, `odd_under_15`, `odd_over_25`, `odd_under_25`, `odd_btts_igen`, `odd_btts_nem`, `odd_szoglet_over_75`, `odd_szoglet_under_75`, `odd_tobb_szoglet_hazai`, `odd_tobb_szoglet_vendeg`, `created_at`) VALUES
+(1, 1, 1.85, 3.40, 4.20, 1.30, 3.20, 1.75, 2.05, 1.65, 2.20, 1.90, 1.90, 1.80, 2.00, '2026-02-10 06:35:49'),
+(2, 2, 2.10, 3.10, 3.60, 1.45, 2.70, 1.95, 1.85, 1.72, 2.05, 1.85, 1.95, 1.75, 2.10, '2026-02-10 06:35:49'),
+(3, 3, 1.95, 3.50, 3.80, 1.25, 3.60, 1.65, 2.20, 1.55, 2.35, 1.88, 1.92, 1.90, 1.95, '2026-02-10 06:35:49'),
+(4, 4, 2.30, 3.00, 3.10, 1.55, 2.45, 2.05, 1.75, 1.80, 1.95, 1.92, 1.88, 1.85, 2.05, '2026-02-10 06:35:49'),
+(5, 5, 1.40, 4.20, 6.50, 1.20, 4.00, 1.55, 2.40, 1.60, 2.30, 1.75, 2.10, 2.00, 1.80, '2026-02-10 06:35:49'),
+(6, 6, 2.00, 3.25, 3.50, 1.50, 2.55, 1.90, 1.90, 1.70, 2.10, 1.95, 1.85, 1.78, 2.02, '2026-02-10 06:35:49');
 
 -- --------------------------------------------------------
 
@@ -1135,11 +1172,19 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `username`, `email`, `password`, `role`, `created_at`) VALUES
-(1, 'admin', 'admin@admin.hu', '12345', 'admin', '2026-01-29 11:59:37');
+(1, 'admin', 'admin@admin.hu', '12345', 'admin', '2026-01-29 11:59:37'),
+(2, 'asd', 'a.aa@gmail.com', '12345678', 'user', '2026-02-10 06:26:59');
 
 --
 -- Indexek a kiírt táblákhoz
 --
+
+--
+-- A tábla indexei `bet`
+--
+ALTER TABLE `bet`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `meccs_id` (`meccs_id`);
 
 --
 -- A tábla indexei `csapatok`
@@ -1206,6 +1251,12 @@ ALTER TABLE `users`
 --
 
 --
+-- AUTO_INCREMENT a táblához `bet`
+--
+ALTER TABLE `bet`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
 -- AUTO_INCREMENT a táblához `csapatok`
 --
 ALTER TABLE `csapatok`
@@ -1251,11 +1302,17 @@ ALTER TABLE `statisztikak`
 -- AUTO_INCREMENT a táblához `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- Megkötések a kiírt táblákhoz
 --
+
+--
+-- Megkötések a táblához `bet`
+--
+ALTER TABLE `bet`
+  ADD CONSTRAINT `bet_ibfk_1` FOREIGN KEY (`meccs_id`) REFERENCES `meccsek` (`id`);
 
 --
 -- Megkötések a táblához `csapatok`
