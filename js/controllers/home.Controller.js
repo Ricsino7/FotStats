@@ -62,6 +62,29 @@
       }
     };
 
+    $scope.kepek = [0, 1, 2];
+
+    $scope.szponzorok = [
+        {
+            nev: 'Nike',
+            kep: './img/szponzorok/nike_logo.jpg',
+            leiras: 'A legjobb ötözékekért!',
+            url: 'https://nike.com'
+        },
+        {
+            nev: 'Telekom',
+            kep: './img/szponzorok/telekom.jpg',
+            leiras: 'A legjobb szolgáltatásért!',
+            url: 'https://telekom.hu'
+        },
+        {
+            nev: 'Tippmixpro',
+            kep: './img/szponzorok/tippmixpro.jpg',
+            leiras: 'Játssz velünk most!',
+            url: 'https://tippmixpro.hu'
+        }
+    ];
+
   }]);
 
 })(window, angular);

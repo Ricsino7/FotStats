@@ -3,7 +3,6 @@
   <!-- Liga választó + logó -->
   <div class="row mt-5">
     <div class="mx-3 d-flex flex-column flex-sm-row align-items-center gap-3">
-
       <!-- Kiválasztott liga logó -->
       <img class="rounded img-fluid liga-logo"
            ng-src="img/liga_logos/{{kivalasztott_kep}}"
@@ -15,20 +14,18 @@
               class="form-select shadow-sm rounded-3 w-100 w-sm-auto"
               ng-model="kivalasztott_tabella"
               ng-change="tabella_kivalasztas()">
-
         <!-- Ligák listája -->
         <option ng-repeat="Liga in Ligak" value="{{ Liga }}">
           {{ Liga }}
         </option>
-
       </select>
     </div>
   </div>
 
-  <!-- Tabella -->
+  <!-- Tabella és Szponzorok -->
   <div class="row mt-5 justify-content-center">
-    <div class="col-lg-10">
-
+    <!-- Táblázat - bal oldal -->
+    <div class="col-lg-8 col-xl-9">
       <!-- Cím fordításból -->
       <h2 class="fw-bold mb-3">
         {{ $root.lang.data.title }}
@@ -36,50 +33,76 @@
 
       <div class="card shadow-lg border-0 rounded-4 card-home">
         <div class="card-body p-4">
-
           <div class="table-responsive">
             <table class="table modern-table home-table">
+              <!-- Fejléc -->
+              <thead>
+                <tr>
+                  <!-- Dinamikus oszlopnevek (kép + liga kihagyva) -->
+                  <th ng-repeat="(key, value) in data[0]"
+                      ng-if="key !== 'kepek' && key !== 'Liga'">
+                    {{ $root.lang.data[key] }}
+                  </th>
+                </tr>
+              </thead>
 
+              <!-- Tartalom -->
+              <tbody>
+                <!-- Csak a kiválasztott liga sorai -->
+                <tr ng-repeat="row in data"
+                    ng-if="kivalasztott_tabella === row.Liga">
+                  <td ng-repeat="(key, value) in row"
+                      ng-if="key !== 'kepek' && key !== 'Liga'">
+                    {{ value }}
+                  </td>
+                </tr>
 
-            <!-- Fejléc -->
-            <thead>
-              <tr>
-                <!-- Dinamikus oszlopnevek (kép + liga kihagyva) -->
-                <th ng-repeat="(key, value) in data[0]"
-                    ng-if="key !== 'kepek' && key !== 'Liga'">
-                  {{ $root.lang.data[key] }}
-                </th>
-              </tr>
-            </thead>
-
-            <!-- Tartalom -->
-            <tbody>
-
-              <!-- Csak a kiválasztott liga sorai -->
-              <tr ng-repeat="row in data"
-                  ng-if="kivalasztott_tabella === row.Liga">
-
-                <td ng-repeat="(key, value) in row"
-                    ng-if="key !== 'kepek' && key !== 'Liga'">
-                  {{ value }}
-                </td>
-
-              </tr>
-
-              <!-- Nincs adat -->
-              <tr ng-if="!data.length">
-                <td colspan="10"
-                    class="text-center text-muted py-4">
-                  Nincs adat
-                </td>
-              </tr>
-
-            </tbody>
-          </table>
+                <!-- Nincs adat -->
+                <tr ng-if="!data.length">
+                  <td colspan="10"
+                      class="text-center text-muted py-4">
+                    Nincs adat
+                  </td>
+                </tr>
+              </tbody>
+            </table>
           </div>
         </div>  
       </div>
     </div>
-  </div>
 
+    <!-- Szponzorok - jobb oldal -->
+    <div class="col-lg-4 col-xl-3 mt-4 mt-lg-0">
+      <div style="top: 20px;">
+        <div class="card shadow border-0 rounded-4">
+          <div class="card-body p-4">
+            <h5 class="text-center mb-4 fw-bold">🤝 A csapat mögött:</h5>
+
+            <div class="szponzor-lista">
+              <a ng-href="{{sz.url}}" 
+                 target="_blank"
+                 rel="noopener noreferrer"
+                 class="text-decoration-none d-block"
+                 ng-repeat="sz in szponzorok">
+
+                <div class="szponzor-card text-center p-3 mb-3 border rounded-3">
+                  <img ng-src="{{sz.kep}}" 
+                       alt="{{sz.nev}}" 
+                       class="img-fluid mb-3 rounded-3"
+                       style="cursor: pointer; max-height: 80px; object-fit: contain;">
+                  <h6 class="fw-bold mb-2 text-dark">{{sz.nev}}</h6>
+                  <p class="leiras text-muted small mb-0">{{sz.leiras}}</p>
+                </div>
+
+              </a>
+            </div>
+
+            <!-- Üres állapot -->
+          <div ng-if="!szponzorok.length" class="text-center py-4">
+            <p class="text-muted">Jelenleg nincs szponzorunk</p>
+          </div>
+
+      </div>
+    </div>
+  </div>
 </div>

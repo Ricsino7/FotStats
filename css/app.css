@@ -359,3 +359,32 @@ body{
     max-height: 60px;
   }
 }
+
+/* Szponzor kártyák stílusa */
+.szponzor-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background-color: rgba(34, 74, 182, 0.719);
+}
+
+.szponzor-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* Reszponzív beállítások */
+@media (max-width: 992px) {
+  
+  .szponzor-card img {
+    max-height: 60px !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .liga-logo {
+    max-width: 60px;
+  }
+}
+
+.leiras{
+  color: #0824c2;
+}
