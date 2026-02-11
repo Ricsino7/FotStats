@@ -2,19 +2,17 @@
 
   <!-- Liga választó + logó -->
   <div class="row mt-5">
-    <div class="mx-3 d-flex align-items-center gap-3">
+    <div class="mx-3 d-flex flex-column flex-sm-row align-items-center gap-3">
 
       <!-- Kiválasztott liga logó -->
-      <img style="height: 90px; width: 110px;"
-           class="rounded"
+      <img class="rounded img-fluid liga-logo"
            ng-src="img/liga_logos/{{kivalasztott_kep}}"
            alt="Liga logo">
 
       <!-- Liga select -->
       <select name="tabella"
               id="tabella"
-              class="form-select shadow-sm rounded-3"
-              style="max-width: 250px;"
+              class="form-select shadow-sm rounded-3 w-100 w-sm-auto"
               ng-model="kivalasztott_tabella"
               ng-change="tabella_kivalasztas()">
 
@@ -39,7 +37,9 @@
       <div class="card shadow-lg border-0 rounded-4 card-home">
         <div class="card-body p-4">
 
-          <table class="table modern-table home-table">
+          <div class="table-responsive">
+            <table class="table modern-table home-table">
+
 
             <!-- Fejléc -->
             <thead>
@@ -76,8 +76,8 @@
 
             </tbody>
           </table>
-
-        </div>
+          </div>
+        </div>  
       </div>
     </div>
   </div>

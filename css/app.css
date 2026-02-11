@@ -348,3 +348,14 @@ body{
 .fav-star.active {
   color: #f5c518; /* arany */
 }
+
+.liga-logo {
+  max-height: 90px;
+  width: 110px;
+}
+
+@media (max-width: 576px) {
+  .liga-logo {
+    max-height: 60px;
+  }
+}
