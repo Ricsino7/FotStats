@@ -22,25 +22,114 @@
       </button>
     </div>
 
-  <!--Adatok a kártyákhoz + a kártyák hozzád rendeláse a tabhoz/gombokhoz -->
+    <!--Adatok a kártyákhoz + a kártyákban gombokban megjelenítve az oddsok 
+    (Jelenleg oddsok nélkül)  -->
     <div class="card p-3 shadow-sm rounded-4">
 
       <div ng-show="activeTab === '1x2'">
-        <h5>1X2</h5>
-        <p>HAZAI DÖNTETLEN VENDÉG FOGADÁSI OPCIOK HELYE</p>
+
+        <div class="match-card"
+             ng-repeat="b in data">
+
+          <h6>{{b.hazai}} - {{b.vendeg}}</h6>
+
+          <div class="odds-row">
+
+            <div class="odd">
+                  Hazai<br>
+              <strong>{{b.odd_hazai}}</strong>
+            </div>
+
+            <div class="odd">
+              Döntetlen<br>
+              <strong>{{b.odd_dontetlen}}</strong>
+            </div>
+
+            <div class="odd">
+              Vendég<br>
+              <strong>{{b.odd_vendeg}}</strong>
+            </div>
+
+          </div>
+        </div>
       </div>
+
+      <!-- Oddsok megjelenitése a gombokban és kártya létrehozása hozzá -->
 
       <div ng-show="activeTab === 'goals'">
-        <h5>Gólszám</h5>
-        <p>TÖBB MINT VAGY KEVESEBB MINT VALAMENNYI GOLSZAL + Mindkét csapat szerez gólt</p>
-      </div>
 
+        <div class="match-card"
+             ng-repeat="b in data">
+
+          <h6>{{b.hazai}} - {{b.vendeg}}</h6>
+
+          <div class="odds-row">
+
+            <div class="odd">
+              Több mint 2,5 gól<br>
+              <strong>{{b.odd_over_25}}</strong>
+            </div>
+
+            <div class="odd">
+              Több mint 1,5 gól<br>
+              <strong>{{b.odd_over_15}}</strong>
+            </div>
+
+            <div class="odd">
+              Kevesebb mint 1,5 gól<br>
+              <strong>{{b.odd_over_15}}</strong>
+            </div>
+
+            <div class="odd">
+              Kevesebb mint 2,5 gól<br>
+              <strong>{{b.odd_over_15}}</strong>
+            </div>
+
+            <div class="odd">
+              BTTS<br>
+              <strong>{{b.odd_btts_igen}}</strong>
+            </div>
+
+            <div class="odd">
+              BTTS<br>
+              <strong>{{b.odd_btts_nem}}</strong>
+            </div>
+
+          </div>
+        </div>
+      </div>
+      
+      <!-- Oddsok megjelenitése a gombokban és kártya létrehozása hozzá -->
       <div ng-show="activeTab === 'corners'">
-        <h5>Szögletek</h5>
-        <p>SZÖGLET SZÁMOK + KINEK LESZ TÖBB SZÖGLETE HAZAI V VENDÉG.</p>
-      </div>
 
-    </div>
-    </div>
+        <div class="match-card"
+             ng-repeat="b in data">
+
+          <h6>{{b.hazai}} - {{b.vendeg}}</h6>
+
+          <div class="odds-row">
+
+            <div class="odd">
+              Több mint 7,5 szöglet<br>
+              <strong>{{b.odd_szoglet_over_75}}</strong>
+            </div>
+
+            <div class="odd">
+              Kevesebb mint 7,5 gól<br>
+              <strong>{{b.odd_szoglet_under_75}}</strong>
+            </div>
+
+            <div class="odd">
+              Hazai több szöglet<br>
+              <strong>{{b.odd_tobb_szoglet_hazai}}</strong>
+            </div>
+
+            <div class="odd">
+              Vendég több szöhlet<br>
+              <strong>{{b.odd_tobb_szoglet_vendeg}}</strong>
+            </div>
+          </div>
+        </div>
+      </div>
   </div>  
 </div>
