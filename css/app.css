@@ -400,7 +400,7 @@ body{
 }
 
 .match-card {
-  background: #1e293b;
+  background: rgba(34, 74, 182, 0.719);
   padding: 15px;
   border-radius: 12px;
   margin-bottom: 15px;
@@ -411,14 +411,14 @@ body{
 }
 
 .odds-row {
-  display: flex;
+  display: flex;  
   gap: 10px;
   margin-top: 10px;
 }
 
 .odd {
   flex: 1;
-  background: #1e40af;
+  background: #4a9fee;
   padding: 10px;
   border-radius: 8px;
   cursor: pointer;
