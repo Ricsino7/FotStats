@@ -35,7 +35,7 @@ if ($result2 != NULL) {
 }
 
 $result = $db->execute($query, $args);
-
+//lezárjuk a kapcsolatot
 $db = null;
 
 Util::setResponse($result);
