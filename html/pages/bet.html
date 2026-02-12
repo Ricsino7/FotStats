@@ -12,13 +12,13 @@
       <button class="btn"
               ng-class="activeTab === 'goals' ? 'btn-primary' : 'btn-outline-primary'"
               ng-click="setTab('goals')">
-        Gólszám
+        {{$root.lang.data.golszam}}
       </button>
 
       <button class="btn"
               ng-class="activeTab === 'corners' ? 'btn-primary' : 'btn-outline-primary'"
               ng-click="setTab('corners')">
-        Szögletek
+        {{$root.lang.data.szog}}
       </button>
     </div>
 
@@ -36,17 +36,17 @@
           <div class="odds-row">
 
             <div class="odd">
-                  Hazai<br>
+                  {{$root.lang.data.oddhaz}}<br>
               <strong>{{b.odd_hazai}}</strong>
             </div>
 
             <div class="odd">
-              Döntetlen<br>
+              {{$root.lang.data.odddont}}<br>
               <strong>{{b.odd_dontetlen}}</strong>
             </div>
 
             <div class="odd">
-              Vendég<br>
+              {{$root.lang.data.oddvend}}<br>
               <strong>{{b.odd_vendeg}}</strong>
             </div>
 
@@ -66,32 +66,32 @@
           <div class="odds-row">
 
             <div class="odd">
-              Több mint 2,5 gól<br>
+              {{$root.lang.data.tobbgol25}}<br>
               <strong>{{b.odd_over_25}}</strong>
             </div>
 
             <div class="odd">
-              Több mint 1,5 gól<br>
+              {{$root.lang.data.tobbgol15}}<br>
               <strong>{{b.odd_over_15}}</strong>
             </div>
 
             <div class="odd">
-              Kevesebb mint 1,5 gól<br>
-              <strong>{{b.odd_over_15}}</strong>
+              {{$root.lang.data.kevgol25}}<br>
+              <strong>{{b.odd_under_25}}</strong>
             </div>
 
             <div class="odd">
-              Kevesebb mint 2,5 gól<br>
-              <strong>{{b.odd_over_15}}</strong>
+              {{$root.lang.data.kevgol15}}<br>
+              <strong>{{b.odd_under_15}}</strong>
             </div>
 
             <div class="odd">
-              BTTS<br>
+              {{$root.lang.data.btts_igen}}<br>
               <strong>{{b.odd_btts_igen}}</strong>
             </div>
 
             <div class="odd">
-              BTTS<br>
+              {{$root.lang.data.btts_nem}}<br>
               <strong>{{b.odd_btts_nem}}</strong>
             </div>
 
@@ -110,22 +110,22 @@
           <div class="odds-row">
 
             <div class="odd">
-              Több mint 7,5 szöglet<br>
+              {{$root.lang.data.szogtobb75}}<br>
               <strong>{{b.odd_szoglet_over_75}}</strong>
             </div>
 
             <div class="odd">
-              Kevesebb mint 7,5 gól<br>
+              {{$root.lang.data.szogkev75}}<br>
               <strong>{{b.odd_szoglet_under_75}}</strong>
             </div>
 
             <div class="odd">
-              Hazai több szöglet<br>
+              {{$root.lang.data.szoghaz}}<br>
               <strong>{{b.odd_tobb_szoglet_hazai}}</strong>
             </div>
 
             <div class="odd">
-              Vendég több szöhlet<br>
+              {{$root.lang.data.szogvend}}<br>
               <strong>{{b.odd_tobb_szoglet_vendeg}}</strong>
             </div>
           </div>
