@@ -79,5 +79,20 @@
   "regisz":"Registrierung",
   "bet":"Die Wette",
   "hamar":"Demnächst.... ",
-  "szponzi":"🤝Hinter dem Team:"
+  "szponzi":"🤝Hinter dem Team:",
+  "golszam":"Tore",
+  "szog":"Eckbälle",
+  "oddhaz":"Heim",
+  "oddvend":"Auswärts",
+  "odddont":"Unentschieden",
+  "tobbgol25":"Über 2,5 Tore",
+  "tobbgol15":"Über 1,5 Tore",
+  "kevgol25":"Unter 2,5 Tore",
+  "kevgol15":"Unter 1,5 Tore",
+  "btts_igen":"Beide Teams treffen Ja",
+  "btts_nem":"Beide Teams treffen Nein",
+  "szogtobb75":"Über 7,5 Eckbälle",
+  "szogkev75":"Unter 7,5 Eckbälle",
+  "szoghaz":"Heimteam mehr Eckbälle",
+  "szogvend":"Auswärtsteam mehr Eckbälle"
 }

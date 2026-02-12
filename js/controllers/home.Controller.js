@@ -62,8 +62,7 @@
       }
     };
 
-    $scope.kepek = [0, 1, 2];
-
+    //Szponzorok adatainak megadása amit megtudunk jeleniteni az oldalon
     $scope.szponzorok = [
         {
             nev: 'Nike',

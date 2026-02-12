@@ -79,5 +79,20 @@
   "regisz":"Regisztráció",
   "bet":"Fogadás",
   "hamar":"Hamarosan....",
-  "szponzi":"🤝A csapat mögött:"
+  "szponzi":"🤝A csapat mögött:",
+  "golszam":"Golszám",
+  "szog":"Szögletek",
+  "oddhaz":"Hazai",
+  "oddvend":"Vendég",
+  "odddont":"Döntetlen",
+  "tobbgol25":"Több mint 2,5 gól",
+  "tobbgol15":"Több mint 1,5 gól",
+  "kevgol25":"Kevesebb mint 2,5 gól",
+  "kevgol15":"Kevesebb mint 1,5 gól",
+  "btts_igen":"Mindkét csapat igen",
+  "btts_nem":"Mindkét csapat nem",
+  "szogtobb75":"Több mint 7,5 szöglet",
+  "szogkev75":"Kevesebb mint 7,5 szöglet",
+  "szoghaz":"Hazai több szöglet",
+  "szogvend":"Vendég több szöglet"
 }

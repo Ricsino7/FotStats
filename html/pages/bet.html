@@ -3,44 +3,133 @@
 
     <!--A gombok letre hozasa + a gombokhoz esemeny letre hozasa ra-->
     <div class="d-flex gap-2 mb-3 mt-3">
-      <button class="btn"
+      <button class="btn telitip"
               ng-class="activeTab === '1x2' ? 'btn-primary' : 'btn-outline-primary'"
               ng-click="setTab('1x2')">
         1X2
       </button>
 
-      <button class="btn"
+      <button class="btn golszam"
               ng-class="activeTab === 'goals' ? 'btn-primary' : 'btn-outline-primary'"
               ng-click="setTab('goals')">
-        Gólszám
+        {{$root.lang.data.golszam}}
       </button>
 
-      <button class="btn"
+      <button class="btn szoglet"
               ng-class="activeTab === 'corners' ? 'btn-primary' : 'btn-outline-primary'"
               ng-click="setTab('corners')">
-        Szögletek
+        {{$root.lang.data.szog}}
       </button>
     </div>
 
-  <!--Adatok a kártyákhoz + a kártyák hozzád rendeláse a tabhoz/gombokhoz -->
-    <div class="card p-3 shadow-sm rounded-4">
+    <!--Adatok a kártyákhoz + a kártyákban gombokban megjelenítve az oddsok 
+    (Jelenleg oddsok nélkül)  -->
+    <div class="card telicard p-3 shadow-sm rounded-4">
 
       <div ng-show="activeTab === '1x2'">
-        <h5>1X2</h5>
-        <p>HAZAI DÖNTETLEN VENDÉG FOGADÁSI OPCIOK HELYE</p>
+
+        <div class="match-card"
+             ng-repeat="b in data">
+
+          <h6>{{b.hazai}} - {{b.vendeg}}</h6>
+
+          <div class="odds-row">
+
+            <div class="odd">
+                  {{$root.lang.data.oddhaz}}<br>
+              <strong>{{b.odd_hazai}}</strong>
+            </div>
+
+            <div class="odd">
+              {{$root.lang.data.odddont}}<br>
+              <strong>{{b.odd_dontetlen}}</strong>
+            </div>
+
+            <div class="odd">
+              {{$root.lang.data.oddvend}}<br>
+              <strong>{{b.odd_vendeg}}</strong>
+            </div>
+
+          </div>
+        </div>
       </div>
+
+      <!-- Oddsok megjelenitése a gombokban és kártya létrehozása hozzá -->
 
       <div ng-show="activeTab === 'goals'">
-        <h5>Gólszám</h5>
-        <p>TÖBB MINT VAGY KEVESEBB MINT VALAMENNYI GOLSZAL + Mindkét csapat szerez gólt</p>
-      </div>
 
+        <div class="match-card"
+             ng-repeat="b in data">
+
+          <h6>{{b.hazai}} - {{b.vendeg}}</h6>
+
+          <div class="odds-row">
+
+            <div class="odd">
+              {{$root.lang.data.tobbgol25}}<br>
+              <strong>{{b.odd_over_25}}</strong>
+            </div>
+
+            <div class="odd">
+              {{$root.lang.data.tobbgol15}}<br>
+              <strong>{{b.odd_over_15}}</strong>
+            </div>
+
+            <div class="odd">
+              {{$root.lang.data.kevgol25}}<br>
+              <strong>{{b.odd_under_25}}</strong>
+            </div>
+
+            <div class="odd">
+              {{$root.lang.data.kevgol15}}<br>
+              <strong>{{b.odd_under_15}}</strong>
+            </div>
+
+            <div class="odd">
+              {{$root.lang.data.btts_igen}}<br>
+              <strong>{{b.odd_btts_igen}}</strong>
+            </div>
+
+            <div class="odd">
+              {{$root.lang.data.btts_nem}}<br>
+              <strong>{{b.odd_btts_nem}}</strong>
+            </div>
+
+          </div>
+        </div>
+      </div>
+      
+      <!-- Oddsok megjelenitése a gombokban és kártya létrehozása hozzá -->
       <div ng-show="activeTab === 'corners'">
-        <h5>Szögletek</h5>
-        <p>SZÖGLET SZÁMOK + KINEK LESZ TÖBB SZÖGLETE HAZAI V VENDÉG.</p>
-      </div>
 
-    </div>
-    </div>
+        <div class="match-card"
+             ng-repeat="b in data">
+
+          <h6>{{b.hazai}} - {{b.vendeg}}</h6>
+
+          <div class="odds-row">
+
+            <div class="odd">
+              {{$root.lang.data.szogtobb75}}<br>
+              <strong>{{b.odd_szoglet_over_75}}</strong>
+            </div>
+
+            <div class="odd">
+              {{$root.lang.data.szogkev75}}<br>
+              <strong>{{b.odd_szoglet_under_75}}</strong>
+            </div>
+
+            <div class="odd">
+              {{$root.lang.data.szoghaz}}<br>
+              <strong>{{b.odd_tobb_szoglet_hazai}}</strong>
+            </div>
+
+            <div class="odd">
+              {{$root.lang.data.szogvend}}<br>
+              <strong>{{b.odd_tobb_szoglet_vendeg}}</strong>
+            </div>
+          </div>
+        </div>
+      </div>
   </div>  
 </div>

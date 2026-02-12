@@ -79,5 +79,20 @@
   "regisz":"Registration",
   "bet":"Bet",
   "hamar":"Soon.....",
-  "szponzi":"🤝Behind the team:"
+  "szponzi":"🤝Behind the team:",
+  "golszam":"Goals",
+  "szog":"Corners",
+  "oddhaz":"Home",
+  "oddvend":"Away",
+  "odddont":"Draw",
+  "tobbgol25":"Over 2.5 Goals",
+  "tobbgol15":"Over 1.5 Goals",
+  "kevgol25":"Under 2.5 Goals",
+  "kevgol15":"Under 1.5 Goals",
+  "btts_igen":"Both Teams To Score Yes",
+  "btts_nem":"Both Teams To Score No",
+  "szogtobb75":"Over 7.5 Corners",
+  "szogkev75":"Under 7.5 Corners",
+  "szoghaz":"Home Most Corners",
+  "szogvend":"Away Most Corners"
 }
