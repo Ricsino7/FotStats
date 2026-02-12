@@ -78,13 +78,15 @@
           <div class="card-body p-4">
             <h5 class="text-center mb-4 fw-bold">{{$root.lang.data.szponzi}}</h5>
 
+            <!-- Az url be linkelése a kártyába -->
             <div class="szponzor-lista">
               <a ng-href="{{sz.url}}" 
                  target="_blank"
-                 rel="noopener noreferrer"
                  class="text-decoration-none d-block"
                  ng-repeat="sz in szponzorok">
 
+                <!-- Itt jelenitjük meg a cardba a képet és a nevet 
+                + adunk hozzá egy leírást a név alá -->
                 <div class="szponzor-card text-center p-3 mb-3 border rounded-3">
                   <img ng-src="{{sz.kep}}" 
                        alt="{{sz.nev}}" 
