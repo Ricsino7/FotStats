@@ -3,19 +3,19 @@
 
     <!--A gombok letre hozasa + a gombokhoz esemeny letre hozasa ra-->
     <div class="d-flex gap-2 mb-3 mt-3">
-      <button class="btn"
+      <button class="btn telitip"
               ng-class="activeTab === '1x2' ? 'btn-primary' : 'btn-outline-primary'"
               ng-click="setTab('1x2')">
         1X2
       </button>
 
-      <button class="btn"
+      <button class="btn golszam"
               ng-class="activeTab === 'goals' ? 'btn-primary' : 'btn-outline-primary'"
               ng-click="setTab('goals')">
         {{$root.lang.data.golszam}}
       </button>
 
-      <button class="btn"
+      <button class="btn szoglet"
               ng-class="activeTab === 'corners' ? 'btn-primary' : 'btn-outline-primary'"
               ng-click="setTab('corners')">
         {{$root.lang.data.szog}}
@@ -24,7 +24,7 @@
 
     <!--Adatok a kártyákhoz + a kártyákban gombokban megjelenítve az oddsok 
     (Jelenleg oddsok nélkül)  -->
-    <div class="card p-3 shadow-sm rounded-4">
+    <div class="card telicard p-3 shadow-sm rounded-4">
 
       <div ng-show="activeTab === '1x2'">
 

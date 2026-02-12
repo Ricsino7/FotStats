@@ -434,7 +434,25 @@ body{
   opacity: 0.8;
 }
 
+.telitip{
+  background-color: rgba(34, 74, 182, 0.719);
+  color: whitesmoke;
+}
 
+.golszam{
+  background-color: rgba(34, 74, 182, 0.719);
+  color: whitesmoke;
+}
+
+.szoglet{
+  background-color: rgba(34, 74, 182, 0.719);
+  color: whitesmoke;
+}
+
+.telicard{
+  background-color: rgba(34, 74, 182, 0.719);
+  border-color: #18e0e7;
+}
 
 
 
