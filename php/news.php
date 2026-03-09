@@ -20,4 +20,5 @@ $db = null;
 
 // JSON válasz frontendnek
 // ha nincs adat → üres tömb
-echo json_encode($rows ?: [], JSON_PRETTY_PRINT);
+echo json_encode($rows ?: [], JSON_UNESCAPED_UNICODE | 
+                              JSON_UNESCAPED_SLASHES);

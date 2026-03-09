@@ -63,12 +63,33 @@
           controller: 'newsController',
           templateUrl: './html../pages/news.html'
         })
-
+     
        .state('lineup', {
-           url: '/lineup?selectedTeam',
+          url: '/lineup?selectedTeam',
           parent: 'root',
           controller: 'lineupController',
           templateUrl: './html../pages/lineup.html'
+        })
+
+        .state('login', {
+          url: '/login',
+          parent: 'root',
+          controller: 'loginController',
+          templateUrl: './html../pages/login.html'
+        })
+
+        .state('register', {
+          url: '/register',
+          parent: 'root',
+          controller: 'registerController',
+          templateUrl: './html../pages/register.html'
+        })
+
+        .state('bet', {
+          url: '/bet',
+          parent: 'root',
+          controller: 'betController',
+          templateUrl: './html../pages/bet.html'
         });
 
       $urlRouterProvider.otherwise('/');

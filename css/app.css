@@ -306,7 +306,7 @@ body{
   background-color: rgba(34, 74, 182, 0.719);
 }
 
-.form-control{
+.kereses {
   background-color: rgba(34, 74, 182, 0.719);
 }
 
@@ -314,3 +314,145 @@ body{
   color: #18e0e7;
   background-color: rgba(34, 74, 182, 0.719);
 }
+
+.btn-login{
+  color:  #18e0e7;
+  background-color: rgba(34, 74, 182, 0.719);
+}
+
+.btn-register{
+  color:  #18e0e7;
+  background-color: rgba(34, 74, 182, 0.719);
+}
+
+.btn-login:hover{
+  color: #0db9fd;
+}
+
+.btn-register:hover{
+  color: #0db9fd;
+}
+
+.fav-star {
+  cursor: pointer;
+  font-size: 20px;
+  color: #ccc;
+  transition: all 0.2s ease;
+}
+
+.fav-star:hover {
+  transform: scale(1.2);
+  color: #999;
+}
+
+.fav-star.active {
+  color: #f5c518; /* arany */
+}
+
+.liga-logo {
+  max-height: 90px;
+  width: 110px;
+}
+
+@media (max-width: 576px) {
+  .liga-logo {
+    max-height: 60px;
+  }
+}
+
+/* Szponzor kártyák stílusa */
+.szponzor-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background-color: rgba(34, 74, 182, 0.719);
+}
+
+.szponzor-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* Reszponzív beállítások */
+@media (max-width: 992px) {
+  
+  .szponzor-card img {
+    max-height: 60px !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .liga-logo {
+    max-width: 60px;
+  }
+}
+
+.leiras{
+  color: #0824c2;
+}
+
+.dark {
+  background: #0f172a;
+  color: white;
+}
+
+.light {
+  background: #f8f9fa;
+  color: black;
+}
+
+.match-card {
+  background: rgba(34, 74, 182, 0.719);
+  padding: 15px;
+  border-radius: 12px;
+  margin-bottom: 15px;
+}
+
+.light .match-card {
+  background: white;
+}
+
+.odds-row {
+  display: flex;  
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.odd {
+  flex: 1;
+  background: #4a9fee;
+  padding: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  text-align: center;
+}
+
+.light .odd {
+  background: #0d6efd;
+  color: white;
+}
+
+.odd:hover {
+  opacity: 0.8;
+}
+
+.telitip{
+  background-color: rgba(34, 74, 182, 0.719);
+  color: whitesmoke;
+}
+
+.golszam{
+  background-color: rgba(34, 74, 182, 0.719);
+  color: whitesmoke;
+}
+
+.szoglet{
+  background-color: rgba(34, 74, 182, 0.719);
+  color: whitesmoke;
+}
+
+.telicard{
+  background-color: rgba(34, 74, 182, 0.719);
+  border-color: #18e0e7;
+}
+
+
+

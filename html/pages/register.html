@@ -1,0 +1,74 @@
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-12 col-md-6 col-lg-4">
+
+      <form name="registerForm" class="p-4 border rounded shadow-sm">
+        <!--  -->
+         <div class="form-group mb-3">
+          <label>Felhasználónév</label>
+          <input ng-model="registerData.username" type="text" class="form-control" required>
+        </div>
+        <!-- elkérjük az emailt a felhasználótól -->
+        <div class="form-group mb-3">
+          <label>Email</label>
+          <input ng-model="registerData.email" type="email" class="form-control" required>
+        </div>
+        <!-- elkérjük a jelszót a felhasználótól -->
+        <div class="form-group mb-3">
+          <label>Jelszó</label>
+          <input ng-model="registerData.password" type="password" class="form-control" required>
+        </div>
+        <!-- elkérjük a jelszót újra a felhasználótól -->
+        <div class="form-group mb-3">
+          <label>Jelszó Újra!</label>
+          <input ng-model="registerData.passwordConfirm" type="password" class="form-control" required>
+        </div>
+
+       
+        <!-- 2 db választási lehetősék a felhasználót megkérdezzük  hogy elmúlt e 18-éves -->
+        <div class="form-group mb-4">
+          <label class="fw-bold d-block mb-2">Elmúltál 18?</label>
+          <!--  -->
+          <div class="d-flex gap-4">
+            <div class="form-check">
+              <input class="form-check-input"
+                     type="radio"
+                     name="age18"
+                     id="igen"
+                     ng-model="registerData.radio"
+                     ng-value="'y'"
+                     required>
+              <label class="form-check-label"  for="igen">
+                Igen
+              </label>
+            </div>
+
+            <div class="form-check">
+              <input class="form-check-input"
+                     type="radio"
+                     name="age18"
+                     id="nem"
+                     ng-model="registerData.radio"
+                     ng-value="'n'"
+                     >
+              <label class="form-check-label" for="nem">
+                Nem
+              </label>
+            </div>
+          </div>
+        </div>
+        <!-- regisztráció button amennyiben a felhsználó a nemre nyom és nem felelnek meg az értékek nem képes a bejelentkezésre -->
+        <div class="form-group">
+          <button type="submit"   
+                  ng-disabled="registerForm.$invalid || registerData.radio === 'n' || 
+                  registerData.passwordConfirm !== registerData.password"
+                  ng-click="registerButton()" class="btn btn-primary w-100">
+            Regisztráció
+          </button>
+        </div>
+
+      </form>
+
+    </div>
+  </div>
+</div>

@@ -39,3 +39,10 @@ ide kell bele updatelni a dologokat  //KÉSZ
 ki cserelni a jsonprettyprintet 
 jsonunescapeducincode/Slashesre mint ketto kell 
 kell bejelenkezes a wpfbe hogy adatokat lehessen feltolteni meg a hasonlok
+
+ÖTLET(MUSZÁJ MEGVALOSITANI CRUD MIATT HOGY MEG LEGYEN):
+    -Legyen bejelentkezése
+    -Aki bejelentkezik tudjon meccsekre fogadni és a meccseket hozzáadni 
+    -a listához amiket megrakott vagy éppen látni szeretne
+    -a regisztraciohoz ha ranyomunka a gombra legyen alert ami 
+    -kiírja hogy elmultal e 18 es lehet valasztasni az igen nem gombal

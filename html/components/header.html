@@ -58,10 +58,27 @@
           </a>
         </li>
 
+        <li class="nav-item">
+          <a class="nav-link" ui-sref="bet">
+            {{ $root.lang.data.bet }}
+          </a>
+        </li>
+
       </ul>
 
       <!-- Jobb oldal -->
       <div class="d-flex flex-column flex-lg-row align-items-start align-items-lg-center gap-2">
+        <button type="button" 
+                class="btn btn-login"
+                ui-sref="login">
+          {{$root.lang.data.bejelent}}
+        </button>
+
+        <button type="button" 
+                class="btn btn-register"
+                ui-sref="register">
+          {{$root.lang.data.regisz}}
+        </button>
 
         <!-- Dark / Light váltó -->
         <button class="btn theme-btn"
@@ -91,7 +108,7 @@
         <div class="position-relative">
 
           <form class="d-flex nav-search" role="search">
-            <input class="form-control me-2"
+            <input class="kereses form-control me-2"
                    type="search"
                    placeholder="{{ $root.lang.data.search }}"
                    ng-model="searchText"

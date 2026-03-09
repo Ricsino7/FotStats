@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Gép: 127.0.0.1
--- Létrehozás ideje: 2026. Jan 09. 11:52
+-- Létrehozás ideje: 2026. Feb 10. 07:37
 -- Kiszolgáló verziója: 10.4.32-MariaDB
 -- PHP verzió: 8.2.12
 
@@ -20,6 +20,43 @@ SET time_zone = "+00:00";
 --
 -- Adatbázis: `fotstats`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Tábla szerkezet ehhez a táblához `bet`
+--
+
+CREATE TABLE `bet` (
+  `id` int(11) NOT NULL,
+  `meccs_id` int(11) NOT NULL,
+  `odd_hazai` decimal(5,2) DEFAULT NULL,
+  `odd_dontetlen` decimal(5,2) DEFAULT NULL,
+  `odd_vendeg` decimal(5,2) DEFAULT NULL,
+  `odd_over_15` decimal(5,2) DEFAULT NULL,
+  `odd_under_15` decimal(5,2) DEFAULT NULL,
+  `odd_over_25` decimal(5,2) DEFAULT NULL,
+  `odd_under_25` decimal(5,2) DEFAULT NULL,
+  `odd_btts_igen` decimal(5,2) DEFAULT NULL,
+  `odd_btts_nem` decimal(5,2) DEFAULT NULL,
+  `odd_szoglet_over_75` decimal(5,2) DEFAULT NULL,
+  `odd_szoglet_under_75` decimal(5,2) DEFAULT NULL,
+  `odd_tobb_szoglet_hazai` decimal(5,2) DEFAULT NULL,
+  `odd_tobb_szoglet_vendeg` decimal(5,2) DEFAULT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+
+--
+-- A tábla adatainak kiíratása `bet`
+--
+
+INSERT INTO `bet` (`id`, `meccs_id`, `odd_hazai`, `odd_dontetlen`, `odd_vendeg`, `odd_over_15`, `odd_under_15`, `odd_over_25`, `odd_under_25`, `odd_btts_igen`, `odd_btts_nem`, `odd_szoglet_over_75`, `odd_szoglet_under_75`, `odd_tobb_szoglet_hazai`, `odd_tobb_szoglet_vendeg`, `created_at`) VALUES
+(1, 1, 1.85, 3.40, 4.20, 1.30, 3.20, 1.75, 2.05, 1.65, 2.20, 1.90, 1.90, 1.80, 2.00, '2026-02-10 06:35:49'),
+(2, 2, 2.10, 3.10, 3.60, 1.45, 2.70, 1.95, 1.85, 1.72, 2.05, 1.85, 1.95, 1.75, 2.10, '2026-02-10 06:35:49'),
+(3, 3, 1.95, 3.50, 3.80, 1.25, 3.60, 1.65, 2.20, 1.55, 2.35, 1.88, 1.92, 1.90, 1.95, '2026-02-10 06:35:49'),
+(4, 4, 2.30, 3.00, 3.10, 1.55, 2.45, 2.05, 1.75, 1.80, 1.95, 1.92, 1.88, 1.85, 2.05, '2026-02-10 06:35:49'),
+(5, 5, 1.40, 4.20, 6.50, 1.20, 4.00, 1.55, 2.40, 1.60, 2.30, 1.75, 2.10, 2.00, 1.80, '2026-02-10 06:35:49'),
+(6, 6, 2.00, 3.25, 3.50, 1.50, 2.55, 1.90, 1.90, 1.70, 2.10, 1.95, 1.85, 1.78, 2.02, '2026-02-10 06:35:49');
 
 -- --------------------------------------------------------
 
@@ -963,19 +1000,19 @@ CREATE TABLE `news` (
 --
 
 INSERT INTO `news` (`id`, `cim`, `datum`, `forras`, `osszefoglalo`, `kep`) VALUES
-(1, 'Liverpool: Romano információi szerint nincs napirenden az edző menesztése', '2025-09-25', 'Football365 / Fabrizio Romano', 'Romano szerint a klubnak jelenleg nem áll szándékában menedzsert váltani, noha a szezon rosszul indult.', 'slot.jpg'),
-(2, 'A Manchester United csak akkor igazol csatárt januárban, ha Sesko sérülése komolyabb', '2025-10-22', 'Football365 / Fabrizio Romano', 'Romano úgy tudja, az MU csak akkor szerződtet új csatárt, ha Benjamin Sesko sérülése hosszabb távú problémának bizonyul.', 'sesko.jpg'),
-(3, 'A Liverpool új szerződést kínált Konaténak, közel a megállapodás', '2025-11-23', 'LiverpoolWorld / Fabrizio Romano', 'Romano megerősítette, hogy az Anfield-csapat friss hosszabbítást ajánlott Ibrahima Konaténak, és bíznak a sikeres megegyezésben.', 'konate.jpg'),
-(4, 'Arsenal új ajánlatra készül egy középpályásért, a tárgyalások egyre intenzívebbek', '2025-12-05', 'Football365 / Fabrizio Romano', 'Romano szerint az Arsenal újabb ajánlatot készít elő egy kiszemelt középpályás megszerzésére, miközben a tárgyalások egyre aktívabbá válnak.', 'arteta.jpg'),
-(5, 'A Chelsea közel a megállapodáshoz egy új védővel, a feltételekben már megegyeztek', '2025-12-08', 'LondonWorld / Fabrizio Romano', 'Romano információi alapján a Chelsea hamarosan bejelentheti új védőjét, a játékossal pedig már megállapodtak a személyes feltételekről.', 'maresca.jpg'),
-(6, 'A Tottenham tárgyalásokat kezdett egy januári szélsőigazolásról', '2025-12-11', 'Football Insider / Fabrizio Romano', 'Romano szerint a Tottenham már megkezdte a tárgyalásokat egy szélső leigazolásáról a téli átigazolási időszakra, és optimisták az egyezség elérésében.', 'totthenam.jpg'),
-(7, 'A Newcastle új csatárt akar igazolni, a klub nem adja fel', '2025-12-15', 'ChronicleLive / Fabrizio Romano', 'Romano úgy tudja, hogy a Newcastle eltökélt egy új csatár szerződtetésében, és addig folytatják a tárgyalásokat, amíg nem sikerül megegyezni.', 'woltemade.jpg'),
-(8, 'A Barcelona áttörést ért el egy kulcsvédő szerződéshosszabbításában', '2025-12-18', 'Marca / Fabrizio Romano', 'Romano szerint a Barcelona komoly előrelépést tett egy fontos védő új szerződéséről szóló tárgyalásokban, és közel állnak a végleges megállapodáshoz.', 'ericgarcia.jpg'),
-(9, 'A Real Madrid új szerződést kínál fiatal tehetségének, közel a megegyezés', '2025-12-20', 'Marca / Fabrizio Romano', 'Romano szerint a Real Madrid már előrehaladott tárgyalásokat folytat egyik legnagyobb tehetségével a szerződéshosszabbításról, és hamarosan megegyezhetnek.', 'gonzalogarcia.jpg'),
-(10, 'A Bayern München új támadó szerződtetését tervezi a keret megerősítésére', '2025-12-22', 'Bild / Fabrizio Romano', 'Romano arról számolt be, hogy a Bayern München egy új támadó igazolásán dolgozik, és több jelölt neve is felmerült.', 'bayern.jpg'),
-(11, 'Az Inter Milan közel áll egy új középpályás szerződtetéséhez', '2025-12-23', 'Gazzetta dello Sport / Fabrizio Romano', 'Romano információi szerint az Inter megegyezés közeli állapotban van egy középpályás érkezéséről, aki már januárban csatlakozhat a csapathoz.', 'inter.jpg'),
-(12, 'A Juventus hamarosan bemutathatja új védőjét', '2025-12-27', 'Tuttosport / Fabrizio Romano', 'Romano úgy tudja, hogy a Juventus lezárta az egyeztetéseket egy új védő szerződtetéséről, a bejelentés már csak idő kérdése.', 'juve.jpg'),
-(13, 'A PSG több kulcsjátékossal tárgyal a szerződéshosszabbításról', '2025-12-28', 'L Équipe / Fabrizio Romano', 'Romano jelentése szerint a PSG célja a keret stabilizálása, ezért egyszerre több meghatározó játékossal is tárgyal a hosszabbításról.', 'psg.jpg');
+(1, 'hirek_leirasa_01', '2025-09-25', 'Football365 / Fabrizio Romano', 'hir_osszefoglalo_01', 'slot.jpg'),
+(2, 'hirek_leirasa_02', '2025-10-22', 'Football365 / Fabrizio Romano', 'hir_osszefoglalo_02', 'sesko.jpg'),
+(3, 'hirek_leirasa_03', '2025-11-23', 'LiverpoolWorld / Fabrizio Romano', 'hir_osszefoglalo_03', 'konate.jpg'),
+(4, 'hirek_leirasa_04', '2025-12-05', 'Football365 / Fabrizio Romano', 'hir_osszefoglalo_04', 'arteta.jpg'),
+(5, 'hirek_leirasa_05', '2025-12-08', 'LondonWorld / Fabrizio Romano', 'hir_osszefoglalo_05', 'maresca.jpg'),
+(6, 'hirek_leirasa_06', '2025-12-11', 'Football Insider / Fabrizio Romano', 'hir_osszefoglalo_06', 'totthenam.jpg'),
+(7, 'hirek_leirasa_07', '2025-12-15', 'ChronicleLive / Fabrizio Romano', 'hir_osszefoglalo_07', 'woltemade.jpg'),
+(8, 'hirek_leirasa_08', '2025-12-18', 'Marca / Fabrizio Romano', 'hir_osszefoglalo_08', 'ericgarcia.jpg'),
+(9, 'hirek_leirasa_09', '2025-12-20', 'Marca / Fabrizio Romano', 'hir_osszefoglalo_09', 'gonzalogarcia.jpg'),
+(10, 'hirek_leirasa_10', '2025-12-22', 'Bild / Fabrizio Romano', 'hir_osszefoglalo_10', 'bayern.jpg'),
+(11, 'hirek_leirasa_11', '2025-12-23', 'Gazzetta dello Sport / Fabrizio Romano', 'hir_osszefoglalo_11', 'inter.jpg'),
+(12, 'hirek_leirasa_12', '2025-12-27', 'Tuttosport / Fabrizio Romano', 'hir_osszefoglalo_12', 'juve.jpg'),
+(13, 'hirek_leirasa_13', '2025-12-28', 'L Équipe / Fabrizio Romano', 'hir_osszefoglalo_13', 'psg.jpg');
 
 -- --------------------------------------------------------
 
@@ -1115,9 +1152,39 @@ INSERT INTO `statisztikak` (`id`, `jatekos_id`, `csapat_id`, `golok`, `lovesek`,
 (126, NULL, 49, 49, 3, 17, 57.00, 36),
 (127, NULL, 50, 50, 0, 10, 44.00, 36);
 
+-- --------------------------------------------------------
+
+--
+-- Tábla szerkezet ehhez a táblához `users`
+--
+
+CREATE TABLE `users` (
+  `id` int(11) NOT NULL,
+  `username` varchar(50) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `password` varchar(255) NOT NULL,
+  `role` varchar(20) DEFAULT 'user',
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+
+--
+-- A tábla adatainak kiíratása `users`
+--
+
+INSERT INTO `users` (`id`, `username`, `email`, `password`, `role`, `created_at`) VALUES
+(1, 'admin', 'admin@admin.hu', '12345', 'admin', '2026-01-29 11:59:37'),
+(2, 'asd', 'a.aa@gmail.com', '12345678', 'user', '2026-02-10 06:26:59');
+
 --
 -- Indexek a kiírt táblákhoz
 --
+
+--
+-- A tábla indexei `bet`
+--
+ALTER TABLE `bet`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `meccs_id` (`meccs_id`);
 
 --
 -- A tábla indexei `csapatok`
@@ -1172,8 +1239,22 @@ ALTER TABLE `statisztikak`
   ADD KEY `fk_meccs` (`meccs_id`);
 
 --
+-- A tábla indexei `users`
+--
+ALTER TABLE `users`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `username` (`username`),
+  ADD UNIQUE KEY `email` (`email`);
+
+--
 -- A kiírt táblák AUTO_INCREMENT értéke
 --
+
+--
+-- AUTO_INCREMENT a táblához `bet`
+--
+ALTER TABLE `bet`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT a táblához `csapatok`
@@ -1218,8 +1299,20 @@ ALTER TABLE `statisztikak`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=128;
 
 --
+-- AUTO_INCREMENT a táblához `users`
+--
+ALTER TABLE `users`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
 -- Megkötések a kiírt táblákhoz
 --
+
+--
+-- Megkötések a táblához `bet`
+--
+ALTER TABLE `bet`
+  ADD CONSTRAINT `bet_ibfk_1` FOREIGN KEY (`meccs_id`) REFERENCES `meccsek` (`id`);
 
 --
 -- Megkötések a táblához `csapatok`

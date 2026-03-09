@@ -62,6 +62,40 @@
       }
     };
 
+    //Szponzorok adatainak megadása amit megtudunk jeleniteni az oldalon
+    $scope.szponzorok = [
+        {
+          nev: 'Nike',
+          kep: './img/szponzorok/nike_logo.jpg',
+          leiras: 'A legjobb ötözékekért!',
+          url: 'https://nike.com'
+        },
+        {
+          nev: 'Telekom',
+          kep: './img/szponzorok/telekom.jpg',
+          leiras: 'A legjobb szolgáltatásért!',
+          url: 'https://telekom.hu'
+        },
+        {
+          nev: 'Tippmixpro',
+          kep: './img/szponzorok/tippmixpro.jpg',
+          leiras: 'Játssz velünk most!',
+          url: 'https://tippmixpro.hu'
+        },
+         {
+          nev: 'LM10',
+          kep: './img/szponzorok/messi_logo.jpg',
+          leiras: 'Növeld új szintre a rajongásod!',
+          url: 'https://www.themessistore.com/?srsltid=AfmBOop_tgrIgOhqI1q5LunVgD1oEGRdk6PL6Uys21b9XUQRPqz9qt8B'
+        },
+        {
+          nev: 'CR7',
+          kep: './img/szponzorok/cr7_logo.jpg',
+          leiras: 'Minden ami CR7 csak rajongoknak',
+          url: 'https://www.cristianoronaldo.com/#cr7'
+        }
+    ];
+
   }]);
 
 })(window, angular);
