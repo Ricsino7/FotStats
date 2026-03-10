@@ -46,3 +46,17 @@ kell bejelenkezes a wpfbe hogy adatokat lehessen feltolteni meg a hasonlok
     -a listához amiket megrakott vagy éppen látni szeretne
     -a regisztraciohoz ha ranyomunka a gombra legyen alert ami 
     -kiírja hogy elmultal e 18 es lehet valasztasni az igen nem gombal
+
+Adatbázis átírása/helyre rakása:
+    -Statisztika kötése a meccsekhez ott legyen a gol ki lotte meg a pontszamok es ezen kivul az osszes tobbi is
+    -Legyen kulon tabla a pontszamokra es a tobbire
+    -A helyezes se legyen a csapatoknal
+    -A meccseknel kell egy alt tabla ahol az eredmenyeket taroljuk ami a statisztikahoz tartozik egy tabla kell az eredmenyekre
+        és abbol a tablabol fogjuk azokat az adatokat lekerdezni amik voltak a csapatoknal
+    -A tábla: meccs_id, csapat_id, jatekos_id, melyik percbe rugta a golt és ebből a lekerdezésbol megtudjuk az eredmenyt
+    tudjuk a ket csapatot a gol rugokat a golszamot és ebbol letudjuk az eredmenyt kerdezni
+    datum se kell eleg csak hogy mikor voltak a golok.
+    -A meccsekhez kell egy tervezet datum meg egy olyan hogy lejatszotak e vagy elmaradt vagy barmi.
+    -statisztika tabla nem is kell
+    -meccs_statisztika tabla legyen helyette
+
