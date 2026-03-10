@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Gép: 127.0.0.1
--- Létrehozás ideje: 2026. Feb 10. 07:37
+-- Létrehozás ideje: 2026. Már 10. 13:06
 -- Kiszolgáló verziója: 10.4.32-MariaDB
 -- PHP verzió: 8.2.12
 
@@ -71,166 +71,158 @@ CREATE TABLE `csapatok` (
   `tipus` enum('klub','valogatott') DEFAULT 'klub',
   `liga_id` int(11) DEFAULT NULL,
   `helyezes` int(11) DEFAULT NULL,
-  `kep` varchar(100) NOT NULL,
-  `Pontszam` tinyint(20) NOT NULL,
-  `Lottgol` tinyint(50) NOT NULL,
-  `kapottgol` tinyint(50) NOT NULL,
-  `golarany` int(50) NOT NULL,
-  `lejatszottmeccs` tinyint(50) NOT NULL,
-  `gyozelem` tinyint(50) NOT NULL,
-  `dontetlen` tinyint(50) NOT NULL,
-  `vereseg` tinyint(50) NOT NULL
+  `kep` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- A tábla adatainak kiíratása `csapatok`
 --
 
-INSERT INTO `csapatok` (`id`, `nev`, `orszag`, `tipus`, `liga_id`, `helyezes`, `kep`, `Pontszam`, `Lottgol`, `kapottgol`, `golarany`, `lejatszottmeccs`, `gyozelem`, `dontetlen`, `vereseg`) VALUES
-(1, 'Manchester City', 'Anglia', 'klub', 1, 1, 'Manchester_City.jpg', 76, 86, 41, 45, 38, 23, 7, 8),
-(2, 'Arsenal', 'Anglia', 'klub', 1, 2, 'Arsenal_FC.jpg', 72, 69, 34, 35, 38, 20, 12, 6),
-(3, 'Liverpool', 'Anglia', 'klub', 1, 3, 'Liverpool.jpg', 72, 72, 44, 28, 38, 22, 6, 10),
-(4, 'Aston Villa', 'Anglia', 'klub', 1, 4, 'astonvilla.jpg', 70, 64, 43, 21, 38, 20, 10, 8),
-(5, 'Tottenham Hotspur', 'Anglia', 'klub', 1, 5, 'tottenham.jpg', 69, 68, 47, 21, 38, 18, 15, 5),
-(6, 'Real Madrid', 'Spanyolország', 'klub', 2, 1, 'real-madrid.jpg', 85, 102, 39, 63, 38, 25, 10, 3),
-(7, 'Barcelona', 'Spanyolország', 'klub', 2, 2, 'Barcelona.jpg', 84, 78, 38, 40, 38, 24, 12, 2),
-(8, 'Atletico Madrid', 'Spanyolország', 'klub', 2, 3, 'atleticomadrid.jpg', 78, 68, 30, 38, 38, 22, 12, 4),
-(9, 'Girona', 'Spanyolország', 'klub', 2, 4, 'girona.jpg', 74, 54, 29, 25, 38, 22, 8, 8),
-(10, 'Real Sociedad', 'Spanyolország', 'klub', 2, 5, 'realsociedad.jpg', 73, 71, 51, 20, 38, 21, 10, 7),
-(11, 'Bayer Leverkusen', 'Németország', 'klub', 3, 1, 'bayerleverkusen.jpg', 92, 99, 32, 67, 38, 28, 8, 2),
-(12, 'Bayern München', 'Németország', 'klub', 3, 2, 'bayernmunich.jpg', 87, 72, 43, 29, 38, 25, 12, 1),
-(13, 'Stuttgart', 'Németország', 'klub', 3, 3, 'stuttgart.jpg', 83, 68, 46, 22, 38, 24, 11, 3),
-(14, 'RB Leipzig', 'Németország', 'klub', 3, 4, 'rbleipzig.jpg', 80, 71, 51, 20, 38, 24, 8, 6),
-(15, 'Borussia Dortmund', 'Németország', 'klub', 3, 5, 'BorussiaDortmund.jpg', 74, 49, 53, -4, 38, 20, 14, 4),
-(16, 'Inter', 'Olaszország', 'klub', 4, 1, 'inter.jpg', 72, 59, 27, 32, 38, 22, 6, 10),
-(17, 'AC Milan', 'Olaszország', 'klub', 4, 2, 'acmilan.jpg', 65, 79, 35, 44, 38, 18, 11, 9),
-(18, 'Juventus', 'Olaszország', 'klub', 4, 3, 'juventus.jpg', 62, 78, 37, 41, 38, 20, 2, 16),
-(19, 'Napoli', 'Olaszország', 'klub', 4, 4, 'napoli.jpg', 61, 58, 35, 23, 38, 17, 10, 11),
-(20, 'Atalanta', 'Olaszország', 'klub', 4, 5, 'atalanta.jpg', 58, 56, 35, 21, 38, 15, 13, 10),
-(21, 'Paris Saint-Germain', 'Franciaország', 'klub', 5, 1, 'psg.jpg', 101, 92, 35, 57, 38, 33, 2, 3),
-(22, 'Monaco', 'Franciaország', 'klub', 5, 2, 'monaco.jpg', 82, 74, 47, 27, 38, 25, 7, 6),
-(23, 'Lille', 'Franciaország', 'klub', 5, 3, 'lille.jpg', 74, 63, 41, 22, 38, 23, 5, 10),
-(24, 'Marseille', 'Franciaország', 'klub', 5, 4, 'marseille.jpg', 71, 66, 41, 25, 38, 20, 11, 7),
-(25, 'Nice', 'Franciaország', 'klub', 5, 5, 'nice.jpg', 68, 52, 36, 16, 38, 20, 8, 10),
-(26, 'Real Madrid', 'Spanyolország', 'klub', 6, 1, '', 22, 17, 5, 12, 8, 7, 1, 0),
-(27, 'Manchester City', 'Anglia', 'klub', 6, 2, '', 21, 28, 13, 15, 8, 7, 0, 1),
-(28, 'Bayern München', 'Németország', 'klub', 6, 3, '', 21, 16, 3, 13, 8, 7, 0, 1),
-(29, 'Paris Saint-Germain', 'Franciaország', 'klub', 6, 4, '', 19, 11, 1, 10, 8, 6, 1, 1),
-(30, 'Inter', 'Olaszország', 'klub', 6, 5, '', 17, 20, 12, 8, 8, 5, 2, 1),
-(31, 'Fiorentina', 'Olaszország', 'klub', 7, 1, 'fiorentina.jpg', 24, 26, 5, 21, 8, 8, 0, 0),
-(32, 'Aston Villa', 'Anglia', 'klub', 7, 2, '', 20, 13, 6, 7, 8, 6, 2, 0),
-(33, 'Club Brugge', 'Belgium', 'klub', 7, 3, 'brugge.jpg', 19, 18, 7, 11, 8, 6, 1, 1),
-(34, 'Lille', 'Franciaország', 'klub', 7, 4, '', 19, 11, 5, 6, 8, 5, 3, 0),
-(35, 'PAOK', 'Görögország', 'klub', 7, 5, 'paok.jpg', 17, 11, 7, 4, 8, 5, 2, 1),
-(36, 'Franciaország', 'Franciaország', 'valogatott', 8, 1, 'france.jpg', 18, 16, 4, 12, 6, 6, 0, 0),
-(37, 'Anglia', 'Anglia', 'valogatott', 8, 2, 'england.jpg', 18, 22, 0, 22, 6, 6, 0, 0),
-(38, 'Portugália', 'Portugália', 'valogatott', 8, 3, 'portugal.jpg', 16, 20, 7, 13, 6, 5, 1, 0),
-(39, 'Spanyolország', 'Spanyolország', 'valogatott', 8, 4, 'spain.jpg', 16, 21, 2, 19, 6, 5, 1, 0),
-(40, 'Magyarország', 'Magyarország', 'valogatott', 8, 5, 'hungary.jpg', 14, 11, 10, 1, 6, 4, 2, 0),
-(41, 'Chelsea', 'Anglia', 'klub', 1, 6, 'chelsea.jpg', 68, 58, 51, 7, 38, 20, 8, 10),
-(42, 'Manchester United', 'Anglia', 'klub', 1, 7, 'manchesterunited.jpg', 65, 58, 46, 12, 38, 20, 5, 13),
-(43, 'Newcastle United', 'Anglia', 'klub', 1, 8, 'newcastle.jpg', 63, 66, 66, 0, 38, 19, 6, 13),
-(44, 'West Ham United', 'Anglia', 'klub', 1, 9, 'westham.jpg', 58, 58, 46, 12, 38, 18, 4, 16),
-(45, 'Brighton & Hove Albion', 'Anglia', 'klub', 1, 10, 'brighton.jpg', 55, 66, 57, 9, 38, 15, 10, 13),
-(46, 'Fulham', 'Anglia', 'klub', 1, 11, 'fullham.jpg', 53, 54, 54, 0, 38, 12, 17, 9),
-(47, 'Crystal Palace', 'Anglia', 'klub', 1, 12, 'crystalpalace.jpg', 50, 51, 51, 0, 38, 14, 8, 16),
-(48, 'Brentford', 'Anglia', 'klub', 1, 13, 'brentford.jpg', 47, 42, 44, -2, 38, 14, 5, 19),
-(49, 'Wolverhampton Wanderers', 'Anglia', 'klub', 1, 14, 'wolverhampton.jpg', 45, 46, 62, -16, 38, 13, 6, 19),
-(50, 'Nottingham Forest', 'Anglia', 'klub', 1, 15, 'nottingham.jpg', 42, 44, 54, -10, 38, 10, 12, 16),
-(51, 'Everton', 'Anglia', 'klub', 1, 16, 'everton.jpg', 37, 54, 69, -15, 38, 10, 7, 21),
-(52, 'Southampton', 'Anglia', 'klub', 1, 17, 'southamphton.jpg', 33, 64, 65, -1, 38, 9, 6, 23),
-(53, 'Ipswich Town', 'Anglia', 'klub', 1, 18, 'ipswitch.jpg', 32, 33, 80, -47, 38, 10, 2, 26),
-(54, 'Leicester City', 'Anglia', 'klub', 1, 19, 'leichester.jpg', 27, 36, 82, -46, 38, 8, 3, 27),
-(55, 'Bournemouth', 'Anglia', 'klub', 1, 20, 'bournemouth.jpg', 20, 26, 86, -60, 38, 5, 5, 28),
-(56, 'Real Betis', 'Spanyolország', 'klub', 2, 6, '', 72, 57, 50, 7, 38, 20, 12, 6),
-(57, 'Athletic Bilbao', 'Spanyolország', 'klub', 2, 7, '', 69, 59, 57, 2, 38, 20, 9, 9),
-(58, 'Valencia', 'Spanyolország', 'klub', 2, 8, '', 69, 41, 45, -4, 38, 18, 15, 5),
-(59, 'Sevilla', 'Spanyolország', 'klub', 2, 9, '', 63, 48, 52, -4, 38, 18, 9, 11),
-(60, 'Villarreal', 'Spanyolország', 'klub', 2, 10, '', 61, 35, 44, -9, 38, 20, 1, 17),
-(61, 'Osasuna', 'Spanyolország', 'klub', 2, 11, '', 59, 35, 46, -11, 38, 16, 11, 11),
-(62, 'Getafe', 'Spanyolország', 'klub', 2, 12, '', 59, 44, 54, -10, 38, 17, 8, 13),
-(63, 'Celta Vigo', 'Spanyolország', 'klub', 2, 13, '', 54, 34, 39, -5, 38, 15, 9, 14),
-(64, 'Mallorca', 'Spanyolország', 'klub', 2, 14, '', 52, 40, 51, -11, 38, 15, 7, 16),
-(65, 'Las Palmas', 'Spanyolország', 'klub', 2, 15, '', 50, 38, 48, -10, 38, 14, 8, 16),
-(66, 'Rayo Vallecano', 'Spanyolország', 'klub', 2, 16, '', 49, 44, 60, -16, 38, 14, 7, 17),
-(67, 'Alaves', 'Spanyolország', 'klub', 2, 17, '', 42, 42, 55, -13, 38, 12, 6, 20),
-(68, 'Cadiz', 'Spanyolország', 'klub', 2, 18, '', 39, 39, 56, -17, 38, 12, 3, 23),
-(69, 'Granada', 'Spanyolország', 'klub', 2, 19, '', 36, 40, 61, -21, 38, 10, 6, 22),
-(70, 'Leganes', 'Spanyolország', 'klub', 2, 20, '', 30, 26, 90, -64, 38, 8, 6, 24),
-(71, 'Eintracht Frankfurt', 'Németország', 'klub', 3, 6, '', 71, 55, 43, 12, 38, 22, 5, 11),
-(72, 'TSG Hoffenheim', 'Németország', 'klub', 3, 7, '', 71, 53, 48, 5, 38, 21, 8, 9),
-(73, 'SC Freiburg', 'Németország', 'klub', 3, 8, '', 68, 54, 57, -3, 38, 20, 8, 10),
-(74, 'FC Augsburg', 'Németország', 'klub', 3, 9, '', 62, 64, 53, 11, 38, 20, 2, 16),
-(75, 'Werder Bremen', 'Németország', 'klub', 3, 10, '', 59, 55, 57, -2, 38, 18, 1, 19),
-(76, 'VfL Wolfsburg', 'Németország', 'klub', 3, 11, '', 59, 56, 54, 2, 38, 15, 14, 9),
-(77, 'Borussia Mönchengladbach', 'Németország', 'klub', 3, 12, '', 54, 35, 51, -16, 38, 14, 12, 12),
-(78, '1. FC Heidenheim', 'Németország', 'klub', 3, 13, '', 53, 35, 51, -16, 38, 14, 11, 13),
-(79, 'VfL Bochum', 'Németország', 'klub', 3, 14, '', 50, 28, 41, -13, 38, 13, 11, 14),
-(80, 'Mainz 05', 'Németország', 'klub', 3, 15, '', 46, 46, 68, -22, 38, 13, 7, 18),
-(81, 'Union Berlin', 'Németország', 'klub', 3, 16, '', 41, 37, 64, -27, 38, 11, 8, 19),
-(82, 'FC St. Pauli', 'Németország', 'klub', 3, 17, '', 38, 49, 80, -31, 38, 10, 8, 20),
-(83, 'Greuther Fürth', 'Németország', 'klub', 3, 18, '', 33, 33, 67, -34, 38, 10, 3, 25),
-(84, 'Holstein Kiel', 'Németország', 'klub', 3, 19, '', 28, 40, 71, -31, 38, 7, 7, 24),
-(85, 'Fortuna Düsseldorf', 'Németország', 'klub', 3, 20, '', 21, 41, 64, -22, 38, 5, 6, 27),
-(86, 'AS Roma', 'Olaszország', 'klub', 4, 6, '', 57, 60, 41, 19, 38, 18, 3, 17),
-(87, 'Lazio', 'Olaszország', 'klub', 4, 7, '', 53, 61, 49, 12, 38, 17, 2, 19),
-(88, 'Bologna', 'Olaszország', 'klub', 4, 8, '', 53, 61, 43, 18, 38, 16, 5, 17),
-(89, 'Torino', 'Olaszország', 'klub', 4, 9, '', 51, 57, 47, 10, 38, 15, 6, 17),
-(90, 'Fiorentina', 'Olaszország', 'klub', 4, 10, '', 49, 49, 52, -3, 38, 13, 10, 15),
-(91, 'Monza', 'Olaszország', 'klub', 4, 11, '', 45, 39, 45, -6, 38, 13, 6, 19),
-(92, 'Genoa', 'Olaszország', 'klub', 4, 12, '', 45, 41, 56, -15, 38, 10, 15, 13),
-(93, 'Lecce', 'Olaszország', 'klub', 4, 13, '', 42, 37, 49, -12, 38, 11, 9, 18),
-(94, 'Udinese', 'Olaszország', 'klub', 4, 14, '', 41, 34, 66, -32, 38, 9, 14, 15),
-(95, 'Cagliari', 'Olaszország', 'klub', 4, 15, '', 41, 40, 56, -16, 38, 10, 11, 17),
-(96, 'Empoli', 'Olaszország', 'klub', 4, 16, '', 40, 44, 58, -14, 38, 8, 16, 14),
-(97, 'Sassuolo', 'Olaszország', 'klub', 4, 17, '', 40, 27, 58, -31, 38, 8, 16, 14),
-(98, 'Verona', 'Olaszország', 'klub', 4, 18, '', 37, 33, 59, -26, 38, 10, 7, 21),
-(99, 'Como', 'Olaszország', 'klub', 4, 19, '', 35, 32, 56, -24, 38, 10, 5, 23),
-(100, 'Parma', 'Olaszország', 'klub', 4, 20, '', 30, 28, 69, -41, 38, 5, 15, 18),
-(101, 'Lyon', 'Franciaország', 'klub', 5, 6, '', 67, 65, 46, 19, 38, 20, 7, 11),
-(102, 'Rennes', 'Franciaország', 'klub', 5, 7, '', 62, 56, 44, 12, 38, 18, 8, 12),
-(103, 'Lens', 'Franciaország', 'klub', 5, 8, '', 61, 42, 39, 3, 38, 18, 7, 13),
-(104, 'Toulouse', 'Franciaország', 'klub', 5, 9, '', 61, 52, 59, -7, 38, 20, 1, 17),
-(105, 'Montpellier', 'Franciaország', 'klub', 5, 10, '', 55, 44, 43, -2, 38, 18, 1, 19),
-(106, 'Strasbourg', 'Franciaország', 'klub', 5, 11, '', 51, 48, 51, -3, 38, 17, 0, 21),
-(107, 'Nantes', 'Franciaország', 'klub', 5, 12, '', 47, 51, 50, 1, 38, 13, 8, 17),
-(108, 'Reims', 'Franciaország', 'klub', 5, 13, '', 47, 39, 52, -13, 38, 14, 5, 19),
-(109, 'Le Havre', 'Franciaország', 'klub', 5, 14, '', 46, 32, 53, -21, 38, 14, 4, 20),
-(110, 'Brest', 'Franciaország', 'klub', 5, 15, '', 43, 40, 71, -31, 38, 13, 4, 21),
-(111, 'Lorient', 'Franciaország', 'klub', 5, 16, '', 42, 33, 47, -14, 38, 10, 12, 16),
-(112, 'Clermont Foot', 'Franciaország', 'klub', 5, 17, '', 38, 39, 77, -38, 38, 10, 8, 20),
-(113, 'Saint-Étienne', 'Franciaország', 'klub', 5, 18, '', 34, 23, 79, -54, 38, 9, 7, 22),
-(114, 'Auxerre', 'Franciaország', 'klub', 5, 19, '', 31, 24, 74, -50, 38, 9, 4, 25),
-(115, 'Angers', 'Franciaország', 'klub', 5, 20, '', 24, 32, 64, -32, 38, 5, 9, 24),
-(116, 'Argentína', 'Argentína', 'valogatott', 8, 6, 'argentina.jpg', 13, 31, 10, 21, 6, 4, 1, 1),
-(117, 'Brazília', 'Brazília', 'valogatott', 8, 7, 'brasil.jpg', 12, 24, 17, 7, 6, 4, 0, 2),
-(118, 'Németország', 'Németország', 'valogatott', 8, 8, 'germany.jpg', 12, 16, 3, 13, 6, 3, 3, 0),
-(119, 'Hollandia', 'Hollandia', 'valogatott', 8, 9, 'netherland.jpg', 10, 27, 4, 23, 6, 3, 1, 2),
-(120, 'Olaszország', 'Olaszország', 'valogatott', 8, 10, 'italy.jpg', 9, 21, 12, 9, 6, 3, 0, 3),
-(121, 'Belgium', 'Belgium', 'valogatott', 8, 11, 'belgium.jpg', 9, 29, 7, 22, 6, 2, 3, 1),
-(122, 'Horvátország', 'Horvátország', 'valogatott', 8, 12, 'croatia.jpg', 9, 26, 4, 22, 6, 2, 3, 1),
-(123, 'Dánia', 'Dánia', 'valogatott', 8, 13, 'denmark.jpg', 6, 16, 7, 9, 6, 2, 0, 4),
-(124, 'Svájc', 'Svájc', 'valogatott', 8, 14, 'switczerland.jpg', 6, 14, 2, 12, 6, 1, 3, 2),
-(125, 'Szerbia', 'Szerbia', 'valogatott', 8, 15, 'serbia.jpg', 3, 9, 10, -1, 6, 0, 3, 3),
-(126, 'Borussia Dortmund', 'Németország', 'klub', 6, 6, '', 17, 15, 7, 8, 8, 5, 2, 1),
-(127, 'Barcelona', 'Spanyolország', 'klub', 6, 7, '', 17, 17, 10, 7, 8, 5, 2, 1),
-(128, 'Atletico Madrid', 'Spanyolország', 'klub', 6, 8, '', 16, 13, 6, 7, 8, 5, 1, 2),
-(129, 'RB Leipzig', 'Németország', 'klub', 6, 9, '', 16, 20, 6, 14, 8, 4, 4, 0),
-(130, 'AC Milan', 'Olaszország', 'klub', 6, 10, '', 14, 22, 12, 10, 8, 4, 2, 2),
-(131, 'Juventus', 'Olaszország', 'klub', 6, 11, '', 13, 20, 12, 8, 8, 4, 1, 3),
-(132, 'Arsenal', 'Anglia', 'klub', 6, 12, '', 12, 20, 12, 8, 8, 4, 0, 4),
-(133, 'Liverpool', 'Anglia', 'klub', 6, 13, '', 12, 14, 11, 3, 8, 3, 3, 2),
-(134, 'Bayer Leverkusen', 'Németország', 'klub', 6, 14, '', 11, 16, 12, 4, 8, 3, 2, 3),
-(135, 'Benfica', 'Portugália', 'klub', 6, 15, '', 9, 14, 9, 5, 8, 3, 0, 5),
-(137, 'Aston Villa', 'Anglia', 'klub', 7, 7, '', 15, 13, 7, 6, 8, 5, 0, 3),
-(138, 'Club Brugge', 'Belgium', 'klub', 7, 8, '', 15, 14, 5, 9, 8, 4, 3, 1),
-(139, 'Lille', 'Franciaország', 'klub', 7, 9, '', 14, 10, 7, 3, 8, 4, 2, 2),
-(140, 'PAOK', 'Görögország', 'klub', 7, 10, '', 14, 12, 9, 3, 8, 3, 5, 0),
-(141, 'Fenerbahçe', 'Törökország', 'klub', 7, 11, '', 12, 8, 5, 3, 8, 3, 0, 5),
-(142, 'Olympiacos', 'Görögország', 'klub', 7, 12, '', 11, 11, 7, 4, 8, 3, 2, 3),
-(143, 'Dinamo Zagreb', 'Horvátország', 'klub', 7, 13, '', 10, 10, 7, 3, 8, 3, 1, 4),
-(144, 'Midtjylland', 'Dánia', 'klub', 7, 14, '', 8, 7, 6, 1, 8, 2, 2, 4),
-(145, 'AZ Alkmaar', 'Hollandia', 'klub', 7, 15, '', 5, 6, 5, 1, 8, 1, 2, 5);
+INSERT INTO `csapatok` (`id`, `nev`, `orszag`, `tipus`, `liga_id`, `helyezes`, `kep`) VALUES
+(1, 'Manchester City', 'Anglia', 'klub', 1, 1, 'Manchester_City.jpg'),
+(2, 'Arsenal', 'Anglia', 'klub', 1, 2, 'Arsenal_FC.jpg'),
+(3, 'Liverpool', 'Anglia', 'klub', 1, 3, 'Liverpool.jpg'),
+(4, 'Aston Villa', 'Anglia', 'klub', 1, 4, 'astonvilla.jpg'),
+(5, 'Tottenham Hotspur', 'Anglia', 'klub', 1, 5, 'tottenham.jpg'),
+(6, 'Real Madrid', 'Spanyolország', 'klub', 2, 1, 'real-madrid.jpg'),
+(7, 'Barcelona', 'Spanyolország', 'klub', 2, 2, 'Barcelona.jpg'),
+(8, 'Atletico Madrid', 'Spanyolország', 'klub', 2, 3, 'atleticomadrid.jpg'),
+(9, 'Girona', 'Spanyolország', 'klub', 2, 4, 'girona.jpg'),
+(10, 'Real Sociedad', 'Spanyolország', 'klub', 2, 5, 'realsociedad.jpg'),
+(11, 'Bayer Leverkusen', 'Németország', 'klub', 3, 1, 'bayerleverkusen.jpg'),
+(12, 'Bayern München', 'Németország', 'klub', 3, 2, 'bayernmunich.jpg'),
+(13, 'Stuttgart', 'Németország', 'klub', 3, 3, 'stuttgart.jpg'),
+(14, 'RB Leipzig', 'Németország', 'klub', 3, 4, 'rbleipzig.jpg'),
+(15, 'Borussia Dortmund', 'Németország', 'klub', 3, 5, 'BorussiaDortmund.jpg'),
+(16, 'Inter', 'Olaszország', 'klub', 4, 1, 'inter.jpg'),
+(17, 'AC Milan', 'Olaszország', 'klub', 4, 2, 'acmilan.jpg'),
+(18, 'Juventus', 'Olaszország', 'klub', 4, 3, 'juventus.jpg'),
+(19, 'Napoli', 'Olaszország', 'klub', 4, 4, 'napoli.jpg'),
+(20, 'Atalanta', 'Olaszország', 'klub', 4, 5, 'atalanta.jpg'),
+(21, 'Paris Saint-Germain', 'Franciaország', 'klub', 5, 1, 'psg.jpg'),
+(22, 'Monaco', 'Franciaország', 'klub', 5, 2, 'monaco.jpg'),
+(23, 'Lille', 'Franciaország', 'klub', 5, 3, 'lille.jpg'),
+(24, 'Marseille', 'Franciaország', 'klub', 5, 4, 'marseille.jpg'),
+(25, 'Nice', 'Franciaország', 'klub', 5, 5, 'nice.jpg'),
+(26, 'Real Madrid', 'Spanyolország', 'klub', 6, 1, ''),
+(27, 'Manchester City', 'Anglia', 'klub', 6, 2, ''),
+(28, 'Bayern München', 'Németország', 'klub', 6, 3, ''),
+(29, 'Paris Saint-Germain', 'Franciaország', 'klub', 6, 4, ''),
+(30, 'Inter', 'Olaszország', 'klub', 6, 5, ''),
+(31, 'Fiorentina', 'Olaszország', 'klub', 7, 1, 'fiorentina.jpg'),
+(32, 'Aston Villa', 'Anglia', 'klub', 7, 2, ''),
+(33, 'Club Brugge', 'Belgium', 'klub', 7, 3, 'brugge.jpg'),
+(34, 'Lille', 'Franciaország', 'klub', 7, 4, ''),
+(35, 'PAOK', 'Görögország', 'klub', 7, 5, 'paok.jpg'),
+(36, 'Franciaország', 'Franciaország', 'valogatott', 8, 1, 'france.jpg'),
+(37, 'Anglia', 'Anglia', 'valogatott', 8, 2, 'england.jpg'),
+(38, 'Portugália', 'Portugália', 'valogatott', 8, 3, 'portugal.jpg'),
+(39, 'Spanyolország', 'Spanyolország', 'valogatott', 8, 4, 'spain.jpg'),
+(40, 'Magyarország', 'Magyarország', 'valogatott', 8, 5, 'hungary.jpg'),
+(41, 'Chelsea', 'Anglia', 'klub', 1, 6, 'chelsea.jpg'),
+(42, 'Manchester United', 'Anglia', 'klub', 1, 7, 'manchesterunited.jpg'),
+(43, 'Newcastle United', 'Anglia', 'klub', 1, 8, 'newcastle.jpg'),
+(44, 'West Ham United', 'Anglia', 'klub', 1, 9, 'westham.jpg'),
+(45, 'Brighton & Hove Albion', 'Anglia', 'klub', 1, 10, 'brighton.jpg'),
+(46, 'Fulham', 'Anglia', 'klub', 1, 11, 'fullham.jpg'),
+(47, 'Crystal Palace', 'Anglia', 'klub', 1, 12, 'crystalpalace.jpg'),
+(48, 'Brentford', 'Anglia', 'klub', 1, 13, 'brentford.jpg'),
+(49, 'Wolverhampton Wanderers', 'Anglia', 'klub', 1, 14, 'wolverhampton.jpg'),
+(50, 'Nottingham Forest', 'Anglia', 'klub', 1, 15, 'nottingham.jpg'),
+(51, 'Everton', 'Anglia', 'klub', 1, 16, 'everton.jpg'),
+(52, 'Southampton', 'Anglia', 'klub', 1, 17, 'southamphton.jpg'),
+(53, 'Ipswich Town', 'Anglia', 'klub', 1, 18, 'ipswitch.jpg'),
+(54, 'Leicester City', 'Anglia', 'klub', 1, 19, 'leichester.jpg'),
+(55, 'Bournemouth', 'Anglia', 'klub', 1, 20, 'bournemouth.jpg'),
+(56, 'Real Betis', 'Spanyolország', 'klub', 2, 6, ''),
+(57, 'Athletic Bilbao', 'Spanyolország', 'klub', 2, 7, ''),
+(58, 'Valencia', 'Spanyolország', 'klub', 2, 8, ''),
+(59, 'Sevilla', 'Spanyolország', 'klub', 2, 9, ''),
+(60, 'Villarreal', 'Spanyolország', 'klub', 2, 10, ''),
+(61, 'Osasuna', 'Spanyolország', 'klub', 2, 11, ''),
+(62, 'Getafe', 'Spanyolország', 'klub', 2, 12, ''),
+(63, 'Celta Vigo', 'Spanyolország', 'klub', 2, 13, ''),
+(64, 'Mallorca', 'Spanyolország', 'klub', 2, 14, ''),
+(65, 'Las Palmas', 'Spanyolország', 'klub', 2, 15, ''),
+(66, 'Rayo Vallecano', 'Spanyolország', 'klub', 2, 16, ''),
+(67, 'Alaves', 'Spanyolország', 'klub', 2, 17, ''),
+(68, 'Cadiz', 'Spanyolország', 'klub', 2, 18, ''),
+(69, 'Granada', 'Spanyolország', 'klub', 2, 19, ''),
+(70, 'Leganes', 'Spanyolország', 'klub', 2, 20, ''),
+(71, 'Eintracht Frankfurt', 'Németország', 'klub', 3, 6, ''),
+(72, 'TSG Hoffenheim', 'Németország', 'klub', 3, 7, ''),
+(73, 'SC Freiburg', 'Németország', 'klub', 3, 8, ''),
+(74, 'FC Augsburg', 'Németország', 'klub', 3, 9, ''),
+(75, 'Werder Bremen', 'Németország', 'klub', 3, 10, ''),
+(76, 'VfL Wolfsburg', 'Németország', 'klub', 3, 11, ''),
+(77, 'Borussia Mönchengladbach', 'Németország', 'klub', 3, 12, ''),
+(78, '1. FC Heidenheim', 'Németország', 'klub', 3, 13, ''),
+(79, 'VfL Bochum', 'Németország', 'klub', 3, 14, ''),
+(80, 'Mainz 05', 'Németország', 'klub', 3, 15, ''),
+(81, 'Union Berlin', 'Németország', 'klub', 3, 16, ''),
+(82, 'FC St. Pauli', 'Németország', 'klub', 3, 17, ''),
+(83, 'Greuther Fürth', 'Németország', 'klub', 3, 18, ''),
+(84, 'Holstein Kiel', 'Németország', 'klub', 3, 19, ''),
+(85, 'Fortuna Düsseldorf', 'Németország', 'klub', 3, 20, ''),
+(86, 'AS Roma', 'Olaszország', 'klub', 4, 6, ''),
+(87, 'Lazio', 'Olaszország', 'klub', 4, 7, ''),
+(88, 'Bologna', 'Olaszország', 'klub', 4, 8, ''),
+(89, 'Torino', 'Olaszország', 'klub', 4, 9, ''),
+(90, 'Fiorentina', 'Olaszország', 'klub', 4, 10, ''),
+(91, 'Monza', 'Olaszország', 'klub', 4, 11, ''),
+(92, 'Genoa', 'Olaszország', 'klub', 4, 12, ''),
+(93, 'Lecce', 'Olaszország', 'klub', 4, 13, ''),
+(94, 'Udinese', 'Olaszország', 'klub', 4, 14, ''),
+(95, 'Cagliari', 'Olaszország', 'klub', 4, 15, ''),
+(96, 'Empoli', 'Olaszország', 'klub', 4, 16, ''),
+(97, 'Sassuolo', 'Olaszország', 'klub', 4, 17, ''),
+(98, 'Verona', 'Olaszország', 'klub', 4, 18, ''),
+(99, 'Como', 'Olaszország', 'klub', 4, 19, ''),
+(100, 'Parma', 'Olaszország', 'klub', 4, 20, ''),
+(101, 'Lyon', 'Franciaország', 'klub', 5, 6, ''),
+(102, 'Rennes', 'Franciaország', 'klub', 5, 7, ''),
+(103, 'Lens', 'Franciaország', 'klub', 5, 8, ''),
+(104, 'Toulouse', 'Franciaország', 'klub', 5, 9, ''),
+(105, 'Montpellier', 'Franciaország', 'klub', 5, 10, ''),
+(106, 'Strasbourg', 'Franciaország', 'klub', 5, 11, ''),
+(107, 'Nantes', 'Franciaország', 'klub', 5, 12, ''),
+(108, 'Reims', 'Franciaország', 'klub', 5, 13, ''),
+(109, 'Le Havre', 'Franciaország', 'klub', 5, 14, ''),
+(110, 'Brest', 'Franciaország', 'klub', 5, 15, ''),
+(111, 'Lorient', 'Franciaország', 'klub', 5, 16, ''),
+(112, 'Clermont Foot', 'Franciaország', 'klub', 5, 17, ''),
+(113, 'Saint-Étienne', 'Franciaország', 'klub', 5, 18, ''),
+(114, 'Auxerre', 'Franciaország', 'klub', 5, 19, ''),
+(115, 'Angers', 'Franciaország', 'klub', 5, 20, ''),
+(116, 'Argentína', 'Argentína', 'valogatott', 8, 6, 'argentina.jpg'),
+(117, 'Brazília', 'Brazília', 'valogatott', 8, 7, 'brasil.jpg'),
+(118, 'Németország', 'Németország', 'valogatott', 8, 8, 'germany.jpg'),
+(119, 'Hollandia', 'Hollandia', 'valogatott', 8, 9, 'netherland.jpg'),
+(120, 'Olaszország', 'Olaszország', 'valogatott', 8, 10, 'italy.jpg'),
+(121, 'Belgium', 'Belgium', 'valogatott', 8, 11, 'belgium.jpg'),
+(122, 'Horvátország', 'Horvátország', 'valogatott', 8, 12, 'croatia.jpg'),
+(123, 'Dánia', 'Dánia', 'valogatott', 8, 13, 'denmark.jpg'),
+(124, 'Svájc', 'Svájc', 'valogatott', 8, 14, 'switczerland.jpg'),
+(125, 'Szerbia', 'Szerbia', 'valogatott', 8, 15, 'serbia.jpg'),
+(126, 'Borussia Dortmund', 'Németország', 'klub', 6, 6, ''),
+(127, 'Barcelona', 'Spanyolország', 'klub', 6, 7, ''),
+(128, 'Atletico Madrid', 'Spanyolország', 'klub', 6, 8, ''),
+(129, 'RB Leipzig', 'Németország', 'klub', 6, 9, ''),
+(130, 'AC Milan', 'Olaszország', 'klub', 6, 10, ''),
+(131, 'Juventus', 'Olaszország', 'klub', 6, 11, ''),
+(132, 'Arsenal', 'Anglia', 'klub', 6, 12, ''),
+(133, 'Liverpool', 'Anglia', 'klub', 6, 13, ''),
+(134, 'Bayer Leverkusen', 'Németország', 'klub', 6, 14, ''),
+(135, 'Benfica', 'Portugália', 'klub', 6, 15, ''),
+(137, 'Aston Villa', 'Anglia', 'klub', 7, 7, ''),
+(138, 'Club Brugge', 'Belgium', 'klub', 7, 8, ''),
+(139, 'Lille', 'Franciaország', 'klub', 7, 9, ''),
+(140, 'PAOK', 'Görögország', 'klub', 7, 10, ''),
+(141, 'Fenerbahçe', 'Törökország', 'klub', 7, 11, ''),
+(142, 'Olympiacos', 'Görögország', 'klub', 7, 12, ''),
+(143, 'Dinamo Zagreb', 'Horvátország', 'klub', 7, 13, ''),
+(144, 'Midtjylland', 'Dánia', 'klub', 7, 14, ''),
+(145, 'AZ Alkmaar', 'Hollandia', 'klub', 7, 15, '');
 
 -- --------------------------------------------------------
 
@@ -983,6 +975,30 @@ INSERT INTO `meccsek` (`id`, `csapat1_id`, `csapat2_id`, `datum`, `liga_id`, `er
 -- --------------------------------------------------------
 
 --
+-- Tábla szerkezet ehhez a táblához `meccsek_statisztika`
+--
+
+CREATE TABLE `meccsek_statisztika` (
+  `id` int(11) NOT NULL,
+  `meccs_id` int(11) NOT NULL,
+  `jatekos_id` int(11) DEFAULT NULL,
+  `csapat_id` int(11) NOT NULL,
+  `perc` int(11) DEFAULT NULL,
+  `type` varchar(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+
+--
+-- A tábla adatainak kiíratása `meccsek_statisztika`
+--
+
+INSERT INTO `meccsek_statisztika` (`id`, `meccs_id`, `jatekos_id`, `csapat_id`, `perc`, `type`) VALUES
+(1, 3, 25, 15, 22, 'gol'),
+(2, 3, NULL, 15, 35, 'szoglet'),
+(4, 3, 32, 15, 65, 'gol');
+
+-- --------------------------------------------------------
+
+--
 -- Tábla szerkezet ehhez a táblához `news`
 --
 
@@ -1041,116 +1057,20 @@ INSERT INTO `poszt` (`id`, `name`, `name_id`) VALUES
 -- --------------------------------------------------------
 
 --
--- Tábla szerkezet ehhez a táblához `statisztikak`
+-- Tábla szerkezet ehhez a táblához `tabella`
 --
 
-CREATE TABLE `statisztikak` (
-  `id` int(11) NOT NULL,
-  `jatekos_id` int(11) DEFAULT NULL,
-  `csapat_id` int(11) DEFAULT NULL,
-  `golok` tinyint(4) DEFAULT 0,
-  `lovesek` int(11) DEFAULT 0,
-  `passzok` int(11) DEFAULT 0,
-  `labdabirtoklas` decimal(5,2) DEFAULT 0.00,
-  `meccs_id` int(11) NOT NULL
+CREATE TABLE `tabella` (
+  `pontszam` tinyint(20) NOT NULL,
+  `lottgol` tinyint(50) NOT NULL,
+  `kapottgol` tinyint(50) NOT NULL,
+  `golarany` int(50) NOT NULL,
+  `lejatszottmeccs` tinyint(50) NOT NULL,
+  `gyozelem` tinyint(50) NOT NULL,
+  `dontetlen` tinyint(50) NOT NULL,
+  `vereseg` tinyint(50) NOT NULL,
+  `helyezes` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
-
---
--- A tábla adatainak kiíratása `statisztikak`
---
-
-INSERT INTO `statisztikak` (`id`, `jatekos_id`, `csapat_id`, `golok`, `lovesek`, `passzok`, `labdabirtoklas`, `meccs_id`) VALUES
-(1, 10, 1, 2, 5, 42, 55.30, 1),
-(2, 11, 1, 0, 1, 37, 55.30, 1),
-(3, 21, 2, 1, 3, 28, 44.70, 1),
-(4, 12, 1, 0, 2, 31, 60.10, 2),
-(5, 22, 3, 1, 4, 24, 39.90, 2),
-(6, 13, 4, 3, 6, 18, 48.20, 3),
-(7, 23, 5, 0, 2, 33, 51.80, 3),
-(44, 1, 1, 2, 14, 520, 57.00, 1),
-(45, 2, 1, 1, 9, 465, 43.00, 1),
-(46, 3, 2, 1, 11, 502, 53.00, 2),
-(47, 4, 2, 1, 10, 448, 47.00, 2),
-(48, 5, 3, 3, 17, 545, 56.00, 3),
-(49, 6, 3, 2, 13, 425, 44.00, 3),
-(50, 7, 4, 0, 8, 498, 51.00, 4),
-(51, 8, 4, 0, 7, 472, 49.00, 4),
-(52, 9, 5, 3, 16, 603, 62.00, 5),
-(53, 10, 5, 0, 5, 368, 38.00, 5),
-(54, 11, 6, 0, 10, 490, 54.00, 6),
-(55, 12, 6, 0, 9, 421, 46.00, 6),
-(56, NULL, 1, 2, 15, 500, 56.00, 1),
-(57, NULL, 2, 1, 10, 450, 44.00, 1),
-(58, NULL, 3, 1, 12, 510, 53.00, 2),
-(59, NULL, 4, 2, 1, 11, 47.00, 2),
-(60, NULL, 6, 3, 3, 18, 50.00, 3),
-(61, NULL, 7, 2, 2, 14, 46.00, 3),
-(62, NULL, 8, 0, 8, 498, 51.00, 4),
-(63, NULL, 9, 0, 7, 472, 49.00, 4),
-(64, NULL, 26, 3, 16, 603, 62.00, 5),
-(65, NULL, 27, 0, 5, 368, 38.00, 5),
-(66, NULL, 31, 0, 10, 490, 54.00, 6),
-(67, NULL, 32, 0, 9, 421, 46.00, 6),
-(68, NULL, 1, 2, 2, 14, 57.00, 7),
-(69, NULL, 2, 1, 1, 11, 45.00, 7),
-(70, NULL, 3, 2, 2, 13, 55.00, 8),
-(71, NULL, 4, 1, 2, 12, 46.00, 8),
-(72, NULL, 6, 1, 3, 17, 56.00, 9),
-(73, NULL, 7, 2, 1, 14, 44.00, 9),
-(74, NULL, 8, 0, 10, 51, 4.00, 10),
-(75, NULL, 9, 1, 1, 48, 49.00, 10),
-(76, NULL, 10, 1, 2, 12, 55.00, 11),
-(77, NULL, 11, 2, 1, 10, 45.00, 11),
-(78, NULL, 12, 2, 1, 14, 53.00, 12),
-(79, NULL, 13, 1, 2, 12, 47.00, 12),
-(80, NULL, 14, 3, 3, 18, 52.00, 13),
-(81, NULL, 15, 4, 0, 11, 48.00, 13),
-(82, NULL, 16, 5, 2, 15, 55.00, 14),
-(83, NULL, 17, 6, 1, 13, 45.00, 14),
-(84, NULL, 18, 7, 1, 12, 50.00, 15),
-(85, NULL, 19, 8, 2, 14, 49.00, 15),
-(86, NULL, 20, 9, 0, 10, 52.00, 16),
-(87, NULL, 21, 10, 1, 9, 48.00, 16),
-(88, NULL, 22, 11, 3, 16, 57.00, 17),
-(89, NULL, 23, 12, 1, 12, 46.00, 17),
-(90, NULL, 24, 13, 2, 14, 55.00, 18),
-(91, NULL, 25, 14, 0, 11, 44.00, 18),
-(92, NULL, 26, 15, 1, 13, 52.00, 19),
-(93, NULL, 27, 16, 1, 12, 47.00, 19),
-(94, NULL, 28, 17, 2, 15, 54.00, 20),
-(95, NULL, 29, 18, 0, 10, 43.00, 20),
-(96, NULL, 30, 19, 3, 16, 56.00, 21),
-(97, NULL, 31, 20, 2, 12, 49.00, 21),
-(98, NULL, 32, 21, 1, 14, 53.00, 22),
-(99, NULL, 33, 22, 1, 11, 47.00, 22),
-(100, NULL, 34, 23, 2, 15, 55.00, 23),
-(101, NULL, 35, 24, 0, 10, 44.00, 23),
-(102, NULL, 36, 25, 1, 12, 52.00, 24),
-(103, NULL, 37, 26, 2, 14, 46.00, 24),
-(104, NULL, 38, 27, 3, 17, 57.00, 25),
-(105, NULL, 39, 28, 1, 11, 45.00, 25),
-(106, NULL, 40, 29, 2, 13, 54.00, 26),
-(107, NULL, 41, 30, 0, 10, 42.00, 26),
-(108, NULL, 31, 31, 1, 12, 53.00, 27),
-(109, NULL, 32, 32, 2, 14, 47.00, 27),
-(110, NULL, 33, 33, 0, 10, 49.00, 28),
-(111, NULL, 34, 34, 1, 11, 50.00, 28),
-(112, NULL, 35, 35, 3, 16, 56.00, 29),
-(113, NULL, 36, 36, 2, 12, 48.00, 29),
-(114, NULL, 37, 37, 1, 11, 52.00, 30),
-(115, NULL, 38, 38, 0, 9, 45.00, 30),
-(116, NULL, 39, 39, 2, 14, 55.00, 31),
-(117, NULL, 40, 40, 1, 12, 46.00, 31),
-(118, NULL, 41, 41, 3, 17, 57.00, 32),
-(119, NULL, 42, 42, 0, 10, 43.00, 32),
-(120, NULL, 43, 43, 1, 12, 53.00, 33),
-(121, NULL, 44, 44, 2, 14, 49.00, 33),
-(122, NULL, 45, 45, 0, 10, 48.00, 34),
-(123, NULL, 46, 46, 1, 11, 50.00, 34),
-(124, NULL, 47, 47, 2, 15, 55.00, 35),
-(125, NULL, 48, 48, 1, 12, 46.00, 35),
-(126, NULL, 49, 49, 3, 17, 57.00, 36),
-(127, NULL, 50, 50, 0, 10, 44.00, 36);
 
 -- --------------------------------------------------------
 
@@ -1217,6 +1137,12 @@ ALTER TABLE `meccsek`
   ADD KEY `liga_id` (`liga_id`);
 
 --
+-- A tábla indexei `meccsek_statisztika`
+--
+ALTER TABLE `meccsek_statisztika`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- A tábla indexei `news`
 --
 ALTER TABLE `news`
@@ -1228,15 +1154,6 @@ ALTER TABLE `news`
 ALTER TABLE `poszt`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `uq_poszt_name_id` (`name_id`);
-
---
--- A tábla indexei `statisztikak`
---
-ALTER TABLE `statisztikak`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `fk_statisztika_jatekos` (`jatekos_id`),
-  ADD KEY `fk_statisztika_csapat` (`csapat_id`),
-  ADD KEY `fk_meccs` (`meccs_id`);
 
 --
 -- A tábla indexei `users`
@@ -1281,6 +1198,12 @@ ALTER TABLE `meccsek`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
 
 --
+-- AUTO_INCREMENT a táblához `meccsek_statisztika`
+--
+ALTER TABLE `meccsek_statisztika`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
 -- AUTO_INCREMENT a táblához `news`
 --
 ALTER TABLE `news`
@@ -1291,12 +1214,6 @@ ALTER TABLE `news`
 --
 ALTER TABLE `poszt`
   MODIFY `id` tinyint(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
-
---
--- AUTO_INCREMENT a táblához `statisztikak`
---
-ALTER TABLE `statisztikak`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=128;
 
 --
 -- AUTO_INCREMENT a táblához `users`
@@ -1336,14 +1253,6 @@ ALTER TABLE `meccsek`
   ADD CONSTRAINT `meccsek_ibfk_1` FOREIGN KEY (`csapat1_id`) REFERENCES `csapatok` (`id`) ON DELETE CASCADE,
   ADD CONSTRAINT `meccsek_ibfk_2` FOREIGN KEY (`csapat2_id`) REFERENCES `csapatok` (`id`) ON DELETE CASCADE,
   ADD CONSTRAINT `meccsek_ibfk_3` FOREIGN KEY (`liga_id`) REFERENCES `ligak` (`id`) ON DELETE CASCADE;
-
---
--- Megkötések a táblához `statisztikak`
---
-ALTER TABLE `statisztikak`
-  ADD CONSTRAINT `fk_meccs` FOREIGN KEY (`meccs_id`) REFERENCES `meccsek` (`id`),
-  ADD CONSTRAINT `fk_statisztika_csapat` FOREIGN KEY (`csapat_id`) REFERENCES `csapatok` (`id`) ON DELETE CASCADE,
-  ADD CONSTRAINT `fk_statisztika_jatekos` FOREIGN KEY (`jatekos_id`) REFERENCES `jatekosok` (`id`) ON DELETE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
