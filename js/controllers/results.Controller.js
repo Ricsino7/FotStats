@@ -29,7 +29,7 @@
       $scope.modalData.eredmeny = meccs.eredmeny;
       
       // ABSZOLÚT ÚTVONAL a biztonság kedvéért
-      $http.get('/FotStats/php/meccs_reszletek.php?id=' + meccs.id).then(function(r) {
+      $http.get('./php/meccs_reszletek.php?id=' + meccs.id).then(function(r) {
         console.log('Statisztika:', r.data);
         $scope.modalData.stat = r.data;
         
