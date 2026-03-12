@@ -1,30 +1,49 @@
-;(function(window, angular) {
+;(function(angular) {
   'use strict';
 
   angular.module('app')
-  .controller('resultsController', ['$scope','$rootScope','$http', function($scope,$rootScope,$http) {
-    console.log($rootScope.user)
+  .controller('resultsController', ['$scope', '$http', function($scope, $http) {
     
-    // Inicializálunk egy üres tömböt a hírek tárolására
-    // Ide fogja betölteni a PHP-ból érkező JSON adatokat
-  $scope.data = [];
+    $scope.data = [];
+    $scope.modalData = {
+      hazai: '',
+      vendeg: '',
+      eredmeny: '',
+      stat: []
+    };
 
-    // Lekérjük a híreket a PHP fájlból Angular $http segítségével
-  $http.get('./php/results.php') // az útvonal a PHP fájlhoz
-
-        // Ha a lekérés sikeres, ezt a függvényt hívja meg
-  .then(function(response) {
-
-    // response.data tartalmazza a PHP által visszaadott JSON tömböt
-    // Ezt betöltjük az Angular scope változójába, így a HTML ng-repeat-je automatikusan frissül
-    $scope.data = response.data;
-    })
-
-    // Ha valami hiba történik a lekérés során, ezt a függvényt hívja meg
-    .catch(function(error) {
-      // Kiírjuk a konzolra a hibát, hogy lássuk mi ment rosszul
-      console.error("Hiba a lekérésnél:", error);
+    // Meccsek betöltése
+    $http.get('php/results.php').then(function(r) {
+      console.log('Meccsek:', r.data);
+      $scope.data = r.data;
+    }).catch(function(e) {
+      console.error('Hiba a meccsek betöltésénél:', e);
     });
-}]);
 
-})(window, angular);
+    // Részletek gomb
+    $scope.reszletek = function(meccs) {
+      console.log('Meccs:', meccs);
+      
+      $scope.modalData.hazai = meccs.hazai;
+      $scope.modalData.vendeg = meccs.vendeg;
+      $scope.modalData.eredmeny = meccs.eredmeny;
+      
+      // ABSZOLÚT ÚTVONAL a biztonság kedvéért
+      $http.get('/FotStats/php/meccs_reszletek.php?id=' + meccs.id).then(function(r) {
+        console.log('Statisztika:', r.data);
+        $scope.modalData.stat = r.data;
+        
+        var modalElem = document.getElementById('reszletModal');
+        if (modalElem) {
+          var modal = new bootstrap.Modal(modalElem);
+          modal.show();
+        }
+      }).catch(function(e) {
+        console.error('Hiba a statisztika betöltésénél:', e);
+        alert('Nem található a meccs_reszletek.php fájl!');
+      });
+    };
+    
+  }]);
+
+})(angular);
