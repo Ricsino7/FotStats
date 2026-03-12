@@ -97,14 +97,15 @@
   ])
     //Application run
     .run([
-      '$rootScope',
-      ($rootScope) => {
+      '$rootScope','util',
+      ($rootScope,util) => {
 
         $rootScope.lang = { id: 'hu' };
         $rootScope.getLanguageData = () => {
           fetch(`./lang/${$rootScope.lang.id}.json`)
           .then(r => r.json())
           .then(r => {
+            console.log(util.getPageId())
             $rootScope.lang.data = r;
             $rootScope.$applyAsync();
           })
