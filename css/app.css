@@ -154,8 +154,7 @@ body{
 }
 
 .home-table tbody tr:hover {
-  background-color: rgba(13,110,253,.10) !important; 
-  transform: scale(1.01);
+  background-color: rgba(13,110,253,.10) !important;
 }
 
 .sticky-header th{
@@ -331,22 +330,6 @@ body{
 
 .btn-register:hover{
   color: #0db9fd;
-}
-
-.fav-star {
-  cursor: pointer;
-  font-size: 20px;
-  color: #ccc;
-  transition: all 0.2s ease;
-}
-
-.fav-star:hover {
-  transform: scale(1.2);
-  color: #999;
-}
-
-.fav-star.active {
-  color: #f5c518; /* arany */
 }
 
 .liga-logo {
