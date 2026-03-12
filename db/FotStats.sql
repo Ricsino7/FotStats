@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Gép: 127.0.0.1
--- Létrehozás ideje: 2026. Már 10. 13:06
+-- Létrehozás ideje: 2026. Már 12. 13:24
 -- Kiszolgáló verziója: 10.4.32-MariaDB
 -- PHP verzió: 8.2.12
 
@@ -982,7 +982,7 @@ CREATE TABLE `meccsek_statisztika` (
   `id` int(11) NOT NULL,
   `meccs_id` int(11) NOT NULL,
   `jatekos_id` int(11) DEFAULT NULL,
-  `csapat_id` int(11) NOT NULL,
+  `csapat_id` int(11) DEFAULT NULL,
   `perc` int(11) DEFAULT NULL,
   `type` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
@@ -992,9 +992,20 @@ CREATE TABLE `meccsek_statisztika` (
 --
 
 INSERT INTO `meccsek_statisztika` (`id`, `meccs_id`, `jatekos_id`, `csapat_id`, `perc`, `type`) VALUES
-(1, 3, 25, 15, 22, 'gol'),
-(2, 3, NULL, 15, 35, 'szoglet'),
-(4, 3, 32, 15, 65, 'gol');
+(5, 3, 11, 6, 23, 'gol'),
+(6, 3, 12, 6, 67, 'gol'),
+(7, 3, 11, 6, 81, 'gol'),
+(8, 3, NULL, 6, 12, 'szoglet'),
+(9, 3, NULL, 6, 34, 'szoglet'),
+(10, 3, NULL, 6, 71, 'szoglet'),
+(11, 3, NULL, 6, 88, 'szoglet'),
+(12, 3, 13, 7, 15, 'gol'),
+(13, 3, 14, 7, 45, 'gol'),
+(14, 3, NULL, 7, 8, 'szoglet'),
+(15, 3, NULL, 7, 27, 'szoglet'),
+(16, 3, NULL, 7, 52, 'szoglet'),
+(17, 3, NULL, 7, 78, 'szoglet'),
+(21, 3, NULL, NULL, 93, 'ended');
 
 -- --------------------------------------------------------
 
@@ -1140,7 +1151,10 @@ ALTER TABLE `meccsek`
 -- A tábla indexei `meccsek_statisztika`
 --
 ALTER TABLE `meccsek_statisztika`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `meccs_id` (`meccs_id`),
+  ADD KEY `jatekos_id` (`jatekos_id`),
+  ADD KEY `csapat_id` (`csapat_id`);
 
 --
 -- A tábla indexei `news`
@@ -1201,7 +1215,7 @@ ALTER TABLE `meccsek`
 -- AUTO_INCREMENT a táblához `meccsek_statisztika`
 --
 ALTER TABLE `meccsek_statisztika`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT a táblához `news`
@@ -1253,6 +1267,14 @@ ALTER TABLE `meccsek`
   ADD CONSTRAINT `meccsek_ibfk_1` FOREIGN KEY (`csapat1_id`) REFERENCES `csapatok` (`id`) ON DELETE CASCADE,
   ADD CONSTRAINT `meccsek_ibfk_2` FOREIGN KEY (`csapat2_id`) REFERENCES `csapatok` (`id`) ON DELETE CASCADE,
   ADD CONSTRAINT `meccsek_ibfk_3` FOREIGN KEY (`liga_id`) REFERENCES `ligak` (`id`) ON DELETE CASCADE;
+
+--
+-- Megkötések a táblához `meccsek_statisztika`
+--
+ALTER TABLE `meccsek_statisztika`
+  ADD CONSTRAINT `meccsek_statisztika_ibfk_1` FOREIGN KEY (`meccs_id`) REFERENCES `meccsek` (`id`) ON DELETE CASCADE,
+  ADD CONSTRAINT `meccsek_statisztika_ibfk_2` FOREIGN KEY (`jatekos_id`) REFERENCES `jatekosok` (`id`) ON DELETE SET NULL,
+  ADD CONSTRAINT `meccsek_statisztika_ibfk_3` FOREIGN KEY (`csapat_id`) REFERENCES `csapatok` (`id`) ON DELETE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
