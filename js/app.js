@@ -90,6 +90,13 @@
           parent: 'root',
           controller: 'betController',
           templateUrl: './html../pages/bet.html'
+        })
+
+        .state('statement', {
+          url: '/statement',
+          parent: 'root',
+          controller: 'statementController',
+          templateUrl: './html../pages/statement.html'
         });
 
       $urlRouterProvider.otherwise('/');
