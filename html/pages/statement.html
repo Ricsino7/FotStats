@@ -1,73 +1,200 @@
 <style>
-body{
-  background:#0f0f0f;
-  font-family: Arial, Helvetica, sans-serif;
+  .statement-page{
+  min-height:100vh;
+  background:#050505;
   color:#eaeaea;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-family:Arial, Helvetica, sans-serif;
+  position:relative;
+  overflow:hidden;
 }
 
-.announcement{
-  max-width:800px;
-  margin:80px auto;
-  padding:40px;
-  background:#1b1b1b;
-  border-radius:12px;
-  box-shadow:0 10px 40px rgba(0,0,0,0.5);
-  line-height:1.7;
+.background-animation{
+  position:absolute;
+  width:200%;
+  height:200%;
+  background:
+    radial-gradient(circle at 20% 30%, rgba(255,255,255,0.04), transparent),
+    radial-gradient(circle at 80% 70%, rgba(255,255,255,0.03), transparent),
+    radial-gradient(circle at 40% 80%, rgba(255,255,255,0.02), transparent);
+  animation:moveBg 25s linear infinite;
+  z-index:0;
 }
 
-.announcement h1{
+@keyframes moveBg{
+  0%{transform:translate(0,0);}
+  50%{transform:translate(-100px,-80px);}
+  100%{transform:translate(0,0);}
+}
+
+.statement-box{
+  max-width:700px;
   text-align:center;
-  margin-bottom:30px;
-  font-size:32px;
-  letter-spacing:1px;
+  position:relative;
+  z-index:2;
+  padding:20px;
+  animation:fadeUp 1.5s ease;
 }
 
-.announcement p{
-  margin-bottom:20px;
-  font-size:18px;
+.logo{
+  font-size:48px;
+  letter-spacing:4px;
+  margin-bottom:5px;
+}
+
+.subtitle{
+  color:#aaa;
+  margin-bottom:25px;
+}
+
+.openBtn{
+  margin-top:30px;
+  padding:12px 28px;
+  background:#1b1b1b;
+  border:none;
+  border-radius:8px;
+  color:white;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+.openBtn:hover{
+  background:#2a2a2a;
+  transform:scale(1.05);
+}
+
+.modal{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,0.85);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  opacity:0;
+  pointer-events:none;
+  transition:all 0.4s ease;
+  z-index:10;
+}
+
+.modal.show{
+  opacity:1;
+  pointer-events:auto;
+}
+
+.modal-card{
+  background:#111;
+  padding:40px;
+  border-radius:12px;
+  max-width:650px;
+  line-height:1.7;
+  transform:translateY(-50px);
+  opacity:0;
+  transition:all 0.4s ease;
+}
+
+.modal.show .modal-card{
+  transform:translateY(0);
+  opacity:1;
+}
+
+.close{
+  position:absolute;
+  right:20px;
+  top:15px;
+  font-size:28px;
+  cursor:pointer;
 }
 
 .signature{
+  margin-top:25px;
   text-align:right;
-  font-weight:bold;
-  margin-top:40px;
-  opacity:0.8;
+  color:#aaa;
+}
+
+@keyframes fadeUp{
+  from{opacity:0; transform:translateY(40px);}
+  to{opacity:1; transform:translateY(0);}
 }
 </style>
-<div class="announcement">
-  <h1>Oldal megszűnése</h1>
-  <h2>Hivatalos közlemény</h2>
+<div ng-app="app" ng-controller="statementController" class="statement-page">
 
-  <p>
-    Szeretnénk tájékoztatni minden felhasználónkat és támogatónkat, hogy a
-    <strong>FotStats</strong> fejlesztése és működése megszűnik.
-  </p>
+  <!-- Animált háttér -->
+  <div class="background-animation"></div>
 
-  <p>
-    A projektet <strong>2025 októberétől 2026. március 18-ig</strong> közösen
-    építettük és fejlesztettük. Ez az időszak rengeteg munkát, ötletet,
-    tanulást és közös élményt jelentett számunkra. Büszkék vagyunk arra,
-    amit ez idő alatt sikerült létrehoznunk.
-  </p>
+  <div class="statement-box">
+    <h1 class="logo">FotStats</h1>
+    <h2 class="subtitle">Az oldal megszűnése és hivatalos álláspont</h2>
 
-  <p>
-    Sajnálattal kell azonban közölnünk, hogy a fejlesztői bázis feloszlása
-    miatt a közös munka nem folytatódik tovább. Ennek következtében a
-    <strong>FotStats oldal működése is megszűnik</strong>.
-  </p>
+    <p>
+      A FotStats projekt 2025 októberében indult, tele voltunk lelkesedéssel, kreativitással
+      és azzal a közös hittel, hogy egy olyan szolgáltatást hozzunk létre, amely valódi értéket
+      ad a felhasználóknak. Minden sor kód, minden design, minden teszt mögött ott állt a
+      csapat közös álma és kitartása. Ez az időszak tele volt álmokkal, reménnyel és
+      együttműködéssel, ami örökre a csapat szívében marad.
+    </p>
 
-  <p>
-    Ez a döntés számunkra sem volt könnyű. Őszintén hálásak vagyunk
-    mindenkinek, aki támogatta, használta vagy figyelemmel kísérte
-    a FotStats fejlődését.
-  </p>
+    <p>
+      Az elmúlt hónapok során azonban a körülmények változtak. A fejlesztői csapat
+      útjai szétváltak, a FotStats mögött álló támogatók kiszálltak, és a projekt
+      fenntarthatósága már nem volt biztosítható. Nehéz szívvel kell bejelenteni, hogy
+      a FotStats hivatalosan megszűnik, és a további közös munkát már nem tudjuk folytatni.
+    </p>
 
-  <p>
-    Köszönjük a bizalmat, a visszajelzéseket és azt a közösséget,
-    amely a projekt köré épült.
-  </p>
+    <p>
+      Az alábbi gombra kattintva olvasható a részletes hivatalos álláspont,
+      amelyben mindenki számára láthatóvá válik a projekt lezárásának oka,
+      a csapat útjai és a támogatók döntései.
+    </p>
 
-  <p class="signature">
-    A FotStats fejlesztői csapata
-  </p>
+    <button class="openBtn" ng-click="openModal()">Jelenlegi Álláspont</button>
+
+    <div class="team">
+      <h3>Emlék – Fejlesztői csapat</h3>
+      <ul>
+        <li>Bokor Richárd</li>
+        <li>Kulcsár Tamás</li>
+      </ul>
+      <span class="date">2025 Október – 2026 Március 18</span>
+    </div>
+  </div>
+
+  <!-- Modal -->
+  <div class="modal" ng-class="{'show': modalOpen}" ng-click="closeModal()">
+    <div class="modal-card" ng-click="$event.stopPropagation()">
+      <span class="close" ng-click="closeModal()">×</span>
+
+      <h2>Hivatalos Álláspont</h2>
+
+      <p>
+        A FotStats projekt 2025 októberében indult, egy olyan időszakban, amikor a csapat
+        tele volt lelkesedéssel, kreativitással és a közös célok iránti elkötelezettséggel.
+        Minden apró részlet mögött ott volt a csapat álma: egy értékes és segítő
+        szolgáltatás létrehozása.
+      </p>
+
+      <p>
+        Azonban az idő múlásával a csapat útjai szétváltak, a támogatók kiszálltak,
+        és a projekt fenntarthatósága már nem volt biztosítható. Bár fájdalmas,
+        a projekt hivatalosan lezárásra kerül.
+      </p>
+
+      <p>
+        Szeretnénk kifejezni hálánkat mindenkinek, aki hozzájárult a FotStats sikeréhez.
+        Az itt eltöltött hónapok minden kódolt sora, minden teszt és minden kreatív ötlet
+        örök emlék marad. Emlékezzünk együtt azokra a pillanatokra, amikor a csapat
+        együtt álmodott és dolgozott a közös célokért.
+      </p>
+
+      <p class="signature">
+        A FotStats fejlesztői csapata
+      </p>
+
+    </div>
+  </div>
+
 </div>
