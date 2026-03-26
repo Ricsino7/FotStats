@@ -8,6 +8,15 @@
 
     $scope.data = [];
     $scope.activeTab = '1x2';
+    $scope.ticket = [];
+
+    $scope.addToTicket = function(match, tip, odd) {
+        $scope.ticket.push({
+            match: match,
+            tip: tip,
+            odd: odd
+        });
+    };
 
     $scope.setTab = function(tab) {
       $scope.activeTab = tab;

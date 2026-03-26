@@ -1,135 +1,163 @@
 <div class="container">
   <div class="row">
 
-    <!--A gombok letre hozasa + a gombokhoz esemeny letre hozasa ra-->
-    <div class="d-flex gap-2 mb-3 mt-3">
-      <button class="btn telitip"
-              ng-class="activeTab === '1x2' ? 'btn-primary' : 'btn-outline-primary'"
-              ng-click="setTab('1x2')">
-        1X2
-      </button>
+    <!-- BAL OLDAL -->
+    <div class="col-md-8">
 
-      <button class="btn golszam"
-              ng-class="activeTab === 'goals' ? 'btn-primary' : 'btn-outline-primary'"
-              ng-click="setTab('goals')">
-        {{$root.lang.data.golszam}}
-      </button>
+      <!-- Gombok -->
+      <div class="d-flex gap-2 mb-3 mt-3">
+        <button class="btn telitip"
+                ng-class="activeTab === '1x2' ? 'btn-primary' : 'btn-outline-primary'"
+                ng-click="setTab('1x2')">
+          1X2
+        </button>
 
-      <button class="btn szoglet"
-              ng-class="activeTab === 'corners' ? 'btn-primary' : 'btn-outline-primary'"
-              ng-click="setTab('corners')">
-        {{$root.lang.data.szog}}
-      </button>
+        <button class="btn golszam"
+                ng-class="activeTab === 'goals' ? 'btn-primary' : 'btn-outline-primary'"
+                ng-click="setTab('goals')">
+          {{$root.lang.data.golszam}}
+        </button>
+
+        <button class="btn szoglet"
+                ng-class="activeTab === 'corners' ? 'btn-primary' : 'btn-outline-primary'"
+                ng-click="setTab('corners')">
+          {{$root.lang.data.szog}}
+        </button>
+      </div>
+
+      <div class="card telicard p-3 shadow-sm rounded-4">
+
+        <!-- 1X2 -->
+        <div ng-show="activeTab === '1x2'">
+          <div class="match-card" ng-repeat="b in data">
+            <h6>{{b.hazai}} - {{b.vendeg}}</h6>
+
+            <div class="odds-row">
+
+              <div class="odd"
+                   ng-click="addToTicket(b.hazai + ' - ' + b.vendeg, 'Hazai', b.odd_hazai)">
+                {{$root.lang.data.oddhaz}}<br>
+                <strong>{{b.odd_hazai}}</strong>
+              </div>
+
+              <div class="odd"
+                   ng-click="addToTicket(b.hazai + ' - ' + b.vendeg, 'Döntetlen', b.odd_dontetlen)">
+                {{$root.lang.data.odddont}}<br>
+                <strong>{{b.odd_dontetlen}}</strong>
+              </div>
+
+              <div class="odd"
+                   ng-click="addToTicket(b.hazai + ' - ' + b.vendeg, 'Vendég', b.odd_vendeg)">
+                {{$root.lang.data.oddvend}}<br>
+                <strong>{{b.odd_vendeg}}</strong>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        <!-- GOALS -->
+        <div ng-show="activeTab === 'goals'">
+          <div class="match-card" ng-repeat="b in data">
+            <h6>{{b.hazai}} - {{b.vendeg}}</h6>
+
+            <div class="odds-row">
+
+              <div class="odd" ng-click="addToTicket(b.hazai + ' - ' + b.vendeg, 'Over 2.5', b.odd_over_25)">
+                {{$root.lang.data.tobbgol25}}<br>
+                <strong>{{b.odd_over_25}}</strong>
+              </div>
+
+              <div class="odd" ng-click="addToTicket(b.hazai + ' - ' + b.vendeg, 'Over 1.5', b.odd_over_15)">
+                {{$root.lang.data.tobbgol15}}<br>
+                <strong>{{b.odd_over_15}}</strong>
+              </div>
+
+              <div class="odd" ng-click="addToTicket(b.hazai + ' - ' + b.vendeg, 'Under 2.5', b.odd_under_25)">
+                {{$root.lang.data.kevgol25}}<br>
+                <strong>{{b.odd_under_25}}</strong>
+              </div>
+
+              <div class="odd" ng-click="addToTicket(b.hazai + ' - ' + b.vendeg, 'Under 1.5', b.odd_under_15)">
+                {{$root.lang.data.kevgol15}}<br>
+                <strong>{{b.odd_under_15}}</strong>
+              </div>
+
+              <div class="odd" ng-click="addToTicket(b.hazai + ' - ' + b.vendeg, 'BTTS Igen', b.odd_btts_igen)">
+                {{$root.lang.data.btts_igen}}<br>
+                <strong>{{b.odd_btts_igen}}</strong>
+              </div>
+
+              <div class="odd" ng-click="addToTicket(b.hazai + ' - ' + b.vendeg, 'BTTS Nem', b.odd_btts_nem)">
+                {{$root.lang.data.btts_nem}}<br>
+                <strong>{{b.odd_btts_nem}}</strong>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        <!-- CORNERS -->
+        <div ng-show="activeTab === 'corners'">
+          <div class="match-card" ng-repeat="b in data">
+            <h6>{{b.hazai}} - {{b.vendeg}}</h6>
+
+            <div class="odds-row">
+
+              <div class="odd" ng-click="addToTicket(b.hazai + ' - ' + b.vendeg, 'Over 7.5', b.odd_szoglet_over_75)">
+                {{$root.lang.data.szogtobb75}}<br>
+                <strong>{{b.odd_szoglet_over_75}}</strong>
+              </div>
+
+              <div class="odd" ng-click="addToTicket(b.hazai + ' - ' + b.vendeg, 'Under 7.5', b.odd_szoglet_under_75)">
+                {{$root.lang.data.szogkev75}}<br>
+                <strong>{{b.odd_szoglet_under_75}}</strong>
+              </div>
+
+              <div class="odd" ng-click="addToTicket(b.hazai + ' - ' + b.vendeg, 'Hazai több szöglet', b.odd_tobb_szoglet_hazai)">
+                {{$root.lang.data.szoghaz}}<br>
+                <strong>{{b.odd_tobb_szoglet_hazai}}</strong>
+              </div>
+
+              <div class="odd" ng-click="addToTicket(b.hazai + ' - ' + b.vendeg, 'Vendég több szöglet', b.odd_tobb_szoglet_vendeg)">
+                {{$root.lang.data.szogvend}}<br>
+                <strong>{{b.odd_tobb_szoglet_vendeg}}</strong>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+      </div>
     </div>
 
-    <!--Adatok a kártyákhoz + a kártyákban gombokban megjelenítve az oddsok 
-    (Jelenleg oddsok nélkül)  -->
-    <div class="card telicard p-3 shadow-sm rounded-4">
+    <!-- JOBB OLDAL (SZELVÉNY) -->
+    <div class="col-md-4 mt-3">
 
-      <div ng-show="activeTab === '1x2'">
+      <div class="card p-3 shadow rounded-4 bg-dark text-white">
 
-        <div class="match-card"
-             ng-repeat="b in data">
+        <h5>🎯 Szelvény</h5>
 
-          <h6>{{b.hazai}} - {{b.vendeg}}</h6>
+        <p class="text-secondary">
+          Kiválasztva: {{ticket.length}}
+        </p>
 
-          <div class="odds-row">
+        <ul class="list-unstyled">
 
-            <div class="odd">
-                  {{$root.lang.data.oddhaz}}<br>
-              <strong>{{b.odd_hazai}}</strong>
-            </div>
+          <li ng-repeat="t in ticket"
+              class="mb-2 p-2 rounded"
+              style="background:#1e1e1e;">
 
-            <div class="odd">
-              {{$root.lang.data.odddont}}<br>
-              <strong>{{b.odd_dontetlen}}</strong>
-            </div>
+            <strong>{{t.match}}</strong><br>
+            <small>{{t.tip}} - {{t.odd}}</small>
 
-            <div class="odd">
-              {{$root.lang.data.oddvend}}<br>
-              <strong>{{b.odd_vendeg}}</strong>
-            </div>
+          </li>
 
-          </div>
-        </div>
+        </ul>
+
       </div>
 
-      <!-- Oddsok megjelenitése a gombokban és kártya létrehozása hozzá -->
+    </div>
 
-      <div ng-show="activeTab === 'goals'">
-
-        <div class="match-card"
-             ng-repeat="b in data">
-
-          <h6>{{b.hazai}} - {{b.vendeg}}</h6>
-
-          <div class="odds-row">
-
-            <div class="odd">
-              {{$root.lang.data.tobbgol25}}<br>
-              <strong>{{b.odd_over_25}}</strong>
-            </div>
-
-            <div class="odd">
-              {{$root.lang.data.tobbgol15}}<br>
-              <strong>{{b.odd_over_15}}</strong>
-            </div>
-
-            <div class="odd">
-              {{$root.lang.data.kevgol25}}<br>
-              <strong>{{b.odd_under_25}}</strong>
-            </div>
-
-            <div class="odd">
-              {{$root.lang.data.kevgol15}}<br>
-              <strong>{{b.odd_under_15}}</strong>
-            </div>
-
-            <div class="odd">
-              {{$root.lang.data.btts_igen}}<br>
-              <strong>{{b.odd_btts_igen}}</strong>
-            </div>
-
-            <div class="odd">
-              {{$root.lang.data.btts_nem}}<br>
-              <strong>{{b.odd_btts_nem}}</strong>
-            </div>
-
-          </div>
-        </div>
-      </div>
-      
-      <!-- Oddsok megjelenitése a gombokban és kártya létrehozása hozzá -->
-      <div ng-show="activeTab === 'corners'">
-
-        <div class="match-card"
-             ng-repeat="b in data">
-
-          <h6>{{b.hazai}} - {{b.vendeg}}</h6>
-
-          <div class="odds-row">
-
-            <div class="odd">
-              {{$root.lang.data.szogtobb75}}<br>
-              <strong>{{b.odd_szoglet_over_75}}</strong>
-            </div>
-
-            <div class="odd">
-              {{$root.lang.data.szogkev75}}<br>
-              <strong>{{b.odd_szoglet_under_75}}</strong>
-            </div>
-
-            <div class="odd">
-              {{$root.lang.data.szoghaz}}<br>
-              <strong>{{b.odd_tobb_szoglet_hazai}}</strong>
-            </div>
-
-            <div class="odd">
-              {{$root.lang.data.szogvend}}<br>
-              <strong>{{b.odd_tobb_szoglet_vendeg}}</strong>
-            </div>
-          </div>
-        </div>
-      </div>
-  </div>  
+  </div>
 </div>
