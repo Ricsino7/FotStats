@@ -1,0 +1,57 @@
+<!-- Oldal cím -->
+<h1 class="fw-bold text-center my-4">
+  Profil
+</h1>
+
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-lg-6 col-md-8 col-12">
+
+      <!-- Profil kártya -->
+      <div class="card shadow-lg border-0 rounded-4">
+        <div class="card-body p-4 text-center">
+
+          <!-- Felhasználónév -->
+          <h3 class="fw-bold mb-3">
+            {{ $root.user.username }}
+          </h3>
+
+          <!-- Kijelentkezés gomb -->
+          <button class="btn btn-danger px-4"
+                  ng-click="logout()">
+            Kijelentkezés
+          </button>
+
+        </div>
+
+        <!-- Adatok -->
+        <div class="card-body border-top">
+
+          <div class="table-responsive">
+            <table class="table table-striped text-center align-middle mb-0">
+
+              <tbody>
+                <tr>
+                  <th>Felhasználónév</th>
+                  <td>{{ $root.user.username }}</td>
+                </tr>
+                <tr>
+                  <th>Email</th>
+                  <td>{{ user.email }}</td>
+                </tr>
+                <tr>
+                  <th>Regisztráció</th>
+                  <td>{{ user.created_at }}</td>
+                </tr>
+              </tbody>
+
+            </table>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</div>

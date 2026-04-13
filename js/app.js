@@ -97,6 +97,13 @@
           parent: 'root',
           controller: 'statementController',
           templateUrl: './html../pages/statement.html'
+          })
+
+        .state('profile', {
+          url: '/profile',
+          parent: 'root',
+          controller: 'profileController',
+          templateUrl: './html../pages/profile.html'
         });
 
       $urlRouterProvider.otherwise('/');

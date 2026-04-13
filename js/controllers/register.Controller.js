@@ -4,8 +4,8 @@
   //register buttonra létrehozznk egy funkciot
   angular.module('app')
   .controller('registerController',[
-    '$scope', 'http',
-    function($scope,http) {
+    '$scope', 'http','$state',
+    function($scope,http,$state) {
       $scope.registerButton = function () {
         console.log($scope.registerData);
         //törölni kellet ezt a két dolgot mivel több adatot adtunk volna mint amit kértünk volna ezért nem működött volna
@@ -25,7 +25,9 @@
             //ha sikeres pedig be tud majd jelentkezni
           }else {
             alert("Sikeres Regisztráció!");
+            $state.go('login')
           }
+          
         })
         .catch(e => console.error(e));
       }

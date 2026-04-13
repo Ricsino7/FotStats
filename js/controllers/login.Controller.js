@@ -19,7 +19,7 @@
           }else{
         // ha nem null sikeres a bejelentkezés
             alert("Sikeres Bejelentkezés!");
-            $rootScope.user = response;
+            $rootScope.user = response[0];
             $rootScope.$applyAsync();
             // sikeres bejelentkezés esetén visszavisz a home oldalra
             $state.go('home');
