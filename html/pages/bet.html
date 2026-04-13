@@ -141,7 +141,10 @@
         <p class="text-secondary">
           Kiválasztva: {{ticket.length}}
         </p>  
-        <button class="">Törlés</button>
+        <button class="btn btn-danger m-3"
+                ng-click="delete">
+                Törlés
+        </button>
         <ul class="list-unstyled">
 
           <li ng-repeat="t in ticket"
