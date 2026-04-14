@@ -31,27 +31,19 @@
         <div ng-show="activeTab === '1x2'">
           <div class="match-card" ng-repeat="b in data">
             <h6>{{b.hazai}} - {{b.vendeg}}</h6>
-
             <div class="odds-row">
-
-              <div class="odd"
-                   ng-click="addToTicket(b.hazai + ' - ' + b.vendeg, 'Hazai', b.odd_hazai)">
+              <div class="odd" ng-click="addToTicket(b, 'Hazai', b.odd_hazai)">
                 {{$root.lang.data.oddhaz}}<br>
                 <strong>{{b.odd_hazai}}</strong>
               </div>
-
-              <div class="odd"
-                   ng-click="addToTicket(b.hazai + ' - ' + b.vendeg, 'Döntetlen', b.odd_dontetlen)">
+              <div class="odd" ng-click="addToTicket(b, 'Döntetlen', b.odd_dontetlen)">
                 {{$root.lang.data.odddont}}<br>
                 <strong>{{b.odd_dontetlen}}</strong>
               </div>
-
-              <div class="odd"
-                   ng-click="addToTicket(b.hazai + ' - ' + b.vendeg, 'Vendég', b.odd_vendeg)">
+              <div class="odd" ng-click="addToTicket(b, 'Vendég', b.odd_vendeg)">
                 {{$root.lang.data.oddvend}}<br>
                 <strong>{{b.odd_vendeg}}</strong>
               </div>
-
             </div>
           </div>
         </div>
@@ -60,39 +52,31 @@
         <div ng-show="activeTab === 'goals'">
           <div class="match-card" ng-repeat="b in data">
             <h6>{{b.hazai}} - {{b.vendeg}}</h6>
-
             <div class="odds-row">
-
-              <div class="odd" ng-click="addToTicket(b.hazai + ' - ' + b.vendeg, 'Over 2.5', b.odd_over_25)">
+              <div class="odd" ng-click="addToTicket(b, 'Over 2.5', b.odd_over_25)">
                 {{$root.lang.data.tobbgol25}}<br>
                 <strong>{{b.odd_over_25}}</strong>
               </div>
-
-              <div class="odd" ng-click="addToTicket(b.hazai + ' - ' + b.vendeg, 'Over 1.5', b.odd_over_15)">
+              <div class="odd" ng-click="addToTicket(b, 'Over 1.5', b.odd_over_15)">
                 {{$root.lang.data.tobbgol15}}<br>
                 <strong>{{b.odd_over_15}}</strong>
               </div>
-
-              <div class="odd" ng-click="addToTicket(b.hazai + ' - ' + b.vendeg, 'Under 2.5', b.odd_under_25)">
+              <div class="odd" ng-click="addToTicket(b, 'Under 2.5', b.odd_under_25)">
                 {{$root.lang.data.kevgol25}}<br>
                 <strong>{{b.odd_under_25}}</strong>
               </div>
-
-              <div class="odd" ng-click="addToTicket(b.hazai + ' - ' + b.vendeg, 'Under 1.5', b.odd_under_15)">
+              <div class="odd" ng-click="addToTicket(b, 'Under 1.5', b.odd_under_15)">
                 {{$root.lang.data.kevgol15}}<br>
                 <strong>{{b.odd_under_15}}</strong>
               </div>
-
-              <div class="odd" ng-click="addToTicket(b.hazai + ' - ' + b.vendeg, 'BTTS Igen', b.odd_btts_igen)">
+              <div class="odd" ng-click="addToTicket(b, 'BTTS Igen', b.odd_btts_igen)">
                 {{$root.lang.data.btts_igen}}<br>
                 <strong>{{b.odd_btts_igen}}</strong>
               </div>
-
-              <div class="odd" ng-click="addToTicket(b.hazai + ' - ' + b.vendeg, 'BTTS Nem', b.odd_btts_nem)">
+              <div class="odd" ng-click="addToTicket(b, 'BTTS Nem', b.odd_btts_nem)">
                 {{$root.lang.data.btts_nem}}<br>
                 <strong>{{b.odd_btts_nem}}</strong>
               </div>
-
             </div>
           </div>
         </div>
@@ -101,29 +85,23 @@
         <div ng-show="activeTab === 'corners'">
           <div class="match-card" ng-repeat="b in data">
             <h6>{{b.hazai}} - {{b.vendeg}}</h6>
-
             <div class="odds-row">
-
-              <div class="odd" ng-click="addToTicket(b.hazai + ' - ' + b.vendeg, 'Over 7.5', b.odd_szoglet_over_75)">
+              <div class="odd" ng-click="addToTicket(b, 'Over 7.5', b.odd_szoglet_over_75)">
                 {{$root.lang.data.szogtobb75}}<br>
                 <strong>{{b.odd_szoglet_over_75}}</strong>
               </div>
-
-              <div class="odd" ng-click="addToTicket(b.hazai + ' - ' + b.vendeg, 'Under 7.5', b.odd_szoglet_under_75)">
+              <div class="odd" ng-click="addToTicket(b, 'Under 7.5', b.odd_szoglet_under_75)">
                 {{$root.lang.data.szogkev75}}<br>
                 <strong>{{b.odd_szoglet_under_75}}</strong>
               </div>
-
-              <div class="odd" ng-click="addToTicket(b.hazai + ' - ' + b.vendeg, 'Hazai több szöglet', b.odd_tobb_szoglet_hazai)">
+              <div class="odd" ng-click="addToTicket(b, 'Hazai több szöglet', b.odd_tobb_szoglet_hazai)">
                 {{$root.lang.data.szoghaz}}<br>
                 <strong>{{b.odd_tobb_szoglet_hazai}}</strong>
               </div>
-
-              <div class="odd" ng-click="addToTicket(b.hazai + ' - ' + b.vendeg, 'Vendég több szöglet', b.odd_tobb_szoglet_vendeg)">
+              <div class="odd" ng-click="addToTicket(b, 'Vendég több szöglet', b.odd_tobb_szoglet_vendeg)">
                 {{$root.lang.data.szogvend}}<br>
                 <strong>{{b.odd_tobb_szoglet_vendeg}}</strong>
               </div>
-
             </div>
           </div>
         </div>
@@ -133,34 +111,41 @@
 
     <!-- JOBB OLDAL (SZELVÉNY) -->
     <div class="col-md-4 mt-3">
-
       <div class="card p-3 shadow rounded-4 bg-dark text-white">
-
         <h5>🎯 Szelvény</h5>
+        <p class="text-secondary">Kiválasztva: {{ticket.length}}</p>
 
-        <p class="text-secondary">
-          Kiválasztva: {{ticket.length}}
-        </p>  
-        <button class="btn btn-danger m-3"
-                ng-click="delete">
-                Törlés
-        </button>
+        <div ng-if="ticket.length > 0" class="mt-3">
+          <label class="form-label text-white-50">Tét (Ft)</label>
+          <input type="number" class="form-control bg-secondary text-white" ng-model="stakeAmount" min="100" step="100" ng-change="calcWin()">
+        </div>
+
+        <!-- TELJES ODDS MUTATÁSA -->
+        <div class="mt-2 text-warning" ng-if="ticket.length > 0">
+          <strong>Összodds: {{ totalOdds }}</strong>
+        </div>
+
+        <!-- NYEREMÉNY MUTATÁSA -->
+        <div class="mt-2 alert alert-info text-center" ng-if="totalWin > 0">
+          <strong>Várható nyeremény: {{totalWin}} Ft</strong>
+        </div>
+
+        <button class="btn btn-danger m-3" ng-click="openClearModal()">Törlés</button>
+
         <ul class="list-unstyled">
-
-          <li ng-repeat="t in ticket"
-              class="mb-2 p-2 rounded"
-              style="background:#1e1e1e;">
-
-            <strong>{{t.match}}</strong><br>
-            <small>{{t.tip}} - {{t.odd}}</small>
-
+          <li ng-repeat="t in ticket track by $index" class="mb-2 p-2 rounded d-flex justify-content-between" style="background:#1e1e1e;">
+            <div>
+              <strong>{{t.match.hazai}} - {{t.match.vendeg}}</strong><br>
+              <small>{{t.tip}} - {{t.odd}}</small>
+            </div>
+            <span style="cursor:pointer; color:#ff6b6b;" ng-click="openRemoveModal($index)">🗑️</span>
           </li>
-
         </ul>
 
+        <div ng-if="ticket.length === 0" class="text-center text-secondary">Még nincs kiválasztott fogadás</div>
       </div>
-
     </div>
 
   </div>
 </div>
+<div ng-include="'./html/components/modal.html'"></div>

@@ -30,3 +30,36 @@
     </div>
   </div>
 </div>
+
+<!-- MODALOK BET-->
+<div class="modal fade" id="torlesModal" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content bg-dark text-white">
+      <div class="modal-header">
+        <h5>Szelvény törlése</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">Biztosan törlöd a teljes szelvényt?</div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary" data-bs-dismiss="modal">Mégse</button>
+        <button class="btn btn-danger" data-bs-dismiss="modal" ng-click="confirmClearTicket()">Törlés</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="removeBetModal" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content bg-dark text-white">
+      <div class="modal-header">
+        <h5>Fogadás törlése</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">Biztosan törlöd ezt a fogadást?</div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary" data-bs-dismiss="modal">Mégse</button>
+        <button class="btn btn-danger" data-bs-dismiss="modal" ng-click="confirmRemoveBet()">Törlés</button>
+      </div>
+    </div>
+  </div>
+</div>
