@@ -1,15 +1,186 @@
 body {
   overflow-x: hidden;
-  background: linear-gradient(135deg, #0a0f1e 0%, #0c1222 100%);
+  background: linear-gradient(135deg, #f0f4ff 0%, #e8eeff 100%);
   font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  transition: background 0.3s ease, color 0.3s ease;
+  color: #1a1a2e;
 }
 
-.dark-mode {
-  background-color: #0a0f1e !important;
-  color: #eef2ff !important;
+/* ===== DARK MODE - data-bs-theme="dark" ===== */
+body[data-bs-theme="dark"] {
+  background: #0a0f1e !important;
+  color: #e2e8f0 !important;
 }
 
-/*Navbar*/
+body[data-bs-theme="dark"] .custom-nav {
+  background: rgba(0, 0, 0, 0.8) !important;
+  border-color: #0db9fd !important;
+}
+
+body[data-bs-theme="dark"] .nav-link {
+  color: #0db9fd !important;
+}
+
+body[data-bs-theme="dark"] .nav-link:hover {
+  background: linear-gradient(135deg, #0870e6, #0db9fd);
+  color: white !important;
+}
+
+body[data-bs-theme="dark"] .team-member,
+body[data-bs-theme="dark"] .big-news-card,
+body[data-bs-theme="dark"] .small-news-item,
+body[data-bs-theme="dark"] .match-card,
+body[data-bs-theme="dark"] .card-home,
+body[data-bs-theme="dark"] .telicard,
+body[data-bs-theme="dark"] .kereses,
+body[data-bs-theme="dark"] .list-group-item {
+  background: rgba(30, 41, 59, 0.6) !important;
+  border-color: #0db9fd !important;
+}
+
+body[data-bs-theme="dark"] .szponzor-card {
+  background: rgba(30, 41, 59, 0.5) !important;
+  border-color: #0db9fd;
+}
+
+body[data-bs-theme="dark"] .szponzor-card:hover {
+  background: rgba(30, 41, 59, 0.8) !important;
+}
+
+body[data-bs-theme="dark"] .szponzor-card img {
+  filter: brightness(0.95);
+  opacity: 1;
+}
+
+body[data-bs-theme="dark"] .telitip,
+body[data-bs-theme="dark"] .golszam,
+body[data-bs-theme="dark"] .szoglet {
+  background: rgba(30, 41, 59, 0.7) !important;
+  color: #0db9fd !important;
+}
+
+body[data-bs-theme="dark"] .modern-table {
+  background: rgba(30, 41, 59, 0.4) !important;
+}
+
+body[data-bs-theme="dark"] .modern-table th {
+  background: #0a0a1a !important;
+  color: #0db9fd !important;
+  border-bottom: 2px solid #0db9fd !important;
+}
+
+body[data-bs-theme="dark"] .modern-table td {
+  color: #cbd5e1 !important;
+}
+
+body[data-bs-theme="dark"] .modern-table tbody tr:hover {
+  background: #2a2a3e !important;
+}
+
+body[data-bs-theme="dark"] .sticky-header th {
+  background: #0a0a1a !important;
+  color: #0db9fd !important;
+  border-bottom: 2px solid #0db9fd !important;
+}
+
+body[data-bs-theme="dark"] .home-table th {
+  color: #0db9fd !important;
+}
+
+body[data-bs-theme="dark"] .home-table td {
+  color: #cbd5e1 !important;
+}
+
+body[data-bs-theme="dark"] .home-table tbody tr:hover {
+  background-color: rgba(13, 185, 253, 0.2) !important;
+}
+
+body[data-bs-theme="dark"] .footer-link,
+body[data-bs-theme="dark"] .footer-social a {
+  color: #0db9fd;
+}
+
+body[data-bs-theme="dark"] .footer-link:hover,
+body[data-bs-theme="dark"] .footer-social a:hover {
+  color: #ffffff !important;
+}
+
+body[data-bs-theme="dark"] .see-more {
+  color: #0db9fd !important;
+}
+
+body[data-bs-theme="dark"] .see-more:hover {
+  color: #60a5fa !important;
+}
+
+body[data-bs-theme="dark"] .number-circle {
+  background: #0db9fd;
+  color: #121212 !important;
+}
+
+body[data-bs-theme="dark"] .odd {
+  background: linear-gradient(135deg, #0870e6, #0db9fd);
+  color: white !important;
+}
+
+body[data-bs-theme="dark"] .theme-btn {
+  background: #1a1a2e;
+  color: #0db9fd !important;
+  border-color: #0db9fd;
+}
+
+body[data-bs-theme="dark"] .theme-btn:hover {
+  background: #0870e6;
+  color: white !important;
+}
+
+body[data-bs-theme="dark"] .liga-logo {
+  filter: brightness(0.8);
+}
+
+body[data-bs-theme="dark"] .header {
+  background: linear-gradient(135deg, #0db9fd, #0870e6);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent !important;
+}
+
+body[data-bs-theme="dark"] .btn-login,
+body[data-bs-theme="dark"] .btn-register {
+  background: rgba(30, 41, 59, 0.6) !important;
+  color: #0db9fd !important;
+  border-color: #0db9fd;
+}
+
+body[data-bs-theme="dark"] .btn-login:hover,
+body[data-bs-theme="dark"] .btn-register:hover {
+  background: #0870e6 !important;
+  color: white !important;
+}
+
+body[data-bs-theme="dark"] .form-select {
+  background: #1a1a2e !important;
+  color: white !important;
+}
+
+/* Dark mode - MINDEN SZÖVEG VILÁGOS */
+body[data-bs-theme="dark"] .header,
+body[data-bs-theme="dark"] .team-member p,
+body[data-bs-theme="dark"] .big-news-card p,
+body[data-bs-theme="dark"] .small-news-item p,
+body[data-bs-theme="dark"] .match-card p,
+body[data-bs-theme="dark"] .match-card h5,
+body[data-bs-theme="dark"] .match-card h6,
+body[data-bs-theme="dark"] .footer-title,
+body[data-bs-theme="dark"] .footer-small,
+body[data-bs-theme="dark"] .leiras,
+body[data-bs-theme="dark"] .table-striped td,
+body[data-bs-theme="dark"] p,
+body[data-bs-theme="dark"] span:not(.number-circle) {
+  color: #e2e8f0 !important;
+}
+
+/* ===== HEADER ===== */
 .header {
   text-align: center;
   margin-top: 40px;
@@ -25,6 +196,7 @@ body {
   text-shadow: 0 0 8px rgba(13, 185, 253, 0.3);
 }
 
+/* ===== NAVBAR - KISEBB ===== */
 .custom-nav {
   padding: 6px 20px;
   font-size: 0.85rem;
@@ -45,12 +217,12 @@ body {
 .nav-link {
   position: relative;
   transition: 0.25s ease;
-  color: #0db9fd !important;
+  color: #0870e6 !important;
   font-weight: 600;
   margin: 0 2px;
   border-radius: 40px;
   padding: 8px 18px;
-  background: rgba(8, 112, 230, 0.15);
+  background: rgba(8, 112, 230, 0.1);
   backdrop-filter: blur(4px);
   letter-spacing: 0.3px;
   font-size: 0.85rem;
@@ -60,10 +232,6 @@ body {
 .nav-link[data-long="true"] {
   white-space: normal;
   word-break: keep-all;
-}
-
-.nav-link[title] {
-  cursor: help;
 }
 
 .nav-link[title]:hover::after {
@@ -82,7 +250,6 @@ body {
   z-index: 1000;
   box-shadow: 0 2px 10px rgba(0,0,0,0.2);
   pointer-events: none;
-  font-weight: 500;
 }
 
 .nav-link:hover {
@@ -130,7 +297,7 @@ body {
   }
 }
 
-/*Gombok része*/
+/* ===== GOMBOK ===== */
 .theme-btn {
   border-radius: 40px;
   padding: 5px 18px;
@@ -139,7 +306,8 @@ body {
   backdrop-filter: blur(4px);
   transition: 0.2s;
   font-weight: 500;
-  color: #0db9fd;
+  color: #0870e6;
+  cursor: pointer;
 }
 
 .theme-btn:hover {
@@ -154,7 +322,7 @@ body {
   border-radius: 40px;
   background: rgba(8, 112, 230, 0.25);
   border: 1px solid #0db9fd;
-  color: #0db9fd;
+  color: #0870e6;
   padding: 5px 12px;
   font-weight: 500;
 }
@@ -177,7 +345,7 @@ body {
   box-shadow: 0 0 14px rgba(13, 185, 253, 0.7);
 }
 
-/*Footer része*/
+/* ===== FOOTER ===== */
 .footer-title {
   font-weight: 700;
   font-size: 1.2rem;
@@ -192,35 +360,36 @@ body {
 .footer-small {
   font-size: 0.85rem;
   opacity: 0.8;
+  color: #1a1a2e;
 }
 
 .footer-link {
-  color: #0db9fd;
+  color: #0870e6;
   text-decoration: none;
   transition: 0.2s;
   border-bottom: 1px dotted transparent;
 }
 
 .footer-link:hover {
-  color: #ffffff;
+  color: #0db9fd;
   border-bottom-color: #0db9fd;
 }
 
 .footer-social a {
   font-size: 1.4rem;
   margin-right: 16px;
-  color: #0db9fd;
+  color: #0870e6;
   transition: 0.2s;
   display: inline-block;
 }
 
 .footer-social a:hover {
-  color: #ffffff;
+  color: #0db9fd;
   transform: translateY(-3px);
   text-shadow: 0 0 6px #0db9fd;
 }
 
-/*Team cards*/
+/* ===== TEAM CARDS ===== */
 .team {
   display: flex;
   justify-content: center;
@@ -230,14 +399,14 @@ body {
 }
 
 .team-member {
-  background: rgba(8, 112, 230, 0.2);
+  background: rgba(8, 112, 230, 0.15);
   backdrop-filter: blur(8px);
   border-radius: 28px;
   overflow: hidden;
-  box-shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.2);
   transition: all 0.35s cubic-bezier(0.2, 0.9, 0.4, 1.1);
   text-align: center;
-  width: 300px;
+  width: 320px;
   border: 1px solid rgba(13, 185, 253, 0.4);
 }
 
@@ -249,7 +418,7 @@ body {
 
 .team-member img {
   width: 100%;
-  height: 320px;
+  height: 400px;
   object-fit: cover;
   transition: 0.4s;
 }
@@ -262,13 +431,12 @@ body {
   margin: 18px 0 22px;
   font-size: 1.2rem;
   font-weight: 600;
-  color: #0db9fd;
-  text-shadow: 0 0 4px rgba(13, 185, 253, 0.3);
+  color: #0870e6;
 }
 
-/*A táblák része*/
+/* ===== TABLECKK ===== */
 .modern-table {
-  background: rgba(8, 112, 230, 0.15);
+  background: rgba(8, 112, 230, 0.1);
   backdrop-filter: blur(4px);
   border-radius: 24px;
   overflow: hidden;
@@ -277,12 +445,12 @@ body {
 }
 
 .modern-table th {
-  background: #0a2a4a !important;
+  background: #dce5ff !important;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 1px;
   font-size: 0.8rem;
-  color: #0db9fd !important;
+  color: #0870e6 !important;
   border-bottom: none !important;
   padding: 16px 12px;
 }
@@ -291,18 +459,18 @@ body {
   vertical-align: middle;
   padding: 14px 12px;
   border-bottom: 1px solid rgba(13, 185, 253, 0.2);
-  color: #cbd5e1;
+  color: #1a1a2e;
 }
 
 .modern-table tbody tr:hover {
-  background: rgba(13, 185, 253, 0.15);
+  background: rgba(13, 185, 253, 0.1);
   transition: 0.2s;
 }
 
-/*Home kártyák*/
+/* ===== HOME KÁRTYÁK ===== */
 .card-home {
   border: 1px solid rgba(13, 185, 253, 0.5) !important;
-  background: rgba(8, 112, 230, 0.15);
+  background: rgba(8, 112, 230, 0.1);
   backdrop-filter: blur(8px);
   border-radius: 28px;
   transition: 0.25s;
@@ -314,38 +482,24 @@ body {
 }
 
 .home-table th {
-  color: #0db9fd;
+  color: #0870e6;
   font-weight: 600;
 }
 
 .home-table td {
-  color: #7bc5fd;
+  color: #1a1a2e;
 }
 
-/*Sticky header*/
+/* ===== STICKY HEADER ===== */
 .sticky-header th {
   position: sticky;
   top: 0;
   z-index: 10;
-  background: #0a2a4a !important;
+  background: #dce5ff !important;
   backdrop-filter: blur(12px);
 }
 
-/*Sötét card és hover*/
-.dark-card {
-  background: rgba(8, 112, 230, 0.2);
-  backdrop-filter: blur(4px);
-  border-radius: 24px;
-  transition: all 0.3s;
-}
-
-.hover-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 20px 30px -12px rgba(13, 185, 253, 0.5);
-  background: rgba(8, 112, 230, 0.35);
-}
-
-/*News része*/
+/* ===== NEWS - EREDETI MÉRETEKKEL ===== */
 .news-block {
   margin-bottom: 40px;
 }
@@ -358,15 +512,6 @@ body {
   transition: transform 0.5s, box-shadow 0.5s;
   text-align: center;
   position: relative;
-  animation: newsSlideIn 1s ease-in-out forwards;
-  transform: translateX(-100vw);
-}
-
-.news-block:nth-child(odd) .big-news-card { animation-delay: 0.3s; }
-.news-block:nth-child(even) .big-news-card { animation-delay: 0.6s; }
-
-@keyframes newsSlideIn {
-  to { transform: translateX(0); }
 }
 
 .big-news-card:hover {
@@ -376,14 +521,9 @@ body {
 
 .big-news-card .big-img {
   width: 100%;
-  height: auto;
-  min-height: 400px;
-  max-height: 700px;
+  height: 700px;
   object-fit: cover;
-  object-position: top center;
   padding: 0 !important;
-  margin: 0;
-  display: block;
   box-shadow: 0 6px 16px rgba(17, 163, 189, 0.842);
   transition: transform 0.35s, box-shadow 0.35s;
 }
@@ -395,6 +535,7 @@ body {
 .big-news-card p {
   margin: 12px 0;
   font-size: 1.1em;
+  color: #1a1a2e;
 }
 
 .small-news-item {
@@ -414,7 +555,6 @@ body {
   width: 70px;
   height: 70px;
   object-fit: cover;
-  border-radius: 8px;
 }
 
 .number-circle {
@@ -437,38 +577,24 @@ body {
   cursor: pointer;
 }
 
-@media (max-width: 992px) {
-  .big-news-card .big-img {
-    min-height: 300px;
-    max-height: 500px;
-  }
-}
-
-@media (max-width: 768px) {
-  .big-news-card .big-img {
-    min-height: 200px;
-    max-height: 350px;
-  }
-}
-
-/*Animáciok és a többi elemekhez tartozó rész*/
-.table-striped td, 
+/* ===== EGYÉB ELEMEK ===== */
+.table-striped td,
 .table-bordered th,
 .form-select,
 .kereses,
 .list-group-item {
-  background-color: rgba(8, 112, 230, 0.2) !important;
-  color: #0db9fd !important;
-  border-color: #0db9fd !important;
+  background-color: rgba(34, 74, 182, 0.719);
+  color: #18e0e7;
 }
 
 .btn-login, .btn-register {
   background: rgba(13, 185, 253, 0.15);
   border: 1px solid #0db9fd;
-  color: #0db9fd;
+  color: #0870e6;
   border-radius: 40px;
   padding: 6px 20px;
   transition: 0.2s;
+  cursor: pointer;
 }
 
 .btn-login:hover, .btn-register:hover {
@@ -479,29 +605,43 @@ body {
 }
 
 .liga-logo {
-  max-height: 80px;
-  width: auto;
-  filter: drop-shadow(0 4px 6px rgba(13, 185, 253, 0.3));
+  max-height: 90px;
+  width: 110px;
 }
 
-/* ===== SZPONZOR ===== */
+@media (max-width: 576px) {
+  .liga-logo {
+    max-height: 60px;
+  }
+}
+
+/* ===== SZPONZOR KÁRTYA ===== */
 .szponzor-card {
-  transition: all 0.3s;
-  background: rgba(8, 112, 230, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background: rgba(8, 112, 230, 0.08) !important;
   backdrop-filter: blur(4px);
   border-radius: 24px;
-  border: 1px solid rgba(13, 185, 253, 0.4);
+  border: 1px solid rgba(13, 185, 253, 0.3);
 }
 
 .szponzor-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 12px 24px -8px rgba(13, 185, 253, 0.4);
   border-color: #0db9fd;
+  background: rgba(8, 112, 230, 0.15) !important;
 }
 
-/* ===== MÉRKŐZÉS KÁRTYÁK ===== */
+.szponzor-card img {
+  filter: brightness(1);
+  opacity: 1;
+}
+
+.leiras {
+  color: #0824c2;
+}
+
 .match-card {
-  background: rgba(8, 112, 230, 0.2);
+  background: rgba(8, 112, 230, 0.15);
   backdrop-filter: blur(4px);
   border-radius: 28px;
   padding: 18px;
@@ -524,7 +664,7 @@ body {
   text-align: center;
   font-weight: 600;
   transition: 0.2s;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
   color: white;
 }
 
@@ -535,36 +675,23 @@ body {
 }
 
 .telitip, .golszam, .szoglet {
-  background: rgba(8, 112, 230, 0.25);
-  color: #0db9fd;
+  background: rgba(8, 112, 230, 0.2);
+  color: #0870e6;
   border-radius: 20px;
   padding: 8px 14px;
   border: 1px solid rgba(13, 185, 253, 0.3);
 }
 
 .telicard {
-  background: rgba(8, 112, 230, 0.2);
+  background: rgba(8, 112, 230, 0.15);
   border-color: #0db9fd;
   border-radius: 24px;
 }
 
-/* ===== ANIMÁCIÓK ===== */
-@keyframes slideIn {
-  to { transform: translateX(0); }
-}
-
-.team-member, .big-news-card {
-  animation: slideIn 0.5s cubic-bezier(0.2, 0.9, 0.4, 1.1) forwards;
-  transform: translateX(0);
-  opacity: 1;
-}
-
+/* ===== RESZPONZÍV ===== */
 @media (max-width: 992px) {
-  .custom-nav {
-    border-radius: 32px;
-  }
   .big-news-card .big-img {
-    max-height: 320px;
+    height: 420px;
   }
   .header {
     font-size: 2rem;
@@ -575,7 +702,7 @@ body {
   .team-member {
     width: 260px;
   }
-  .liga-logo {
-    max-height: 50px;
+  .big-news-card .big-img {
+    height: 300px;
   }
 }
