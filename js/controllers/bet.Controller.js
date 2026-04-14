@@ -39,13 +39,13 @@
         $scope.totalWin = 0;
         return;
       }
-
+      
       var szorzat = 1;
       for (var i = 0; i < $scope.ticket.length; i++) {
         szorzat = szorzat * parseFloat($scope.ticket[i].odd);
       }
-
-      $scope.totalOdds = szorzat;
+      
+      $scope.totalOdds = Math.floor(szorzat * 10) / 10;
       $scope.totalWin = Math.floor($scope.stakeAmount * szorzat);
     };
 
