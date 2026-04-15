@@ -1,4 +1,4 @@
-Tagok: Bokor Richard, Kulcsár Tamás
+Tagok: Bokor Richard, Kulcsár Tamás Ámon
 Keretrendszer: AngularJS, Bootstrap
 Backend:PHP
 Az oldal elinditásáná:
