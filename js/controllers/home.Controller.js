@@ -6,7 +6,8 @@
   '$scope',
   '$http',
   '$stateParams',
-  function($scope, $http, $stateParams) {
+  '$rootScope',
+  function($scope, $http, $stateParams, $rootScope) {
 
     // alap scope változók
     $scope.data = [];
@@ -62,36 +63,49 @@
       }
     };
 
+    $scope.frissit = function() {
+          $http.get('./lang/' + $rootScope.lang.id + '.json?v=' + new Date().getTime()).then(function(res) {
+              $scope.nyelv = res.data;
+          });
+      };
+
+      // Induláskor betölt
+      $scope.frissit();
+
+      // Ha a menüben váltasz, ez észreveszi és újra lefut
+      $rootScope.$watch('lang.id', function() {
+          $scope.frissit();
+      });
     //Szponzorok adatainak megadása amit megtudunk jeleniteni az oldalon
     $scope.szponzorok = [
         {
-          nev: 'Nike',
+          nev: 'nike_name',
           kep: './img/szponzorok/nike_logo.jpg',
-          leiras: 'A legjobb ötözékekért!',
+          leiras: 'nike_leiras',
           url: 'https://nike.com'
         },
         {
-          nev: 'Telekom',
+          nev: 'telekom_name',
           kep: './img/szponzorok/telekom.jpg',
-          leiras: 'A legjobb szolgáltatásért!',
+          leiras: 'telekom_leiras',
           url: 'https://telekom.hu'
         },
         {
-          nev: 'Tippmixpro',
+          nev: 'tippmixpro_name',
           kep: './img/szponzorok/tippmixpro.jpg',
-          leiras: 'Játssz velünk most!',
+          leiras: 'tippmixpro_leiras',
           url: 'https://tippmixpro.hu'
         },
          {
-          nev: 'LM10',
+          nev: 'messi_name',
           kep: './img/szponzorok/messi_logo.jpg',
-          leiras: 'Növeld új szintre a rajongásod!',
+          leiras: 'messi_leiras',
           url: 'https://www.themessistore.com/?srsltid=AfmBOop_tgrIgOhqI1q5LunVgD1oEGRdk6PL6Uys21b9XUQRPqz9qt8B'
         },
         {
-          nev: 'CR7',
+          nev: 'cr_name',
           kep: './img/szponzorok/cr7_logo.jpg',
-          leiras: 'Minden ami CR7 csak rajongoknak',
+          leiras: 'cr_leiras',
           url: 'https://www.cristianoronaldo.com/#cr7'
         }
     ];

@@ -2,17 +2,17 @@
 
   <!-- Oldal cím -->
   <h1 class="header display-5 fw-bold">
-    Rolunk
+    {{ $root.lang.data.about }}
   </h1>
 
   <!-- Bemutatkozó szöveg -->
-  <p class="text-center">
-    {{ aboutText }}
+ <p class="text-center">
+    {{ nyelv.aboutText }}
   </p>
 
-  <!-- Csapat szekció -->
+  <!-- Csapat szekció - A JSON-ben lévő 'szponzi' (vagy 'csapatunk') kulcs -->
   <h3 class="text-center fw-bold">
-    Csapatunk
+    {{ $root.lang.data.team }}
   </h3>
 
   <div class="team">
@@ -23,15 +23,16 @@
 
       <!-- Profilkép -->
       <img ng-src="{{member.image}}"
-           alt="{{member.name}}">
+           alt="{{ nyelv[member.name] }}">
 
-      <!-- Név -->
+      <!-- Név - A nyelv objektumból keresi ki a member.name-ben lévő kulcs alapján -->
       <p>
-        <strong>{{ member.name }}</strong>
+        <strong>{{ nyelv[member.name] }}</strong>
       </p>
-      <!-- Szerepkör -->
+      
+      <!-- Szerepkör - A nyelv objektumból keresi ki a member.role-ban lévő kulcs alapján -->
       <p>
-        {{ member.role }}
+        {{ nyelv[member.role] }}
       </p>
 
     </div>

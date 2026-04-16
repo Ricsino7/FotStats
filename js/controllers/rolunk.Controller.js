@@ -4,18 +4,34 @@
   angular.module('app')
   .controller('rolunkController', [
     '$scope',
-    function($scope) {
+    '$http',
+    '$rootScope',
+    function($scope,$http,$rootScope) {
 
+      // Ezt a függvényt hívjuk meg, hogy TÉNYLEG az aktuálisat töltse be
+      $scope.frissit = function() {
+          $http.get('./lang/' + $rootScope.lang.id + '.json?v=' + new Date().getTime()).then(function(res) {
+              $scope.nyelv = res.data;
+          });
+      };
+
+      // Induláskor betölt
+      $scope.frissit();
+
+      // Ha a menüben váltasz, ez észreveszi és újra lefut
+      $rootScope.$watch('lang.id', function() {
+          $scope.frissit();
+      });
       // Csapattagok adatai
       $scope.teamMembers = [
         {
-          name: 'Bokor Richárd',
-          role: 'Projektvezető',
+          name: 'bokor_richard',
+          role: 'boss',
           image: './img/ricsi.jpg'
         },
         {
-          name: 'Kulcsár Tamás Ámon',
-          role: 'Webfejlesztő',
+          name: 'kulcsar_tamas',
+          role: 'worker',
           image: './img/tomi.jpg'
         }
       ];

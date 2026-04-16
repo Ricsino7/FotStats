@@ -17,10 +17,10 @@
             <span ng-if="e.jatekos" class="text-muted ms-2">({{ e.jatekos }})</span>
           </div>
           <div>
-            <span ng-if="e.type == 'gol'" class="text-danger">⚽ Gól</span>
-            <span ng-if="e.type == 'szoglet'" class="text-primary">🎯 Szöglet</span>
-            <span ng-if="e.type == 'sarga_lap'" class="text-secondary">🟨Sárga lap</span>
-            <span ng-if="e.type == 'piros_lap'" class="text-secondary">🟥Piros lap</span>
+            <span ng-if="e.type == 'gol'" class="text-danger">{{ $root.lang.data.gol }}</span>
+            <span ng-if="e.type == 'szoglet'" class="text-primary">{{ $root.lang.data.szoglet }}</span>
+            <span ng-if="e.type == 'sarga_lap'" class="text-secondary">{{ $root.lang.data.sarga_lap }}</span>
+            <span ng-if="e.type == 'piros_lap'" class="text-secondary">{{ $root.lang.data.piros_lap }}</span>
           </div>
         </div>
 
@@ -38,13 +38,13 @@
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content bg-dark text-white">
       <div class="modal-header">
-        <h5>Szelvény törlése</h5>
+        <h5>{{ $root.lang.data.bet_delete }}</h5>
         <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
       </div>
-      <div class="modal-body">Biztosan törlöd a teljes szelvényt?</div>
+      <div class="modal-body">{{ $root.lang.data.bet_delete_confirm }}</div>
       <div class="modal-footer">
-        <button class="btn btn-secondary" data-bs-dismiss="modal">Mégse</button>
-        <button class="btn btn-danger" data-bs-dismiss="modal" ng-click="confirmClearTicket()">Törlés</button>
+        <button class="btn btn-secondary" data-bs-dismiss="modal">{{ $root.lang.data.megse_gomb }}</button>
+        <button class="btn btn-danger" data-bs-dismiss="modal" ng-click="confirmClearTicket()">{{ $root.lang.data.torles }}</button>
       </div>
     </div>
   </div>
@@ -54,14 +54,17 @@
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content bg-dark text-white">
       <div class="modal-header">
-        <h5>Fogadás törlése</h5>
+        <h5>{{ $root.lang.data.beting_delete }}</h5>
         <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
       </div>
-      <div class="modal-body">Biztosan törlöd ezt a fogadást?</div>
+      <div class="modal-body">{{ $root.lang.data.beting_delete_confirm}}</div>
       <div class="modal-footer">
-        <button class="btn btn-secondary" data-bs-dismiss="modal">Mégse</button>
-        <button class="btn btn-danger" data-bs-dismiss="modal" ng-click="confirmRemoveBet()">Törlés</button>
+        <button class="btn btn-secondary" data-bs-dismiss="modal">{{ $root.lang.data.megse_gomb }}</button>
+        <button class="btn btn-danger" data-bs-dismiss="modal" ng-click="confirmRemoveBet()">{{ $root.lang.data.torles }}</button>
       </div>
     </div>
   </div>
 </div>
+
+
+

@@ -16,7 +16,7 @@
               ng-change="tabella_kivalasztas()">
         <!-- Ligák listája -->
         <option ng-repeat="Liga in Ligak" value="{{ Liga }}">
-          {{ Liga }}
+          {{ $root.lang.data[Liga] }}
         </option>
       </select>
     </div>
@@ -92,8 +92,8 @@
                        alt="{{sz.nev}}" 
                        class="img-fluid mb-3 rounded-3"
                        style="cursor: pointer; max-height: 80px; object-fit: contain;">
-                  <h6 class="fw-bold mb-2 text-dark">{{sz.nev}}</h6>
-                  <p class="leiras text-muted small mb-0">{{sz.leiras}}</p>
+                  <h6 class="fw-bold mb-2">{{ nyelv[sz.nev] }}</h6>
+                  <p class="leiras text-muted small mb-0">{{ nyelv[sz.leiras] }}</p>
                 </div>
 
               </a>

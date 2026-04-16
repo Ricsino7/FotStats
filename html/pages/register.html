@@ -5,29 +5,29 @@
       <form name="registerForm" class="p-4 border rounded shadow-sm">
         <!--  -->
          <div class="form-group mb-3">
-          <label>Felhasználónév</label>
-          <input ng-model="registerData.username" placeholder="Felhasználónév" type="text" class="form-control" required>
+          <label>{{ $root.lang.data.username }}</label>
+          <input ng-model="registerData.username" placeholder="{{ $root.lang.data.username }}" type="text" class="form-control" required>
         </div>
         <!-- elkérjük az emailt a felhasználótól -->
         <div class="form-group mb-3">
-          <label>Email</label>
-          <input ng-model="registerData.email" placeholder="Email" type="email" class="form-control" required>
+          <label>{{ $root.lang.data.email }}</label>
+          <input ng-model="registerData.email" placeholder="{{ $root.lang.data.email }}" type="email" class="form-control" required>
         </div>
         <!-- elkérjük a jelszót a felhasználótól -->
         <div class="form-group mb-3">
-          <label>Jelszó</label>
-          <input ng-model="registerData.password" placeholder="Jelszó" type="password" class="form-control" required>
+          <label>{{ $root.lang.data.password }}</label>
+          <input ng-model="registerData.password" placeholder="{{ $root.lang.data.password }}" type="password" class="form-control" required>
         </div>
         <!-- elkérjük a jelszót újra a felhasználótól -->
         <div class="form-group mb-3">
-          <label>Jelszó Újra!</label>
-          <input ng-model="registerData.passwordConfirm" placeholder="Jelszó Újra" type="password" class="form-control" required>
+          <label>{{ $root.lang.data.pass_again }}</label>
+          <input ng-model="registerData.passwordConfirm" placeholder="{{ $root.lang.data.pass_again }}" type="password" class="form-control" required>
         </div>
 
        
         <!-- 2 db választási lehetősék a felhasználót megkérdezzük  hogy elmúlt e 18-éves -->
         <div class="form-group mb-4">
-          <label class="fw-bold d-block mb-2">Elmúltál 18?</label>
+          <label class="fw-bold d-block mb-2">{{ $root.lang.data.age }}</label>
           <!--  -->
           <div class="d-flex gap-4">
             <div class="form-check">
@@ -39,7 +39,7 @@
                      ng-value="'y'"
                      required>
               <label class="form-check-label"  for="igen">
-                Igen
+                {{ $root.lang.data.yes }}
               </label>
             </div>
 
@@ -52,7 +52,7 @@
                      ng-value="'n'"
                      >
               <label class="form-check-label" for="nem">
-                Nem
+                {{ $root.lang.data.no }}
               </label>
             </div>
           </div>
@@ -63,7 +63,7 @@
                   ng-disabled="registerForm.$invalid || registerData.radio === 'n' || 
                   registerData.passwordConfirm !== registerData.password"
                   ng-click="registerButton()" class="btn btn-primary w-100">
-            Regisztráció
+            {{ $root.lang.data.regisz }}
           </button>
         </div>
 
